@@ -4,7 +4,7 @@ Private repository with the test material and test reports for hook v15 of Xahau
 
 - **HookHash (v15, Hooks Builder build):** `4847C361…` (see the on-chain hook; full hash in the testnet logs).
 - **What changed vs v14:** one change. If the hook account itself sends an `Invoke` to another address, the hook lets it pass (`tgs: pass`) and writes nothing. Everything else works as in v14. Details: [reports/REPORT.md](reports/REPORT.md).
-- **Source and wasm:** not in this repository yet (left out on purpose; may be added later).
+- **Source and wasm:** in `src/` and `wasm/` (see "Source and wasm" below).
 
 ## What the tests cover
 
@@ -59,3 +59,24 @@ tests/
 ```
 
 Test account secrets are not in this repository. Scripts read them from local `accounts_SECRET.json` files (git-ignored) or from environment variables such as `GENESIS_SEED` (local standalone node only).
+
+## Source and wasm
+
+- `src/tgstkshookbox_15.c`: hook v15 source (uses the standard Hooks headers).
+- `src/tgsboxv15_builder.c`: the same source with the headers inlined into one file, as compiled in Hooks Builder.
+- `wasm/tgsboxv15.wasm`: the wasm built from `src/tgsboxv15_builder.c` in Hooks Builder (26,205 bytes). This is the exact wasm that was tested and installed.
+  - HookHash (SHA-512Half): `4847C361FCB669BD7C7E919092F9EB4831852B1152CA5AE9C08EFA7E741EE6FA`
+  - SHA-256: `c488123a96b4d0f082049b17b77cc6d1d548c72f257ff28b4dc2eda786e1766f`
+
+## Tools used
+
+- Xahau testnet (network 21338) and a local standalone Xahau node for the test suites in `tests/`.
+- xahc 1.12.1 by @Cryptocrazy589: build, lint, simulation, fuzzing and cbmc proofs (`tests/xahc/`).
+- Hooks Builder for the final wasm build.
+
+All tests, reports, source code and wasm for hook v15 are in this repository.
+
+## License
+
+PolyForm Noncommercial 1.0.0, see `LICENSE`. The name, logo and box image are not covered by the license, see `TRADEMARKS.md`.
+
