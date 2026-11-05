@@ -1,0 +1,212 @@
+[
+ {
+  "sc": "0",
+  "name": "SetHook A",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "sc": "0",
+  "name": "SetHook B",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "sc": "T1",
+  "name": "A PACK VC-box",
+  "exp": "tgs: packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "sc": "T1",
+  "name": "B(hook) CLAIM on A",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "sc": "T1",
+  "name": "payout Remit",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "sc": "T1",
+  "name": "B received XAH",
+  "exp": ">=10000000",
+  "got": "10000000",
+  "ok": true
+ },
+ {
+  "sc": "T1",
+  "name": "box on A erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "sc": "T1",
+  "name": "hook state B unchanged",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "sc": "T2",
+  "name": "A PACK key token box",
+  "exp": "tgs: packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "sc": "T2",
+  "name": "A offer key->B",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS tgs: out | tgs: skip",
+  "ok": true
+ },
+ {
+  "sc": "T2",
+  "name": "B buy key",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS tgs: out | tgs: skip",
+  "ok": true
+ },
+ {
+  "sc": "T2",
+  "name": "(neg) C without key CLAIM",
+  "exp": "not holder",
+  "got": "tgs: not holder",
+  "ok": true
+ },
+ {
+  "sc": "T2",
+  "name": "B(hook) CLAIM by key on A",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "sc": "T2",
+  "name": "payout Remit",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "sc": "T2",
+  "name": "voucher at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "sc": "T2",
+  "name": "hook state B unchanged",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "sc": "T2",
+  "name": "(neg) repeated CLAIM",
+  "exp": "unknown",
+  "got": "tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "sc": "T3",
+  "name": "A PACK with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "sc": "T3",
+  "name": "A OPEN before expiry",
+  "exp": "not expired",
+  "got": "tgs: not expired",
+  "ok": true
+ },
+ {
+  "sc": "T3",
+  "name": "A OPEN after expiry",
+  "exp": "opened",
+  "got": "tgs: opened",
+  "ok": true
+ },
+ {
+  "sc": "T3",
+  "name": "A SYNC",
+  "exp": "idle/synced",
+  "got": "tgs: idle",
+  "ok": true
+ },
+ {
+  "sc": "T3",
+  "name": "A SYNC with Destination=A (as v14)",
+  "exp": "idle/synced",
+  "got": "tecHOOK_REJECTED tgs: idle",
+  "ok": true
+ },
+ {
+  "sc": "T3",
+  "name": "A unknown command without Destination",
+  "exp": "cmd error as v14",
+  "got": "tgs: cmd",
+  "ok": true
+ },
+ {
+  "sc": "T4",
+  "name": "A->C Invoke PACK",
+  "exp": "tgs: pass",
+  "got": "tesSUCCESS tgs: pass",
+  "ok": true
+ },
+ {
+  "sc": "T4",
+  "name": "A->C Invoke OPEN",
+  "exp": "tgs: pass",
+  "got": "tesSUCCESS tgs: pass",
+  "ok": true
+ },
+ {
+  "sc": "T4",
+  "name": "A->C Invoke SYNC",
+  "exp": "tgs: pass",
+  "got": "tesSUCCESS tgs: pass",
+  "ok": true
+ },
+ {
+  "sc": "T4",
+  "name": "A->C Invoke AUDIT",
+  "exp": "tgs: pass",
+  "got": "tesSUCCESS tgs: pass",
+  "ok": true
+ },
+ {
+  "sc": "T4",
+  "name": "A->C Invoke garbage",
+  "exp": "tgs: pass",
+  "got": "tesSUCCESS tgs: pass",
+  "ok": true
+ },
+ {
+  "sc": "T4",
+  "name": "state A unchanged",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "sc": "T4",
+  "name": "box not created",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ }
+]

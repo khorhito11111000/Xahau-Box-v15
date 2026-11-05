@@ -1,0 +1,1 @@
+Error: hook trapped without accept/rollback - likely a host fn this local sim doesn't model; run `xahc verify` for the full-fidelity xahau-mcp VM

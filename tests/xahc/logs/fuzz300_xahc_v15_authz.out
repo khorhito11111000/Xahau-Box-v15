@@ -1,0 +1,8 @@
+[1m[31m✗ DISPROVEN[39m[0m  invariant=authz  (300 runs, seed 1)
+  outcomes: 62 accept · 238 rollback · 0 guard-violation · 0 returned
+  [1m[31mCEX:[39m[0m accepted with origin != owner  [drops=1000000 tip=10 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted with origin != owner  [drops=2000000 tip=10 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted with origin != owner  [drops=120288440581323772 tip=10 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted with origin != owner  [drops=999999 tip=10 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted with origin != owner  [drops=1643911800110307203 tip=10 owner=false dst=0000000000000000000000000000000000000000]
+  -> DISPROVEN: 62 counterexample(s). The hook violates `authz`.

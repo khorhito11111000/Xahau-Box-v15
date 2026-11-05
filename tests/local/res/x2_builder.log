@@ -1,0 +1,299 @@
+PASS 0 SetHook A | tesSUCCESS
+PASS 0 SetHook B | tesSUCCESS
+PASS G1 A→B PACK XAH | tgs: packed
+PASS G1 A→B PACK own token | tgs: packed
+PASS G1 A→B PACK XAH+own token | tgs: packed
+PASS G1 A→B PACK gift code | tgs: packed
+PASS G1 A→B PACK XAH+gift code | tgs: packed
+PASS G1 A→B PACK XAH with EXP | tgs: packed
+PASS G1 A→B PACK token with EXP | tgs: packed
+PASS G1 A→B counters A after PACK | held=20700000 locks=5
+PASS G1 A→B counters B (another hook) after PACK | held=0 locks=0
+PASS G1 A→B XAH: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 A→B XAH: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B XAH: CLAIM by hook B | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 A→B XAH: payout | tesSUCCESS
+PASS G1 A→B XAH: box entry erased | no
+PASS G1 A→B XAH: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B own token: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 A→B own token: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B own token: CLAIM by hook B | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 A→B own token: payout | tesSUCCESS
+PASS G1 A→B own token: token at B | B
+PASS G1 A→B own token: box entry erased | no
+PASS G1 A→B own token: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B XAH+own token: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 A→B XAH+own token: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B XAH+own token: CLAIM by hook B | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 A→B XAH+own token: payout | tesSUCCESS
+PASS G1 A→B XAH+own token: token at B | B
+PASS G1 A→B XAH+own token: box entry erased | no
+PASS G1 A→B XAH+own token: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B gift code: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 A→B gift code: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B gift code: CLAIM by hook B | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 A→B gift code: payout | tesSUCCESS
+PASS G1 A→B gift code: token at B | B
+PASS G1 A→B gift code: box entry erased | no
+PASS G1 A→B gift code: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B XAH+gift code: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 A→B XAH+gift code: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B XAH+gift code: CLAIM by hook B | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 A→B XAH+gift code: payout | tesSUCCESS
+PASS G1 A→B XAH+gift code: token at B | B
+PASS G1 A→B XAH+gift code: box entry erased | no
+PASS G1 A→B XAH+gift code: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B XAH with EXP: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 A→B XAH with EXP: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B XAH with EXP: CLAIM by hook B | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 A→B XAH with EXP: payout | tesSUCCESS
+PASS G1 A→B XAH with EXP: box entry erased | no
+PASS G1 A→B XAH with EXP: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B token with EXP: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 A→B token with EXP: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B token with EXP: CLAIM by hook B | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 A→B token with EXP: payout | tesSUCCESS
+PASS G1 A→B token with EXP: token at B | B
+PASS G1 A→B token with EXP: box entry erased | no
+PASS G1 A→B token with EXP: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 A→B counters A after all CLAIM | held=0 locks=0
+PASS G1 B→A PACK XAH | tgs: packed
+PASS G1 B→A PACK own token | tgs: packed
+PASS G1 B→A PACK XAH+own token | tgs: packed
+PASS G1 B→A PACK gift code | tgs: packed
+PASS G1 B→A PACK XAH+gift code | tgs: packed
+PASS G1 B→A PACK XAH with EXP | tgs: packed
+PASS G1 B→A PACK token with EXP | tgs: packed
+PASS G1 B→A counters B after PACK | held=20700000 locks=5
+PASS G1 B→A counters A (another hook) after PACK | held=0 locks=0
+PASS G1 B→A XAH: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 B→A XAH: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A XAH: CLAIM by hook A | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 B→A XAH: payout | tesSUCCESS
+PASS G1 B→A XAH: box entry erased | no
+PASS G1 B→A XAH: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A own token: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 B→A own token: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A own token: CLAIM by hook A | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 B→A own token: payout | tesSUCCESS
+PASS G1 B→A own token: token at A | A
+PASS G1 B→A own token: box entry erased | no
+PASS G1 B→A own token: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A XAH+own token: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 B→A XAH+own token: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A XAH+own token: CLAIM by hook A | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 B→A XAH+own token: payout | tesSUCCESS
+PASS G1 B→A XAH+own token: token at A | A
+PASS G1 B→A XAH+own token: box entry erased | no
+PASS G1 B→A XAH+own token: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A gift code: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 B→A gift code: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A gift code: CLAIM by hook A | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 B→A gift code: payout | tesSUCCESS
+PASS G1 B→A gift code: token at A | A
+PASS G1 B→A gift code: box entry erased | no
+PASS G1 B→A gift code: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A XAH+gift code: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 B→A XAH+gift code: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A XAH+gift code: CLAIM by hook A | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 B→A XAH+gift code: payout | tesSUCCESS
+PASS G1 B→A XAH+gift code: token at A | A
+PASS G1 B→A XAH+gift code: box entry erased | no
+PASS G1 B→A XAH+gift code: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A XAH with EXP: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 B→A XAH with EXP: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A XAH with EXP: CLAIM by hook A | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 B→A XAH with EXP: payout | tesSUCCESS
+PASS G1 B→A XAH with EXP: box entry erased | no
+PASS G1 B→A XAH with EXP: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A token with EXP: foreign signature | tgs: pass | tgs: bad sig
+PASS G1 B→A token with EXP: foreign PK | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A token with EXP: CLAIM by hook A | tesSUCCESS tgs: pass | tgs: claiming
+PASS G1 B→A token with EXP: payout | tesSUCCESS
+PASS G1 B→A token with EXP: token at A | A
+PASS G1 B→A token with EXP: box entry erased | no
+PASS G1 B→A token with EXP: repeated CLAIM | tecHOOK_REJECTED tgs: pass | tgs: unknown
+PASS G1 B→A counters B after all CLAIM | held=0 locks=0
+PASS G2 A→B PACK under key: XAH | tgs: packed
+PASS G2 A→B PACK under key: own token | tgs: packed
+PASS G2 A→B PACK under key: gift code | tgs: packed
+PASS G2 A→B PACK under key: XAH+gift code | tgs: packed
+PASS G2 A→B PACK under key: XAH+token with EXP | tgs: packed
+PASS G2 A→B counters A after PACK | held=15500000 locks=4
+PASS G2 A→B (neg) B without key | tgs: pass | tgs: not holder
+PASS G2 A→B key A→B | tesSUCCESS
+PASS G2 A→B (neg) C without key | tgs: not holder
+PASS G2 A→B (neg) CLAIM of key box by signature | tecHOOK_REJECTED
+PASS G2 A→B B opens: XAH | tesSUCCESS tgs: pass | tgs: claiming
+PASS G2 A→B XAH: payout | tesSUCCESS
+PASS G2 A→B XAH: entry erased | no
+PASS G2 A→B XAH: again | tgs: pass | tgs: unknown
+PASS G2 A→B B opens: own token | tesSUCCESS tgs: pass | tgs: claiming
+PASS G2 A→B own token: payout | tesSUCCESS
+PASS G2 A→B own token: token at B | B
+PASS G2 A→B own token: entry erased | no
+PASS G2 A→B own token: again | tgs: pass | tgs: unknown
+PASS G2 A→B key B→C halfway | tesSUCCESS
+PASS G2 A→B (neg) previous holder B | tgs: pass | tgs: not holder
+PASS G2 A→B C opens: gift code | tesSUCCESS tgs: claiming
+PASS G2 A→B gift code: payout | tesSUCCESS
+PASS G2 A→B gift code: token at C | C
+PASS G2 A→B gift code: entry erased | no
+PASS G2 A→B gift code: again | tgs: unknown
+PASS G2 A→B C opens: XAH+gift code | tesSUCCESS tgs: claiming
+PASS G2 A→B XAH+gift code: payout | tesSUCCESS
+PASS G2 A→B XAH+gift code: token at C | C
+PASS G2 A→B XAH+gift code: entry erased | no
+PASS G2 A→B XAH+gift code: again | tgs: unknown
+PASS G2 A→B key C→B halfway | tesSUCCESS
+PASS G2 A→B (neg) previous holder C | tgs: not holder
+PASS G2 A→B B opens: XAH+token with EXP | tesSUCCESS tgs: pass | tgs: claiming
+PASS G2 A→B XAH+token with EXP: payout | tesSUCCESS
+PASS G2 A→B XAH+token with EXP: token at B | B
+PASS G2 A→B XAH+token with EXP: entry erased | no
+PASS G2 A→B XAH+token with EXP: again | tgs: pass | tgs: unknown
+PASS G2 A→B counters A after all | held=0 locks=0
+PASS G2 A→B key in place at B | B
+PASS G2 B→A PACK under key: XAH | tgs: packed
+PASS G2 B→A PACK under key: own token | tgs: packed
+PASS G2 B→A PACK under key: gift code | tgs: packed
+PASS G2 B→A PACK under key: XAH+gift code | tgs: packed
+PASS G2 B→A PACK under key: XAH+token with EXP | tgs: packed
+PASS G2 B→A counters B after PACK | held=15500000 locks=4
+PASS G2 B→A (neg) A without key | tgs: pass | tgs: not holder
+PASS G2 B→A key B→A | tesSUCCESS
+PASS G2 B→A (neg) C without key | tgs: not holder
+PASS G2 B→A (neg) CLAIM of key box by signature | tecHOOK_REJECTED
+PASS G2 B→A A opens: XAH | tesSUCCESS tgs: pass | tgs: claiming
+PASS G2 B→A XAH: payout | tesSUCCESS
+PASS G2 B→A XAH: entry erased | no
+PASS G2 B→A XAH: again | tgs: pass | tgs: unknown
+PASS G2 B→A A opens: own token | tesSUCCESS tgs: pass | tgs: claiming
+PASS G2 B→A own token: payout | tesSUCCESS
+PASS G2 B→A own token: token at A | A
+PASS G2 B→A own token: entry erased | no
+PASS G2 B→A own token: again | tgs: pass | tgs: unknown
+PASS G2 B→A key A→C halfway | tesSUCCESS
+PASS G2 B→A (neg) previous holder A | tgs: pass | tgs: not holder
+PASS G2 B→A C opens: gift code | tesSUCCESS tgs: claiming
+PASS G2 B→A gift code: payout | tesSUCCESS
+PASS G2 B→A gift code: token at C | C
+PASS G2 B→A gift code: entry erased | no
+PASS G2 B→A gift code: again | tgs: unknown
+PASS G2 B→A C opens: XAH+gift code | tesSUCCESS tgs: claiming
+PASS G2 B→A XAH+gift code: payout | tesSUCCESS
+PASS G2 B→A XAH+gift code: token at C | C
+PASS G2 B→A XAH+gift code: entry erased | no
+PASS G2 B→A XAH+gift code: again | tgs: unknown
+PASS G2 B→A key C→A halfway | tesSUCCESS
+PASS G2 B→A (neg) previous holder C | tgs: not holder
+PASS G2 B→A A opens: XAH+token with EXP | tesSUCCESS tgs: pass | tgs: claiming
+PASS G2 B→A XAH+token with EXP: payout | tesSUCCESS
+PASS G2 B→A XAH+token with EXP: token at A | A
+PASS G2 B→A XAH+token with EXP: entry erased | no
+PASS G2 B→A XAH+token with EXP: again | tgs: pass | tgs: unknown
+PASS G2 B→A counters B after all | held=0 locks=0
+PASS G2 B→A key in place at A | A
+PASS G3 A→B PACK VC with EXP | tgs: packed
+PASS G3 A→B PACK VC+token with EXP | tgs: packed
+PASS G3 A→B PACK key+gift code with EXP | tgs: packed
+PASS G3 A→B OPEN before expiry | tgs: not expired
+PASS G3 A→B CLAIM by another hook before expiry | tgs: pass | tgs: claiming
+PASS G3 A→B before expiry: payout | tesSUCCESS
+PASS G3 A→B CLAIM after expiry | tgs: pass | tgs: expired
+PASS G3 A→B CLAIM of key box after expiry | tgs: pass | tgs: expired
+PASS G3 A→B OPEN by owner after expiry | tgs: opened
+PASS G3 A→B token returned to owner | P
+PASS G3 A→B OPEN of key box after expiry | tgs: opened
+PASS G3 A→B counters A after expiry | held=0 locks=0
+PASS G3 B→A PACK VC with EXP | tgs: packed
+PASS G3 B→A PACK VC+token with EXP | tgs: packed
+PASS G3 B→A PACK key+gift code with EXP | tgs: packed
+PASS G3 B→A OPEN before expiry | tgs: not expired
+PASS G3 B→A CLAIM by another hook before expiry | tgs: pass | tgs: claiming
+PASS G3 B→A before expiry: payout | tesSUCCESS
+PASS G3 B→A CLAIM after expiry | tgs: pass | tgs: expired
+PASS G3 B→A CLAIM of key box after expiry | tgs: pass | tgs: expired
+PASS G3 B→A OPEN by owner after expiry | tgs: opened
+PASS G3 B→A token returned to owner | P
+PASS G3 B→A OPEN of key box after expiry | tgs: opened
+PASS G3 B→A counters B after expiry | held=0 locks=0
+PASS G4 B own operations B PACK own box (500 XAH+token) | tgs: packed
+PASS G4 B own operations A PACK | tgs: packed
+PASS G4 B own operations CLAIM on A in the same ledger | tgs: pass | tgs: claiming
+PASS G4 B own operations Payment with XAH box | tecHOOK_REJECTED tgs: reserve
+PASS G4 B own operations sell offer of locked token | tgs: locked
+PASS G4 B own operations Remit of locked token | tecHOOK_REJECTED tgs: locked
+PASS G4 B own operations Remit with XAH box | tecHOOK_REJECTED tgs: reserve
+PASS G4 B own operations CLAIM: payout | tesSUCCESS
+PASS G4 B own operations Payment 1 XAH free | tesSUCCESS
+PASS G4 B own operations AUDIT | tgs: audited
+PASS G4 B own operations SYNC | tgs: idle
+PASS G4 B own operations OPEN before expiry | tgs: not expired
+PASS G4 B own operations OPEN with Destination=to self is processed | tecHOOK_REJECTED tgs: not expired
+PASS G4 B own operations PACK with Destination=to self is processed | tesSUCCESS tgs: packed
+PASS G4 B own operations counters B  | held=501200000 locks=1
+PASS G4 B own operations counters A  | held=0 locks=0
+PASS G5 A⇄B counter CLAIM A→B in the same ledger | tgs: pass | tgs: claiming
+PASS G5 A⇄B two CLAIM of one box in one ledger: exactly one | tgs: pass | tgs: busy / tgs: claiming
+PASS G5 A⇄B CLAIM while payout is in flight | tecHOOK_REJECTED tgs: unknown
+PASS G5 A⇄B A (own box is paid out) opens at B | tgs: pass | tgs: claiming
+PASS G5 A⇄B all payouts arrived | tesSUCCESS,tesSUCCESS,tesSUCCESS
+PASS G5 A⇄B counters A  | held=0 locks=0
+PASS G5 A⇄B counters B  | held=501200000 locks=1
+PASS G4 B own operations OPEN of own big box after expiry | tgs: opened
+PASS G4 B own operations counters B after OPEN | held=0 locks=0
+PASS G4 A own operations A PACK own box (500 XAH+token) | tgs: packed
+PASS G4 A own operations B PACK | tgs: packed
+PASS G4 A own operations CLAIM on B in the same ledger | tgs: pass | tgs: claiming
+PASS G4 A own operations Payment with XAH box | tecHOOK_REJECTED tgs: reserve
+PASS G4 A own operations sell offer of locked token | tgs: locked
+PASS G4 A own operations Remit of locked token | tecHOOK_REJECTED tgs: locked
+PASS G4 A own operations Remit with XAH box | tecHOOK_REJECTED tgs: reserve
+PASS G4 A own operations CLAIM: payout | tesSUCCESS
+PASS G4 A own operations Payment 1 XAH free | tesSUCCESS
+PASS G4 A own operations AUDIT | tgs: audited
+PASS G4 A own operations SYNC | tgs: idle
+PASS G4 A own operations OPEN before expiry | tgs: not expired
+PASS G4 A own operations OPEN with Destination=to self is processed | tecHOOK_REJECTED tgs: not expired
+PASS G4 A own operations PACK with Destination=to self is processed | tesSUCCESS tgs: packed
+PASS G4 A own operations counters A  | held=501200000 locks=1
+PASS G4 A own operations counters B  | held=0 locks=0
+PASS G5 B⇄A counter CLAIM B→A in the same ledger | tgs: pass | tgs: claiming
+PASS G5 B⇄A two CLAIM of one box in one ledger: exactly one | tgs: pass | tgs: claiming / tgs: busy
+PASS G5 B⇄A CLAIM while payout is in flight | tecHOOK_REJECTED tgs: unknown
+PASS G5 B⇄A B (own box is paid out) opens at A | tgs: pass | tgs: claiming
+PASS G5 B⇄A all payouts arrived | tesSUCCESS,tesSUCCESS,tesSUCCESS
+PASS G5 B⇄A counters B  | held=0 locks=0
+PASS G5 B⇄A counters A  | held=501200000 locks=1
+PASS G4 A own operations OPEN of own big box after expiry | tgs: opened
+PASS G4 A own operations counters A after OPEN | held=0 locks=0
+PASS G6 C without hook C opens box on A | tgs: claiming
+PASS G6 C without hook A: payout | tesSUCCESS
+PASS G6 C without hook gift code at C | C
+PASS G6 C without hook counters A  | held=0 locks=0
+PASS G6 C without hook C opens box on B | tgs: claiming
+PASS G6 C without hook B: payout | tesSUCCESS
+PASS G6 C without hook gift code at C | C
+PASS G6 C without hook counters B  | held=0 locks=0
+PASS G7 edges A→B garbage: own hook lets it pass | tecHOOK_REJECTED tgs: pass | tgs: cmd
+PASS G7 edges A→B without CMD: own hook lets it pass | tecHOOK_REJECTED tgs: pass | tgs: cmd
+PASS G7 edges A→B PACK: own hook lets it pass | tecHOOK_REJECTED tgs: pass | tgs: owner
+PASS G7 edges A→B empty: own hook lets it pass | tecHOOK_REJECTED tgs: pass | tgs: cmd
+PASS G7 edges A: state unchanged | same
+PASS G7 edges B→A garbage: own hook lets it pass | tecHOOK_REJECTED tgs: pass | tgs: cmd
+PASS G7 edges B→A without CMD: own hook lets it pass | tecHOOK_REJECTED tgs: pass | tgs: cmd
+PASS G7 edges B→A PACK: own hook lets it pass | tecHOOK_REJECTED tgs: pass | tgs: owner
+PASS G7 edges B→A empty: own hook lets it pass | tecHOOK_REJECTED tgs: pass | tgs: cmd
+PASS G7 edges B: state unchanged | same
+PASS G7 edges A→C garbage: own hook lets it pass | tesSUCCESS tgs: pass
+PASS G7 edges A→C without CMD: own hook lets it pass | tesSUCCESS tgs: pass
+PASS G7 edges A→C PACK: own hook lets it pass | tesSUCCESS tgs: pass
+PASS G7 edges A→C empty: own hook lets it pass | tesSUCCESS tgs: pass
+PASS G7 edges A: state unchanged | same
+PASS G8 result A: hook entries are service only (boxes 0) | 4
+PASS G8 result counters A final | held=0 locks=0
+PASS G8 result B: hook entries are service only (boxes 0) | 4
+PASS G8 result counters B final | held=0 locks=0
+GROUPS {"0":[2,0],"G1":[114,0],"G2":[80,0],"G3":[24,0],"G4":[36,0],"G5":[14,0],"G6":[8,0],"G7":[15,0],"G8":[4,0]}
+RESULT 297 / 297

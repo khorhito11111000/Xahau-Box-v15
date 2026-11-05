@@ -1,0 +1,359 @@
+[
+ {
+  "g": "0",
+  "n": "SetHook A",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "0",
+  "n": "SetHook B",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "0",
+  "n": "SetHook D",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "B PACK under key A (key with issuer)",
+  "exp": "key issuer",
+  "got": "tecHOOK_REJECTED tgs: key issuer",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "B PACK under key A (key at issuer): state untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "B PACK under key A (key at issuer): no box",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "A PACK under own key (kept)",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "key A→B",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "A PACK under own key (key already at B)",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "B PACK under key A, passed to them",
+  "exp": "key issuer",
+  "got": "tecHOOK_REJECTED tgs: key issuer",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "B PACK under key A, passed to them: state untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "B PACK under key A, passed to them: no box",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "B PACK of token under key A, passed to them",
+  "exp": "key issuer",
+  "got": "tecHOOK_REJECTED tgs: key issuer",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "B PACK of token under key A, passed to them: state untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "B PACK of token under key A, passed to them: no box",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "B opens XAH",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "XAH: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "B opens code",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "A PACK under key C (holds it)",
+  "exp": "key issuer",
+  "got": "tecHOOK_REJECTED tgs: key issuer",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "A PACK under key C (holds it): state untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "A PACK under key C (holds it): no box",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "A PACK under key D (holds it)",
+  "exp": "key issuer",
+  "got": "tecHOOK_REJECTED tgs: key issuer",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "A PACK under key D (holds it): state untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "A PACK under key D (holds it): no box",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "counters A final",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "K1 A/B",
+  "n": "counters B final",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "A PACK under key B (key with issuer)",
+  "exp": "key issuer",
+  "got": "tecHOOK_REJECTED tgs: key issuer",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "A PACK under key B (key at issuer): state untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "A PACK under key B (key at issuer): no box",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "B PACK under own key (kept)",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "key B→A",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "B PACK under own key (key already at A)",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "A PACK under key B, passed to them",
+  "exp": "key issuer",
+  "got": "tecHOOK_REJECTED tgs: key issuer",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "A PACK under key B, passed to them: state untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "A PACK under key B, passed to them: no box",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "A PACK of token under key B, passed to them",
+  "exp": "key issuer",
+  "got": "tecHOOK_REJECTED tgs: key issuer",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "A PACK of token under key B, passed to them: state untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "A PACK of token under key B, passed to them: no box",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "A opens XAH",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "XAH: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "A opens code",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "B PACK under key C (holds it)",
+  "exp": "key issuer",
+  "got": "tecHOOK_REJECTED tgs: key issuer",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "B PACK under key C (holds it): state untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "B PACK under key C (holds it): no box",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "B PACK under key D (holds it)",
+  "exp": "key issuer",
+  "got": "tecHOOK_REJECTED tgs: key issuer",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "B PACK under key D (holds it): state untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "B PACK under key D (holds it): no box",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "counters B final",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "K1 B/A",
+  "n": "counters A final",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ }
+]

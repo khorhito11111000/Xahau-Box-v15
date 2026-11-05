@@ -1,0 +1,2081 @@
+[
+ {
+  "g": "0",
+  "n": "SetHook A",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "0",
+  "n": "SetHook B",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "PACK XAH",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "PACK own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "PACK XAH+own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "PACK gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "PACK XAH+gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "PACK XAH with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "PACK token with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "counters A after PACK",
+  "exp": "held=20700000 locks=5",
+  "got": "held=20700000 locks=5",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "counters B (another hook) after PACK",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH: CLAIM by hook B",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "own token: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "own token: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "own token: CLAIM by hook B",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "own token: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "own token: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "own token: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+own token: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+own token: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+own token: CLAIM by hook B",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+own token: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+own token: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+own token: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "gift code: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "gift code: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "gift code: CLAIM by hook B",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "gift code: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "gift code: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "gift code: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+gift code: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+gift code: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+gift code: CLAIM by hook B",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+gift code: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+gift code: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH+gift code: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH with EXP: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH with EXP: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH with EXP: CLAIM by hook B",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH with EXP: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "XAH with EXP: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "token with EXP: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "token with EXP: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "token with EXP: CLAIM by hook B",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "token with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "token with EXP: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "token with EXP: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "token with EXP: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 A→B",
+  "n": "counters A after all CLAIM",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "PACK XAH",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "PACK own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "PACK XAH+own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "PACK gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "PACK XAH+gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "PACK XAH with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "PACK token with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "counters B after PACK",
+  "exp": "held=20700000 locks=5",
+  "got": "held=20700000 locks=5",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "counters A (another hook) after PACK",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH: CLAIM by hook A",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "own token: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "own token: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "own token: CLAIM by hook A",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "own token: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "own token: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "own token: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+own token: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+own token: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+own token: CLAIM by hook A",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+own token: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+own token: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+own token: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "gift code: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "gift code: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "gift code: CLAIM by hook A",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "gift code: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "gift code: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "gift code: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+gift code: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+gift code: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+gift code: CLAIM by hook A",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+gift code: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+gift code: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH+gift code: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH with EXP: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH with EXP: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH with EXP: CLAIM by hook A",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH with EXP: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "XAH with EXP: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "token with EXP: foreign signature",
+  "exp": "bad sig",
+  "got": "tgs: pass | tgs: bad sig",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "token with EXP: foreign PK",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "token with EXP: CLAIM by hook A",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "token with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "token with EXP: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "token with EXP: box entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "token with EXP: repeated CLAIM",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G1 B→A",
+  "n": "counters B after all CLAIM",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "PACK under key: XAH",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "PACK under key: own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "PACK under key: gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "PACK under key: XAH+gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "PACK under key: XAH+token with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "counters A after PACK",
+  "exp": "held=15500000 locks=4",
+  "got": "held=15500000 locks=4",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "(neg) B without key",
+  "exp": "not holder",
+  "got": "tgs: pass | tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "key A→B",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "(neg) C without key",
+  "exp": "not holder",
+  "got": "tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "(neg) CLAIM of key box by signature",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "B opens: XAH",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "XAH: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "XAH: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "XAH: again",
+  "exp": "unknown",
+  "got": "tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "B opens: own token",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "own token: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "own token: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "own token: again",
+  "exp": "unknown",
+  "got": "tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "key B→C halfway",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "(neg) previous holder B",
+  "exp": "not holder",
+  "got": "tgs: pass | tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "C opens: gift code",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "gift code: token at C",
+  "exp": "C",
+  "got": "C",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "gift code: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "gift code: again",
+  "exp": "unknown",
+  "got": "tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "C opens: XAH+gift code",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "XAH+gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "XAH+gift code: token at C",
+  "exp": "C",
+  "got": "C",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "XAH+gift code: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "XAH+gift code: again",
+  "exp": "unknown",
+  "got": "tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "key C→B halfway",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "(neg) previous holder C",
+  "exp": "not holder",
+  "got": "tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "B opens: XAH+token with EXP",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "XAH+token with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "XAH+token with EXP: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "XAH+token with EXP: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "XAH+token with EXP: again",
+  "exp": "unknown",
+  "got": "tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "counters A after all",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G2 A→B",
+  "n": "key in place at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "PACK under key: XAH",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "PACK under key: own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "PACK under key: gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "PACK under key: XAH+gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "PACK under key: XAH+token with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "counters B after PACK",
+  "exp": "held=15500000 locks=4",
+  "got": "held=15500000 locks=4",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "(neg) A without key",
+  "exp": "not holder",
+  "got": "tgs: pass | tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "key B→A",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "(neg) C without key",
+  "exp": "not holder",
+  "got": "tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "(neg) CLAIM of key box by signature",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "A opens: XAH",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "XAH: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "XAH: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "XAH: again",
+  "exp": "unknown",
+  "got": "tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "A opens: own token",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "own token: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "own token: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "own token: again",
+  "exp": "unknown",
+  "got": "tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "key A→C halfway",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "(neg) previous holder A",
+  "exp": "not holder",
+  "got": "tgs: pass | tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "C opens: gift code",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "gift code: token at C",
+  "exp": "C",
+  "got": "C",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "gift code: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "gift code: again",
+  "exp": "unknown",
+  "got": "tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "C opens: XAH+gift code",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "XAH+gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "XAH+gift code: token at C",
+  "exp": "C",
+  "got": "C",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "XAH+gift code: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "XAH+gift code: again",
+  "exp": "unknown",
+  "got": "tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "key C→A halfway",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "(neg) previous holder C",
+  "exp": "not holder",
+  "got": "tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "A opens: XAH+token with EXP",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "XAH+token with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "XAH+token with EXP: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "XAH+token with EXP: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "XAH+token with EXP: again",
+  "exp": "unknown",
+  "got": "tgs: pass | tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "counters B after all",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G2 B→A",
+  "n": "key in place at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "PACK VC with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "PACK VC+token with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "PACK key+gift code with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "OPEN before expiry",
+  "exp": "not expired",
+  "got": "tgs: not expired",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "CLAIM by another hook before expiry",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "before expiry: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "CLAIM after expiry",
+  "exp": "expired",
+  "got": "tgs: pass | tgs: expired",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "CLAIM of key box after expiry",
+  "exp": "expired",
+  "got": "tgs: pass | tgs: expired",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "OPEN by owner after expiry",
+  "exp": "opened",
+  "got": "tgs: opened",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "token returned to owner",
+  "exp": "P",
+  "got": "P",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "OPEN of key box after expiry",
+  "exp": "opened",
+  "got": "tgs: opened",
+  "ok": true
+ },
+ {
+  "g": "G3 A→B",
+  "n": "counters A after expiry",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "PACK VC with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "PACK VC+token with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "PACK key+gift code with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "OPEN before expiry",
+  "exp": "not expired",
+  "got": "tgs: not expired",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "CLAIM by another hook before expiry",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "before expiry: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "CLAIM after expiry",
+  "exp": "expired",
+  "got": "tgs: pass | tgs: expired",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "CLAIM of key box after expiry",
+  "exp": "expired",
+  "got": "tgs: pass | tgs: expired",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "OPEN by owner after expiry",
+  "exp": "opened",
+  "got": "tgs: opened",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "token returned to owner",
+  "exp": "P",
+  "got": "P",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "OPEN of key box after expiry",
+  "exp": "opened",
+  "got": "tgs: opened",
+  "ok": true
+ },
+ {
+  "g": "G3 B→A",
+  "n": "counters B after expiry",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "B PACK own box (500 XAH+token)",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "A PACK",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "CLAIM on A in the same ledger",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "Payment with XAH box",
+  "exp": "tgs: reserve",
+  "got": "tecHOOK_REJECTED tgs: reserve",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "sell offer of locked token",
+  "exp": "tgs: locked",
+  "got": "tgs: locked",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "Remit of locked token",
+  "exp": "tgs: locked",
+  "got": "tecHOOK_REJECTED tgs: locked",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "Remit with XAH box",
+  "exp": "tgs: reserve",
+  "got": "tecHOOK_REJECTED tgs: reserve",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "CLAIM: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "Payment 1 XAH free",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "AUDIT",
+  "exp": "audited",
+  "got": "tgs: audited",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "SYNC",
+  "exp": "idle",
+  "got": "tgs: idle",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "OPEN before expiry",
+  "exp": "not expired",
+  "got": "tgs: not expired",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "OPEN with Destination=to self is processed",
+  "exp": "not expired / tem",
+  "got": "tecHOOK_REJECTED tgs: not expired",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "PACK with Destination=to self is processed",
+  "exp": "packed / tem",
+  "got": "tesSUCCESS tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "counters B ",
+  "exp": "held=501200000 locks=1",
+  "got": "held=501200000 locks=1",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "counters A ",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G5 A⇄B",
+  "n": "counter CLAIM A→B in the same ledger",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G5 A⇄B",
+  "n": "two CLAIM of one box in one ledger: exactly one",
+  "exp": "1 claiming + 1 busy",
+  "got": "tgs: pass | tgs: busy / tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G5 A⇄B",
+  "n": "CLAIM while payout is in flight",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G5 A⇄B",
+  "n": "A (own box is paid out) opens at B",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G5 A⇄B",
+  "n": "all payouts arrived",
+  "exp": "tesSUCCESS×3",
+  "got": "tesSUCCESS,tesSUCCESS,tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G5 A⇄B",
+  "n": "counters A ",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G5 A⇄B",
+  "n": "counters B ",
+  "exp": "held=501200000 locks=1",
+  "got": "held=501200000 locks=1",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "OPEN of own big box after expiry",
+  "exp": "opened",
+  "got": "tgs: opened",
+  "ok": true
+ },
+ {
+  "g": "G4 B own operations",
+  "n": "counters B after OPEN",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "A PACK own box (500 XAH+token)",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "B PACK",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "CLAIM on B in the same ledger",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "Payment with XAH box",
+  "exp": "tgs: reserve",
+  "got": "tecHOOK_REJECTED tgs: reserve",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "sell offer of locked token",
+  "exp": "tgs: locked",
+  "got": "tgs: locked",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "Remit of locked token",
+  "exp": "tgs: locked",
+  "got": "tecHOOK_REJECTED tgs: locked",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "Remit with XAH box",
+  "exp": "tgs: reserve",
+  "got": "tecHOOK_REJECTED tgs: reserve",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "CLAIM: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "Payment 1 XAH free",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "AUDIT",
+  "exp": "audited",
+  "got": "tgs: audited",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "SYNC",
+  "exp": "idle",
+  "got": "tgs: idle",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "OPEN before expiry",
+  "exp": "not expired",
+  "got": "tgs: not expired",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "OPEN with Destination=to self is processed",
+  "exp": "not expired / tem",
+  "got": "tecHOOK_REJECTED tgs: not expired",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "PACK with Destination=to self is processed",
+  "exp": "packed / tem",
+  "got": "tesSUCCESS tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "counters A ",
+  "exp": "held=501200000 locks=1",
+  "got": "held=501200000 locks=1",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "counters B ",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G5 B⇄A",
+  "n": "counter CLAIM B→A in the same ledger",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G5 B⇄A",
+  "n": "two CLAIM of one box in one ledger: exactly one",
+  "exp": "1 claiming + 1 busy",
+  "got": "tgs: pass | tgs: busy / tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G5 B⇄A",
+  "n": "CLAIM while payout is in flight",
+  "exp": "refused",
+  "got": "tecHOOK_REJECTED tgs: unknown",
+  "ok": true
+ },
+ {
+  "g": "G5 B⇄A",
+  "n": "B (own box is paid out) opens at A",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G5 B⇄A",
+  "n": "all payouts arrived",
+  "exp": "tesSUCCESS×3",
+  "got": "tesSUCCESS,tesSUCCESS,tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G5 B⇄A",
+  "n": "counters B ",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G5 B⇄A",
+  "n": "counters A ",
+  "exp": "held=501200000 locks=1",
+  "got": "held=501200000 locks=1",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "OPEN of own big box after expiry",
+  "exp": "opened",
+  "got": "tgs: opened",
+  "ok": true
+ },
+ {
+  "g": "G4 A own operations",
+  "n": "counters A after OPEN",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G6 C without hook",
+  "n": "C opens box on A",
+  "exp": "claiming",
+  "got": "tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G6 C without hook",
+  "n": "A: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G6 C without hook",
+  "n": "gift code at C",
+  "exp": "C",
+  "got": "C",
+  "ok": true
+ },
+ {
+  "g": "G6 C without hook",
+  "n": "counters A ",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G6 C without hook",
+  "n": "C opens box on B",
+  "exp": "claiming",
+  "got": "tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "G6 C without hook",
+  "n": "B: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "G6 C without hook",
+  "n": "gift code at C",
+  "exp": "C",
+  "got": "C",
+  "ok": true
+ },
+ {
+  "g": "G6 C without hook",
+  "n": "counters B ",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "A→B garbage: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: cmd",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "A→B without CMD: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: cmd",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "A→B PACK: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: owner",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "A→B empty: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: cmd",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "A: state unchanged",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "B→A garbage: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: cmd",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "B→A without CMD: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: cmd",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "B→A PACK: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: owner",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "B→A empty: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tecHOOK_REJECTED tgs: pass | tgs: cmd",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "B: state unchanged",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "A→C garbage: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tesSUCCESS tgs: pass",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "A→C without CMD: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tesSUCCESS tgs: pass",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "A→C PACK: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tesSUCCESS tgs: pass",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "A→C empty: own hook lets it pass",
+  "exp": "tgs: pass",
+  "got": "tesSUCCESS tgs: pass",
+  "ok": true
+ },
+ {
+  "g": "G7 edges",
+  "n": "A: state unchanged",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "G8 result",
+  "n": "A: hook entries are service only (boxes 0)",
+  "exp": "4",
+  "got": "4",
+  "ok": true
+ },
+ {
+  "g": "G8 result",
+  "n": "counters A final",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "G8 result",
+  "n": "B: hook entries are service only (boxes 0)",
+  "exp": "4",
+  "got": "4",
+  "ok": true
+ },
+ {
+  "g": "G8 result",
+  "n": "counters B final",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ }
+]

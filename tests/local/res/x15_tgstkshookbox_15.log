@@ -1,0 +1,31 @@
+PASS 0 SetHook A | tesSUCCESS
+PASS 0 SetHook B | tesSUCCESS
+PASS T1 A PACK VC-box | tgs: packed
+PASS T1 B(hook) CLAIM on A | tesSUCCESS tgs: pass | tgs: claiming
+PASS T1 payout Remit | tesSUCCESS
+PASS T1 B received XAH | 10000000
+PASS T1 box on A erased | no
+PASS T1 hook state B unchanged | same
+PASS T2 A PACK key token box | tgs: packed
+PASS T2 A offer key->B | tesSUCCESS tgs: out | tgs: skip
+PASS T2 B buy key | tesSUCCESS tgs: out | tgs: skip
+PASS T2 (neg) C without key CLAIM | tgs: not holder
+PASS T2 B(hook) CLAIM by key on A | tesSUCCESS tgs: pass | tgs: claiming
+PASS T2 payout Remit | tesSUCCESS
+PASS T2 voucher at B | B
+PASS T2 hook state B unchanged | same
+PASS T2 (neg) repeated CLAIM | tgs: pass | tgs: unknown
+PASS T3 A PACK with EXP | tgs: packed
+PASS T3 A OPEN before expiry | tgs: not expired
+PASS T3 A OPEN after expiry | tgs: opened
+PASS T3 A SYNC | tgs: idle
+PASS T3 A SYNC with Destination=A (as v14) | tecHOOK_REJECTED tgs: idle
+PASS T3 A unknown command without Destination | tgs: cmd
+PASS T4 A->C Invoke PACK | tesSUCCESS tgs: pass
+PASS T4 A->C Invoke OPEN | tesSUCCESS tgs: pass
+PASS T4 A->C Invoke SYNC | tesSUCCESS tgs: pass
+PASS T4 A->C Invoke AUDIT | tesSUCCESS tgs: pass
+PASS T4 A->C Invoke garbage | tesSUCCESS tgs: pass
+PASS T4 state A unchanged | same
+PASS T4 box not created | no
+RESULT 30 / 30

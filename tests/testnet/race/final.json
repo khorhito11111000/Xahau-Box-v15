@@ -1,0 +1,1959 @@
+{
+ "suite": "race",
+ "hookHash": "4847C361FCB669BD7C7E919092F9EB4831852B1152CA5AE9C08EFA7E741EE6FA",
+ "finished": "2026-11-03T12:18:31.999Z",
+ "pass": 85,
+ "fail": 0,
+ "checks": 85,
+ "txSubmittedOrEmitted": 81,
+ "txInLedger": 36,
+ "accounts": [
+  {
+   "role": "issuer",
+   "address": "rJ1X9WMWAwzMR8zwLYs44DZKSothRknM84"
+  },
+  {
+   "role": "R1",
+   "address": "rNrp66ATDwHZFMGLg3mdpEdMeh7MjUVG8e"
+  },
+  {
+   "role": "R2",
+   "address": "rho6ADR5LKFH9mfNCM8jVHnsmKU5T2FkjN"
+  },
+  {
+   "role": "R3",
+   "address": "rLKuopYayTqFjihJfrxsW5GH8V5sdUniyh"
+  },
+  {
+   "role": "R4(foreign)",
+   "address": "rhLWcdzPhqxH8mhaS5bp2z7pGEdzvb3e8V"
+  }
+ ],
+ "rows": [
+  {
+   "sc": "RACE",
+   "name": "R1 box A (bearer): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "800B17070A7AAE0F0D8BB67A2604B85EC7DA93BD040076709173368078A94915"
+  },
+  {
+   "sc": "RACE",
+   "name": "R1 box C (addressed R1): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "6E50B3B2DC2B068A5D83E350A9F94EA6368DDFD0B1DE0BE8C4C402AF0E018192"
+  },
+  {
+   "sc": "RACE",
+   "name": "R1 box D (token, key at R2): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "F1A6858A9F2F0C180A98F338DA523A7EBDBE305AE0F550D9C234666AE3484E30"
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: all 4 CLAIM in one ledger",
+   "expect": "1 ledger",
+   "got": "ledgers 13737595",
+   "ok": true,
+   "safe": true,
+   "ledger": 13737595
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: R1 legitimate CLAIM (ledger position 4)",
+   "expect": "",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "D7579D371396AFB7CAE7BEB715F6489673EEDEFF92B26F6D0C9EB7F08D763C2F",
+   "ledger": 13737595,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: R3 also knows key (own valid signature) (ledger position 5)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "801248E7C35B70258C9CFFDB25A3627B4EE31AEA37B11C87DDA7CB3DB18B5B5B",
+   "ledger": 13737595,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: R2 copies PK+SIG R1 (ledger position 6)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "6B4ACD70BB08F57CC982B247F0358B9FBB741202FFBD968916BA2BD8EE7E135B",
+   "ledger": 13737595,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: R4 garbage signature (ledger position 7)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "B625152A7619E887D53E5A0D276191696A915CE991E967E93D70146A5C92CFC1",
+   "ledger": 13737595,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: exactly one winner, and it is legitimate",
+   "expect": "1 of R1/R3",
+   "got": "R1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: emitted Remit",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "34FFFA3B913A60B873D76A561F02F531B8FDF263FEA9D98D2A25A7256DFC684D",
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: emits total",
+   "expect": "1",
+   "got": "1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: winner R1 received amount+reserve",
+   "expect": "2200000",
+   "got": "2200000",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: XAH only one received (Δ without fees)",
+   "expect": "1 account with Δ>0",
+   "got": "R1:2200000 R2:0 R3:0 R4(foreign):0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: token with winner",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R1 A: loser R3 repeats after",
+   "expect": "rejected (unknown/bad sig/not holder)",
+   "got": "tecHOOK_REJECTED / tgs: unknown",
+   "ok": true,
+   "hash": "0D6C24EF76E1FBB0A74B614215CFC6A1BC4D280B4C8ED187149E62F833E30A16",
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: all 4 CLAIM in one ledger",
+   "expect": "1 ledger",
+   "got": "ledgers 13737601",
+   "ok": true,
+   "safe": true,
+   "ledger": 13737601
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: R1 addressee (ledger position 5)",
+   "expect": "",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "27B7DAC8F9B73A9D4A5E4B1B2D206264E89AEDBED36CBF3DD1DD58F6E89A1F3B",
+   "ledger": 13737601,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: R2 copies QR R1 (ledger position 6)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "BF1D1A6A56035EF08B82DA9C247C7E64647EFB36ED140D49854B308ADB520857",
+   "ledger": 13737601,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: R3 copies QR R1 (ledger position 8)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "5A4B07AA73DFF38062716BA141C06E3DD651E0817DC2A657463E789ACA8C26AF",
+   "ledger": 13737601,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: R4(foreign) copies QR R1 (ledger position 7)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "2FEB33859D374ABAA210F977A0DFBA042E1584BE74F6E4DCC1D7920358C3B589",
+   "ledger": 13737601,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: exactly one winner, and it is legitimate",
+   "expect": "1 of R1",
+   "got": "R1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: emitted Remit",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "8FFA63117BB88846A4A4CCC88225EDAFFE9D359A73D28ADF621982A78C8FD480",
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: emits total",
+   "expect": "1",
+   "got": "1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: winner R1 received amount+reserve",
+   "expect": "2200000",
+   "got": "2200000",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: XAH only one received (Δ without fees)",
+   "expect": "1 account with Δ>0",
+   "got": "R1:2200000 R2:0 R3:0 R4(foreign):0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: token with winner",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R1 C: loser R2 repeats after",
+   "expect": "rejected (unknown/bad sig/not holder)",
+   "got": "tecHOOK_REJECTED / tgs: unknown",
+   "ok": true,
+   "hash": "88F9999EDB11E7F6F81EDD6CD8527DD8E45483DF870B0B85F1BA3E154FCE0691",
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: all 4 CLAIM in one ledger",
+   "expect": "1 ledger",
+   "got": "ledgers 13737608",
+   "ok": true,
+   "safe": true,
+   "ledger": 13737608
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: R2 holder (ledger position 4)",
+   "expect": "",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "687C8BEE01460180305A09B94A3F60F62A2DEA4CE0D72A9FB896446254FCEA31",
+   "ledger": 13737608,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: R1 without key (ledger position 7)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "AA525F7331B825F8E63A236B98D1C611FBACFB61E7B14901688AF20BD7F755FB",
+   "ledger": 13737608,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: R3 without key (ledger position 8)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "D207789A2C343D8382DBEA2012268CB1291F4DD39E1D5D09EACBB47C14A088D2",
+   "ledger": 13737608,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: R4(foreign) without key (ledger position 6)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "6782E69CAEC41E28B344FE77673A5E0DB6F6FD9A2360F759AD67E158EB1E006B",
+   "ledger": 13737608,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: exactly one winner, and it is legitimate",
+   "expect": "1 of R2",
+   "got": "R2",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: emitted Remit",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "F2F79F3AF4EC6084701C9FB10802736E2D83A90651D3F421430BB23578E20342",
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: emits total",
+   "expect": "1",
+   "got": "1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: winner R2 received amount+reserve",
+   "expect": "2200000",
+   "got": "2200000",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: XAH only one received (Δ without fees)",
+   "expect": "1 account with Δ>0",
+   "got": "R1:0 R2:2200000 R3:0 R4(foreign):0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: token with winner",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R1 D: loser R1 repeats after",
+   "expect": "rejected (unknown/bad sig/not holder)",
+   "got": "tecHOOK_REJECTED / tgs: unknown",
+   "ok": true,
+   "hash": "6A3C4BC4737C04839088797DDA34EBC6694762F8F6908660961D94992460C7F0",
+   "safe": true
+  },
+  {
+   "sc": "RACE",
+   "name": "R1: after round of box entries 0, token locks 0 (service total 4)",
+   "expect": "0 and 0",
+   "got": "0/0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE",
+   "name": "R2 box A (bearer): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "B4F7C7D207B1AEB917CCE1C3E42250280DC5217F44AD3D11761AA6CB5C0D217B"
+  },
+  {
+   "sc": "RACE",
+   "name": "R2 box C (addressed R1): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "252CE2D0F44AB0B98089ADA5679F9F022EE506DA9EDB7597D395DD78DE4FCE4F"
+  },
+  {
+   "sc": "RACE",
+   "name": "R2 box D (token, key at R2): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "1FF1F8C7D5162C8687790C38A2CBB2151AD1E688E92E3F878728AA7CB4F597A6"
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: all 4 CLAIM in one ledger",
+   "expect": "1 ledger",
+   "got": "ledgers 13737635",
+   "ok": true,
+   "safe": true,
+   "ledger": 13737635
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: R1 legitimate CLAIM (ledger position 4)",
+   "expect": "",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "91D13C7701D09F9A4858EA60FCC20F158F664D9399AA89511F9B3CEF4365039F",
+   "ledger": 13737635,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: R3 also knows key (own valid signature) (ledger position 6)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "0C1851BF44FB7B5BD3B066FCF7FD40B9A12885622FCCBEC49C84802EE2F3D083",
+   "ledger": 13737635,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: R2 copies PK+SIG R1 (ledger position 7)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "1D2A9B4ADAA909A350947FA629510EE31AB75E850E48E0288AC6FA9C34D1A6A1",
+   "ledger": 13737635,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: R4 garbage signature (ledger position 8)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "A7B764FF55F36D20E8B12892CB365B3DB2CEE71163CFABAEFE026A0569E96454",
+   "ledger": 13737635,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: exactly one winner, and it is legitimate",
+   "expect": "1 of R1/R3",
+   "got": "R1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: emitted Remit",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "FDBC14260246F35624849FE319A634EFA37930901E12A8FF2298BF384449EBCB",
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: emits total",
+   "expect": "1",
+   "got": "1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: winner R1 received amount+reserve",
+   "expect": "2200000",
+   "got": "2200000",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: XAH only one received (Δ without fees)",
+   "expect": "1 account with Δ>0",
+   "got": "R1:2200000 R2:0 R3:0 R4(foreign):0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: token with winner",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R2 A: loser R3 repeats after",
+   "expect": "rejected (unknown/bad sig/not holder)",
+   "got": "tecHOOK_REJECTED / tgs: unknown",
+   "ok": true,
+   "hash": "B2E85DFD0CB65E5D0ACDD58CD36EFC380D3E792EEDC1238ED6D350CAB11EBD19",
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: all 4 CLAIM in one ledger",
+   "expect": "1 ledger",
+   "got": "ledgers 13737641",
+   "ok": true,
+   "safe": true,
+   "ledger": 13737641
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: R1 addressee (ledger position 4)",
+   "expect": "",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "EE342B8F8654C7F519338242DA13930EE7F392BD3079DFB2486E4F5898289623",
+   "ledger": 13737641,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: R2 copies QR R1 (ledger position 7)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "3F4DC77A98BEC9FB261C31F75482E1822D168F4BBC62D20A8BA3339BFE74B958",
+   "ledger": 13737641,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: R3 copies QR R1 (ledger position 6)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "DD9B640DD4E7CD8D2914C90AAABA016D34EE57BE4368B7CFAF8F236068933752",
+   "ledger": 13737641,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: R4(foreign) copies QR R1 (ledger position 8)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "5CB31F3256CC129E62BF35E7799C1E2B88F38FF0EBBA47095A7A66C3A0850C40",
+   "ledger": 13737641,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: exactly one winner, and it is legitimate",
+   "expect": "1 of R1",
+   "got": "R1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: emitted Remit",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "F40F6502B5DD9D9276F71EAF02FB01B5FB32A82DD9B9F98C7ABD329C3257D9ED",
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: emits total",
+   "expect": "1",
+   "got": "1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: winner R1 received amount+reserve",
+   "expect": "2200000",
+   "got": "2200000",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: XAH only one received (Δ without fees)",
+   "expect": "1 account with Δ>0",
+   "got": "R1:2200000 R2:0 R3:0 R4(foreign):0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: token with winner",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R2 C: loser R2 repeats after",
+   "expect": "rejected (unknown/bad sig/not holder)",
+   "got": "tecHOOK_REJECTED / tgs: unknown",
+   "ok": true,
+   "hash": "980383029EF4184012F8F10243FFEBB5E856DFC5140A13989DDEE2BBC66CA652",
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: all 4 CLAIM in one ledger",
+   "expect": "1 ledger",
+   "got": "ledgers 13737647",
+   "ok": true,
+   "safe": true,
+   "ledger": 13737647
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: R2 holder (ledger position 4)",
+   "expect": "",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "617ED143015ABB335E15B7704F0E4DBE485B0DD14EF126885F493F44203F36CA",
+   "ledger": 13737647,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: R1 without key (ledger position 8)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "428D623A7EF8348D146781554DA281E6E8F19A6A301636A16FD57AB4D8533FF8",
+   "ledger": 13737647,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: R3 without key (ledger position 9)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "626DAF69CBCFC36A287179A8CE30CFB6E1A6CBCFE09EE67DA4522DC7E0845A23",
+   "ledger": 13737647,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: R4(foreign) without key (ledger position 7)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "9D11B61C0A7C5512C5E17B53768C311BC0168FEB4990A5D1D78DE111F6E7F506",
+   "ledger": 13737647,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: exactly one winner, and it is legitimate",
+   "expect": "1 of R2",
+   "got": "R2",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: emitted Remit",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "545890FBEAC53E43FB44624ECE67DFDE62AF43997D7221811BEE717352A601B8",
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: emits total",
+   "expect": "1",
+   "got": "1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: winner R2 received amount+reserve",
+   "expect": "2200000",
+   "got": "2200000",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: XAH only one received (Δ without fees)",
+   "expect": "1 account with Δ>0",
+   "got": "R1:0 R2:2200000 R3:0 R4(foreign):0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: token with winner",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R2 D: loser R1 repeats after",
+   "expect": "rejected (unknown/bad sig/not holder)",
+   "got": "tecHOOK_REJECTED / tgs: unknown",
+   "ok": true,
+   "hash": "20F434F4F5F6013C6222AF99100D11C6DF0E001EF9AAD19AA51378305D04E629",
+   "safe": true
+  },
+  {
+   "sc": "RACE",
+   "name": "R2: after round of box entries 0, token locks 0 (service total 4)",
+   "expect": "0 and 0",
+   "got": "0/0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE",
+   "name": "R3 box A (bearer): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "21639A00EADA70EB0CF8C35F7EAD9FC4FCC2EDC2B2FD6AFD8FC39B149AA49D5C"
+  },
+  {
+   "sc": "RACE",
+   "name": "R3 box C (addressed R1): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "1A7D221532EE9DF1A1E930B8A7B95BEECEF7CFB2D1B321B6C9F12A6354708356"
+  },
+  {
+   "sc": "RACE",
+   "name": "R3 box D (token, key at R2): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "447EE73522549B3F22475AC7927CE99701B042363CF2841EB219B6E5FA22505D"
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: all 4 CLAIM in one ledger",
+   "expect": "1 ledger",
+   "got": "ledgers 13737668",
+   "ok": true,
+   "safe": true,
+   "ledger": 13737668
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: R1 legitimate CLAIM (ledger position 6)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "AC1B04F5D83CB64D976A6E3895E49932FB2AD3907A91D2EB30078F717304619F",
+   "ledger": 13737668,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: R3 also knows key (own valid signature) (ledger position 4)",
+   "expect": "",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "F3A04CE0FA018C366F068DC0916FCF0FABD952211E7A3A8DC495CE0E12039548",
+   "ledger": 13737668,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: R2 copies PK+SIG R1 (ledger position 7)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "6DD87B51AD5A1ABFA16F0A017EDDABF06D2579F6791AAF7B1ABD2344030B41D4",
+   "ledger": 13737668,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: R4 garbage signature (ledger position 8)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "0BFCEC605D23295D76C6FA80C4624ADBC22CFE647A89875058BD1AFD4D359B8E",
+   "ledger": 13737668,
+   "info": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: exactly one winner, and it is legitimate",
+   "expect": "1 of R1/R3",
+   "got": "R3",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: emitted Remit",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "3BFFDF1F3936ABA58D0EE5F8244D48FD1989AB5F52DF293B6268CD47FE046EA4",
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: emits total",
+   "expect": "1",
+   "got": "1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: winner R3 received amount+reserve",
+   "expect": "2200000",
+   "got": "2200000",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: XAH only one received (Δ without fees)",
+   "expect": "1 account with Δ>0",
+   "got": "R1:0 R2:0 R3:2200000 R4(foreign):0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: token with winner",
+   "expect": "R3",
+   "got": "R3",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-A",
+   "name": "R3 A: loser R1 repeats after",
+   "expect": "rejected (unknown/bad sig/not holder)",
+   "got": "tecHOOK_REJECTED / tgs: unknown",
+   "ok": true,
+   "hash": "5009B119558DAF31B083669E53E59FCA2215892968C665159AD0D1ACE0CD42FB",
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: all 4 CLAIM in one ledger",
+   "expect": "1 ledger",
+   "got": "ledgers 13737675",
+   "ok": true,
+   "safe": true,
+   "ledger": 13737675
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: R1 addressee (ledger position 4)",
+   "expect": "",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "DD80EA961BCD7344D88097671DBFBDF1F90D35E64ECA70EC7477036A250E662E",
+   "ledger": 13737675,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: R2 copies QR R1 (ledger position 7)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "A48175EA18BD4A367D298E955A40D835F1F0644D3ADE05D5F49757C8264EBA6B",
+   "ledger": 13737675,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: R3 copies QR R1 (ledger position 8)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "7E4680EC664F9068B236F1D94E4A703E75EE8C5386B7B2B1D3F71765DFB03B7F",
+   "ledger": 13737675,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: R4(foreign) copies QR R1 (ledger position 6)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "40CEAA0E5EFD12B01966B6C0B362831D3C464BC5DB0D7C5EF35D579E6E677E07",
+   "ledger": 13737675,
+   "info": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: exactly one winner, and it is legitimate",
+   "expect": "1 of R1",
+   "got": "R1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: emitted Remit",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "4FC398E31AD2B16FDE4D6F4C35ABC9764C01672D386767E4E68B15025E86FD8E",
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: emits total",
+   "expect": "1",
+   "got": "1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: winner R1 received amount+reserve",
+   "expect": "2200000",
+   "got": "2200000",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: XAH only one received (Δ without fees)",
+   "expect": "1 account with Δ>0",
+   "got": "R1:2200000 R2:0 R3:0 R4(foreign):0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: token with winner",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-C",
+   "name": "R3 C: loser R2 repeats after",
+   "expect": "rejected (unknown/bad sig/not holder)",
+   "got": "tecHOOK_REJECTED / tgs: unknown",
+   "ok": true,
+   "hash": "E8CB736573652EABC8D4AB2AAE0C9285484DC2A0653D76AADA176F1D794973EF",
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: all 4 CLAIM in one ledger",
+   "expect": "1 ledger",
+   "got": "ledgers 13737683",
+   "ok": true,
+   "safe": true,
+   "ledger": 13737683
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: R2 holder (ledger position 4)",
+   "expect": "",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "35535E8D5257595E657A1ACA3908712A55C67610700509501C63EE854454169A",
+   "ledger": 13737683,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: R1 without key (ledger position 7)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "1B54E89281E875CB6CDDB78E3796771FC9E6B477A1483A4741223782F6BF2BA9",
+   "ledger": 13737683,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: R3 without key (ledger position 6)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "9ABEB35E12AEBCD3E8AFE989138E717B6E6997712D2E12BC80677C500A90CBE6",
+   "ledger": 13737683,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: R4(foreign) without key (ledger position 5)",
+   "expect": "",
+   "got": "tecHOOK_REJECTED / tgs: busy",
+   "ok": true,
+   "hash": "ABB5DDCB491EED9571AA2C33F67EA275B13498EB52C90296843F9D38D3995E47",
+   "ledger": 13737683,
+   "info": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: exactly one winner, and it is legitimate",
+   "expect": "1 of R2",
+   "got": "R2",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: emitted Remit",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "8F67D9478F6D101966679CE317DD7BF243C745982CCC9F9EE19D48D96C8BE6A1",
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: emits total",
+   "expect": "1",
+   "got": "1",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: winner R2 received amount+reserve",
+   "expect": "2200000",
+   "got": "2200000",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: XAH only one received (Δ without fees)",
+   "expect": "1 account with Δ>0",
+   "got": "R1:0 R2:2200000 R3:0 R4(foreign):0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: token with winner",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "RACE-D",
+   "name": "R3 D: loser R1 repeats after",
+   "expect": "rejected (unknown/bad sig/not holder)",
+   "got": "tecHOOK_REJECTED / tgs: unknown",
+   "ok": true,
+   "hash": "C4EEE2A357735FB73CBED95AB51F6A3012514A3E9FECCE32FDF57ABFF55B0226",
+   "safe": true
+  },
+  {
+   "sc": "RACE",
+   "name": "R3: after round of box entries 0, token locks 0 (service total 4)",
+   "expect": "0 and 0",
+   "got": "0/0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "CLEANUP",
+   "name": "Hook state cleared (4 → 0)",
+   "expect": "0",
+   "got": "0",
+   "ok": true,
+   "hash": "0149B39BB3E77F1A93063DB4BF504D2BD87250D393D5E5896F7CFC8559151764",
+   "safe": true
+  }
+ ],
+ "txlog": [
+  {
+   "label": "mint R1 box A (bearer)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "814CEAF5217A47555DF0995AF9CE311C054327C1022A634CB758DB7CF03CF485",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737575,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R1 box A (bearer)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "800B17070A7AAE0F0D8BB67A2604B85EC7DA93BD040076709173368078A94915",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13737577,
+   "inLedger": true
+  },
+  {
+   "label": "mint R1 box C (addressed R1)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "4A2DB8722117B3A9B1589832A5D5C5C2737D2AC1945DB7EB386A271B0BD3FDFA",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737579,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R1 box C (addressed R1)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "6E50B3B2DC2B068A5D83E350A9F94EA6368DDFD0B1DE0BE8C4C402AF0E018192",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13737581,
+   "inLedger": true
+  },
+  {
+   "label": "mint R1 box D (token, key at R2)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "9F57F9D3419971F5DE4FD5DEDE04B806AB2B7732E20DF96C7B6BAE0AA5F18E2B",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737583,
+   "inLedger": true
+  },
+  {
+   "label": "mint R1 box D (token, key at R2)-key",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "2A6A064E97D8640FA5843EA3B7F0397273E6E06526BB66293F67A17EB4900EB9",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737585,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R1 box D (token, key at R2)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "DC53DE139FD5F12C1BF4EF15BEEB13EB46AA78432FAF2F9C69E46BFAD3293A4F",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96212",
+   "ledger": 13737587,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "485FF4E53B100C6CC2C371C2DDEDE67D14969BBCCAB25018566A6DB64A69C3BE",
+   "result": "tesSUCCESS",
+   "hook": "tgs: audited",
+   "fee": "96032",
+   "ledger": 13737589,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R1 box D (token, key at R2)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "F1A6858A9F2F0C180A98F338DA523A7EBDBE305AE0F550D9C234666AE3484E30",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96212",
+   "ledger": 13737591,
+   "inLedger": true
+  },
+  {
+   "label": "Remit R1 key D → R2",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "7432F4C3674D9247B55AAF833B4CE3FC21AC67A7D8E2FD0FFF555AF3B74B4FE0",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737593,
+   "inLedger": true
+  },
+  {
+   "label": "R1 A: R1 legitimate CLAIM",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "D7579D371396AFB7CAE7BEB715F6489673EEDEFF92B26F6D0C9EB7F08D763C2F",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13737595,
+   "txIndex": 4,
+   "fee": "96194"
+  },
+  {
+   "label": "R1 A: R3 also knows the key (own valid signature)",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "801248E7C35B70258C9CFFDB25A3627B4EE31AEA37B11C87DDA7CB3DB18B5B5B",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737595,
+   "txIndex": 5,
+   "fee": "96194"
+  },
+  {
+   "label": "R1 A: R2 copies PK+SIG R1",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "6B4ACD70BB08F57CC982B247F0358B9FBB741202FFBD968916BA2BD8EE7E135B",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737595,
+   "txIndex": 6,
+   "fee": "96194"
+  },
+  {
+   "label": "R1 A: R4 garbage signature",
+   "type": "Invoke",
+   "from": "R4(foreign)",
+   "hash": "B625152A7619E887D53E5A0D276191696A915CE991E967E93D70146A5C92CFC1",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737595,
+   "txIndex": 7,
+   "fee": "96195"
+  },
+  {
+   "label": "emit R1 box A (bearer)",
+   "type": "Remit(emit)",
+   "hash": "34FFFA3B913A60B873D76A561F02F531B8FDF263FEA9D98D2A25A7256DFC684D",
+   "result": "tesSUCCESS",
+   "ledger": 13737596
+  },
+  {
+   "label": "replay after race R1 A: R3 also knows the key (own valid signature)",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "0D6C24EF76E1FBB0A74B614215CFC6A1BC4D280B4C8ED187149E62F833E30A16",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "fee": "96194",
+   "ledger": 13737599,
+   "inLedger": true
+  },
+  {
+   "label": "R1 C: R1 addressee",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "27B7DAC8F9B73A9D4A5E4B1B2D206264E89AEDBED36CBF3DD1DD58F6E89A1F3B",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13737601,
+   "txIndex": 5,
+   "fee": "96195"
+  },
+  {
+   "label": "R1 C: R2 copies QR R1",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "BF1D1A6A56035EF08B82DA9C247C7E64647EFB36ED140D49854B308ADB520857",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737601,
+   "txIndex": 6,
+   "fee": "96195"
+  },
+  {
+   "label": "R1 C: R3 copies QR R1",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "5A4B07AA73DFF38062716BA141C06E3DD651E0817DC2A657463E789ACA8C26AF",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737601,
+   "txIndex": 8,
+   "fee": "96195"
+  },
+  {
+   "label": "R1 C: R4(foreign) copies QR R1",
+   "type": "Invoke",
+   "from": "R4(foreign)",
+   "hash": "2FEB33859D374ABAA210F977A0DFBA042E1584BE74F6E4DCC1D7920358C3B589",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737601,
+   "txIndex": 7,
+   "fee": "96195"
+  },
+  {
+   "label": "emit R1 box C (addressed R1)",
+   "type": "Remit(emit)",
+   "hash": "8FFA63117BB88846A4A4CCC88225EDAFFE9D359A73D28ADF621982A78C8FD480",
+   "result": "tesSUCCESS",
+   "ledger": 13737602
+  },
+  {
+   "label": "replay after race R1 C: R2 copies QR R1",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "88F9999EDB11E7F6F81EDD6CD8527DD8E45483DF870B0B85F1BA3E154FCE0691",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "fee": "96195",
+   "ledger": 13737605,
+   "inLedger": true
+  },
+  {
+   "label": "R1 D: R2 holder",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "687C8BEE01460180305A09B94A3F60F62A2DEA4CE0D72A9FB896446254FCEA31",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13737608,
+   "txIndex": 4,
+   "fee": "96083"
+  },
+  {
+   "label": "R1 D: R1 without key",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "AA525F7331B825F8E63A236B98D1C611FBACFB61E7B14901688AF20BD7F755FB",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737608,
+   "txIndex": 7,
+   "fee": "96083"
+  },
+  {
+   "label": "R1 D: R3 without key",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "D207789A2C343D8382DBEA2012268CB1291F4DD39E1D5D09EACBB47C14A088D2",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737608,
+   "txIndex": 8,
+   "fee": "96083"
+  },
+  {
+   "label": "R1 D: R4(foreign) without key",
+   "type": "Invoke",
+   "from": "R4(foreign)",
+   "hash": "6782E69CAEC41E28B344FE77673A5E0DB6F6FD9A2360F759AD67E158EB1E006B",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737608,
+   "txIndex": 6,
+   "fee": "96083"
+  },
+  {
+   "label": "emit R1 box D (token, key at R2)",
+   "type": "Remit(emit)",
+   "hash": "F2F79F3AF4EC6084701C9FB10802736E2D83A90651D3F421430BB23578E20342",
+   "result": "tesSUCCESS",
+   "ledger": 13737609
+  },
+  {
+   "label": "replay after race R1 D: R1 without key",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "6A3C4BC4737C04839088797DDA34EBC6694762F8F6908660961D94992460C7F0",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "fee": "96083",
+   "ledger": 13737616,
+   "inLedger": true
+  },
+  {
+   "label": "mint R2 box A (bearer)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "343543C58751F61E518110AC14005C12E8279ED4F422ECD95891623B9B32F663",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737618,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R2 box A (bearer)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "B4F7C7D207B1AEB917CCE1C3E42250280DC5217F44AD3D11761AA6CB5C0D217B",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13737620,
+   "inLedger": true
+  },
+  {
+   "label": "mint R2 box C (addressed R1)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "1C4692D66AE5E187C03A884643EBF788089CD790EBA6D48BA1FEAAE80D6D1BF2",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737622,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R2 box C (addressed R1)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "252CE2D0F44AB0B98089ADA5679F9F022EE506DA9EDB7597D395DD78DE4FCE4F",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13737624,
+   "inLedger": true
+  },
+  {
+   "label": "mint R2 box D (token, key at R2)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "C142417CF63F7292689E1F4BD9422D23076A3AF445E2EC751BD6B83BCAFF501B",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737626,
+   "inLedger": true
+  },
+  {
+   "label": "mint R2 box D (token, key at R2)-key",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "04096922353F5E4568064E0A47ECFE5766295AA6E81888018897CB7BC9F615CF",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737628,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R2 box D (token, key at R2)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "1FF1F8C7D5162C8687790C38A2CBB2151AD1E688E92E3F878728AA7CB4F597A6",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96212",
+   "ledger": 13737630,
+   "inLedger": true
+  },
+  {
+   "label": "Remit R2 key D → R2",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "F8B772470D3B6A8C527B09765729BBAAC394F3F7E371FA0766CA516C00220D05",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737632,
+   "inLedger": true
+  },
+  {
+   "label": "R2 A: R1 legitimate CLAIM",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "91D13C7701D09F9A4858EA60FCC20F158F664D9399AA89511F9B3CEF4365039F",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13737635,
+   "txIndex": 4,
+   "fee": "96195"
+  },
+  {
+   "label": "R2 A: R3 also knows the key (own valid signature)",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "0C1851BF44FB7B5BD3B066FCF7FD40B9A12885622FCCBEC49C84802EE2F3D083",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737635,
+   "txIndex": 6,
+   "fee": "96195"
+  },
+  {
+   "label": "R2 A: R2 copies PK+SIG R1",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "1D2A9B4ADAA909A350947FA629510EE31AB75E850E48E0288AC6FA9C34D1A6A1",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737635,
+   "txIndex": 7,
+   "fee": "96195"
+  },
+  {
+   "label": "R2 A: R4 garbage signature",
+   "type": "Invoke",
+   "from": "R4(foreign)",
+   "hash": "A7B764FF55F36D20E8B12892CB365B3DB2CEE71163CFABAEFE026A0569E96454",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737635,
+   "txIndex": 8,
+   "fee": "96195"
+  },
+  {
+   "label": "emit R2 box A (bearer)",
+   "type": "Remit(emit)",
+   "hash": "FDBC14260246F35624849FE319A634EFA37930901E12A8FF2298BF384449EBCB",
+   "result": "tesSUCCESS",
+   "ledger": 13737636
+  },
+  {
+   "label": "replay after race R2 A: R3 also knows the key (own valid signature)",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "B2E85DFD0CB65E5D0ACDD58CD36EFC380D3E792EEDC1238ED6D350CAB11EBD19",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "fee": "96195",
+   "ledger": 13737639,
+   "inLedger": true
+  },
+  {
+   "label": "R2 C: R1 addressee",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "EE342B8F8654C7F519338242DA13930EE7F392BD3079DFB2486E4F5898289623",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13737641,
+   "txIndex": 4,
+   "fee": "96195"
+  },
+  {
+   "label": "R2 C: R2 copies QR R1",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "3F4DC77A98BEC9FB261C31F75482E1822D168F4BBC62D20A8BA3339BFE74B958",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737641,
+   "txIndex": 7,
+   "fee": "96195"
+  },
+  {
+   "label": "R2 C: R3 copies QR R1",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "DD9B640DD4E7CD8D2914C90AAABA016D34EE57BE4368B7CFAF8F236068933752",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737641,
+   "txIndex": 6,
+   "fee": "96195"
+  },
+  {
+   "label": "R2 C: R4(foreign) copies QR R1",
+   "type": "Invoke",
+   "from": "R4(foreign)",
+   "hash": "5CB31F3256CC129E62BF35E7799C1E2B88F38FF0EBBA47095A7A66C3A0850C40",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737641,
+   "txIndex": 8,
+   "fee": "96195"
+  },
+  {
+   "label": "emit R2 box C (addressed R1)",
+   "type": "Remit(emit)",
+   "hash": "F40F6502B5DD9D9276F71EAF02FB01B5FB32A82DD9B9F98C7ABD329C3257D9ED",
+   "result": "tesSUCCESS",
+   "ledger": 13737642
+  },
+  {
+   "label": "replay after race R2 C: R2 copies QR R1",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "980383029EF4184012F8F10243FFEBB5E856DFC5140A13989DDEE2BBC66CA652",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "fee": "96195",
+   "ledger": 13737645,
+   "inLedger": true
+  },
+  {
+   "label": "R2 D: R2 holder",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "617ED143015ABB335E15B7704F0E4DBE485B0DD14EF126885F493F44203F36CA",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13737647,
+   "txIndex": 4,
+   "fee": "96083"
+  },
+  {
+   "label": "R2 D: R1 without key",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "428D623A7EF8348D146781554DA281E6E8F19A6A301636A16FD57AB4D8533FF8",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737647,
+   "txIndex": 8,
+   "fee": "96083"
+  },
+  {
+   "label": "R2 D: R3 without key",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "626DAF69CBCFC36A287179A8CE30CFB6E1A6CBCFE09EE67DA4522DC7E0845A23",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737647,
+   "txIndex": 9,
+   "fee": "96083"
+  },
+  {
+   "label": "R2 D: R4(foreign) without key",
+   "type": "Invoke",
+   "from": "R4(foreign)",
+   "hash": "9D11B61C0A7C5512C5E17B53768C311BC0168FEB4990A5D1D78DE111F6E7F506",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737647,
+   "txIndex": 7,
+   "fee": "96083"
+  },
+  {
+   "label": "emit R2 box D (token, key at R2)",
+   "type": "Remit(emit)",
+   "hash": "545890FBEAC53E43FB44624ECE67DFDE62AF43997D7221811BEE717352A601B8",
+   "result": "tesSUCCESS",
+   "ledger": 13737648
+  },
+  {
+   "label": "replay after race R2 D: R1 without key",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "20F434F4F5F6013C6222AF99100D11C6DF0E001EF9AAD19AA51378305D04E629",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "fee": "96083",
+   "ledger": 13737651,
+   "inLedger": true
+  },
+  {
+   "label": "mint R3 box A (bearer)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "FB89B6A75AF7E709A21351954CEF276862E2A91BD21986BF32C88F38ADD93839",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737653,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R3 box A (bearer)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "21639A00EADA70EB0CF8C35F7EAD9FC4FCC2EDC2B2FD6AFD8FC39B149AA49D5C",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13737655,
+   "inLedger": true
+  },
+  {
+   "label": "mint R3 box C (addressed R1)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "600A2B10EEA1ED3E8E18344FC04EA08F3EF96212434316BCEB86B3D65D875FA5",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737657,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R3 box C (addressed R1)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "1A7D221532EE9DF1A1E930B8A7B95BEECEF7CFB2D1B321B6C9F12A6354708356",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13737659,
+   "inLedger": true
+  },
+  {
+   "label": "mint R3 box D (token, key at R2)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "B63BEC74D038CD996E43C53613A41060C94441C465C1C3639ADAD7B7D05B8FDD",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737661,
+   "inLedger": true
+  },
+  {
+   "label": "mint R3 box D (token, key at R2)-key",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "5DDBD8B4DB6F1933A533805B6DC30DB6405974503837F3F5A21FEE94AC893668",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737662,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R3 box D (token, key at R2)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "447EE73522549B3F22475AC7927CE99701B042363CF2841EB219B6E5FA22505D",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96212",
+   "ledger": 13737663,
+   "inLedger": true
+  },
+  {
+   "label": "Remit R3 key D → R2",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "DE41DC32080AADE96679A3C640E018045EAD99CB7E7EF88BB15E74A38087D7E4",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737665,
+   "inLedger": true
+  },
+  {
+   "label": "R3 A: R1 legitimate CLAIM",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "AC1B04F5D83CB64D976A6E3895E49932FB2AD3907A91D2EB30078F717304619F",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737668,
+   "txIndex": 6,
+   "fee": "96194"
+  },
+  {
+   "label": "R3 A: R3 also knows the key (own valid signature)",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "F3A04CE0FA018C366F068DC0916FCF0FABD952211E7A3A8DC495CE0E12039548",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13737668,
+   "txIndex": 4,
+   "fee": "96194"
+  },
+  {
+   "label": "R3 A: R2 copies PK+SIG R1",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "6DD87B51AD5A1ABFA16F0A017EDDABF06D2579F6791AAF7B1ABD2344030B41D4",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737668,
+   "txIndex": 7,
+   "fee": "96194"
+  },
+  {
+   "label": "R3 A: R4 garbage signature",
+   "type": "Invoke",
+   "from": "R4(foreign)",
+   "hash": "0BFCEC605D23295D76C6FA80C4624ADBC22CFE647A89875058BD1AFD4D359B8E",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737668,
+   "txIndex": 8,
+   "fee": "96195"
+  },
+  {
+   "label": "emit R3 box A (bearer)",
+   "type": "Remit(emit)",
+   "hash": "3BFFDF1F3936ABA58D0EE5F8244D48FD1989AB5F52DF293B6268CD47FE046EA4",
+   "result": "tesSUCCESS",
+   "ledger": 13737669
+  },
+  {
+   "label": "replay after race R3 A: R1 legitimate CLAIM",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "5009B119558DAF31B083669E53E59FCA2215892968C665159AD0D1ACE0CD42FB",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "fee": "96194",
+   "ledger": 13737672,
+   "inLedger": true
+  },
+  {
+   "label": "R3 C: R1 addressee",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "DD80EA961BCD7344D88097671DBFBDF1F90D35E64ECA70EC7477036A250E662E",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13737675,
+   "txIndex": 4,
+   "fee": "96194"
+  },
+  {
+   "label": "R3 C: R2 copies QR R1",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "A48175EA18BD4A367D298E955A40D835F1F0644D3ADE05D5F49757C8264EBA6B",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737675,
+   "txIndex": 7,
+   "fee": "96194"
+  },
+  {
+   "label": "R3 C: R3 copies QR R1",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "7E4680EC664F9068B236F1D94E4A703E75EE8C5386B7B2B1D3F71765DFB03B7F",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737675,
+   "txIndex": 8,
+   "fee": "96194"
+  },
+  {
+   "label": "R3 C: R4(foreign) copies QR R1",
+   "type": "Invoke",
+   "from": "R4(foreign)",
+   "hash": "40CEAA0E5EFD12B01966B6C0B362831D3C464BC5DB0D7C5EF35D579E6E677E07",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737675,
+   "txIndex": 6,
+   "fee": "96194"
+  },
+  {
+   "label": "emit R3 box C (addressed R1)",
+   "type": "Remit(emit)",
+   "hash": "4FC398E31AD2B16FDE4D6F4C35ABC9764C01672D386767E4E68B15025E86FD8E",
+   "result": "tesSUCCESS",
+   "ledger": 13737676
+  },
+  {
+   "label": "replay after race R3 C: R2 copies QR R1",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "E8CB736573652EABC8D4AB2AAE0C9285484DC2A0653D76AADA176F1D794973EF",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "fee": "96194",
+   "ledger": 13737680,
+   "inLedger": true
+  },
+  {
+   "label": "R3 D: R2 holder",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "35535E8D5257595E657A1ACA3908712A55C67610700509501C63EE854454169A",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13737683,
+   "txIndex": 4,
+   "fee": "96083"
+  },
+  {
+   "label": "R3 D: R1 without key",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "1B54E89281E875CB6CDDB78E3796771FC9E6B477A1483A4741223782F6BF2BA9",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737683,
+   "txIndex": 7,
+   "fee": "96083"
+  },
+  {
+   "label": "R3 D: R3 without key",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "9ABEB35E12AEBCD3E8AFE989138E717B6E6997712D2E12BC80677C500A90CBE6",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737683,
+   "txIndex": 6,
+   "fee": "96083"
+  },
+  {
+   "label": "R3 D: R4(foreign) without key",
+   "type": "Invoke",
+   "from": "R4(foreign)",
+   "hash": "ABB5DDCB491EED9571AA2C33F67EA275B13498EB52C90296843F9D38D3995E47",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13737683,
+   "txIndex": 5,
+   "fee": "96083"
+  },
+  {
+   "label": "emit R3 box D (token, key at R2)",
+   "type": "Remit(emit)",
+   "hash": "8F67D9478F6D101966679CE317DD7BF243C745982CCC9F9EE19D48D96C8BE6A1",
+   "result": "tesSUCCESS",
+   "ledger": 13737684
+  },
+  {
+   "label": "replay after race R3 D: R1 without key",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "C4EEE2A357735FB73CBED95AB51F6A3012514A3E9FECCE32FDF57ABFF55B0226",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "fee": "96083",
+   "ledger": 13737687,
+   "inLedger": true
+  },
+  {
+   "label": "SetHook NSDelete",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "0149B39BB3E77F1A93063DB4BF504D2BD87250D393D5E5896F7CFC8559151764",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13737689,
+   "inLedger": true
+  }
+ ]
+}

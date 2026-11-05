@@ -1,0 +1,174 @@
+PASS 0 SetHook A | tesSUCCESS
+PASS 0 SetHook B | tesSUCCESS
+PASS 0 SetHook D | tesSUCCESS
+PASS H1 A→B PACK gift code with EXP | tgs: packed
+PASS H1 A→B gift code with EXP: CLAIM by hook before expiry | tgs: pass | tgs: claiming
+PASS H1 A→B gift code with EXP: payout | tesSUCCESS
+PASS H1 A→B gift code with EXP: token at B | B
+PASS H1 A→B gift code with EXP: entry erased | no
+PASS H1 A→B PACK XAH+gift code with EXP | tgs: packed
+PASS H1 A→B XAH+gift code with EXP: CLAIM by hook before expiry | tgs: pass | tgs: claiming
+PASS H1 A→B XAH+gift code with EXP: payout | tesSUCCESS
+PASS H1 A→B XAH+gift code with EXP: token at B | B
+PASS H1 A→B XAH+gift code with EXP: entry erased | no
+PASS H1 A→B PACK XAH+own token with EXP | tgs: packed
+PASS H1 A→B XAH+own token with EXP: CLAIM by hook before expiry | tgs: pass | tgs: claiming
+PASS H1 A→B XAH+own token with EXP: payout | tesSUCCESS
+PASS H1 A→B XAH+own token with EXP: token at B | B
+PASS H1 A→B XAH+own token with EXP: entry erased | no
+PASS H1 A→B counters A  | held=0 locks=0
+PASS H1 B→A PACK gift code with EXP | tgs: packed
+PASS H1 B→A gift code with EXP: CLAIM by hook before expiry | tgs: pass | tgs: claiming
+PASS H1 B→A gift code with EXP: payout | tesSUCCESS
+PASS H1 B→A gift code with EXP: token at A | A
+PASS H1 B→A gift code with EXP: entry erased | no
+PASS H1 B→A PACK XAH+gift code with EXP | tgs: packed
+PASS H1 B→A XAH+gift code with EXP: CLAIM by hook before expiry | tgs: pass | tgs: claiming
+PASS H1 B→A XAH+gift code with EXP: payout | tesSUCCESS
+PASS H1 B→A XAH+gift code with EXP: token at A | A
+PASS H1 B→A XAH+gift code with EXP: entry erased | no
+PASS H1 B→A PACK XAH+own token with EXP | tgs: packed
+PASS H1 B→A XAH+own token with EXP: CLAIM by hook before expiry | tgs: pass | tgs: claiming
+PASS H1 B→A XAH+own token with EXP: payout | tesSUCCESS
+PASS H1 B→A XAH+own token with EXP: token at A | A
+PASS H1 B→A XAH+own token with EXP: entry erased | no
+PASS H1 B→A counters B  | held=0 locks=0
+PASS H2 A key→B→D→C→B PACK under one key: XAH | tgs: packed
+PASS H2 A key→B→D→C→B PACK under one key: own token | tgs: packed
+PASS H2 A key→B→D→C→B PACK under one key: XAH+own token | tgs: packed
+PASS H2 A key→B→D→C→B PACK under one key: gift code | tgs: packed
+PASS H2 A key→B→D→C→B PACK under one key: XAH+gift code | tgs: packed
+PASS H2 A key→B→D→C→B PACK under one key: gift code with EXP | tgs: packed
+PASS H2 A key→B→D→C→B counters A after 6 PACK | held=15600000 locks=5
+PASS H2 A key→B→D→C→B key A→B | tesSUCCESS
+PASS H2 A key→B→D→C→B B opens: XAH | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 A key→B→D→C→B XAH: payout | tesSUCCESS
+PASS H2 A key→B→D→C→B XAH: hook entries B untouched | same
+PASS H2 A key→B→D→C→B XAH: entry erased | no
+PASS H2 A key→B→D→C→B B opens: own token | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 A key→B→D→C→B own token: payout | tesSUCCESS
+PASS H2 A key→B→D→C→B own token: token at B | B
+PASS H2 A key→B→D→C→B own token: hook entries B untouched | same
+PASS H2 A key→B→D→C→B own token: entry erased | no
+PASS H2 A key→B→D→C→B key B→D | tesSUCCESS
+PASS H2 A key→B→D→C→B (neg) previous holder B | tgs: pass | tgs: not holder
+PASS H2 A key→B→D→C→B D opens: XAH+own token | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 A key→B→D→C→B XAH+own token: payout | tesSUCCESS
+PASS H2 A key→B→D→C→B XAH+own token: token at D | D
+PASS H2 A key→B→D→C→B XAH+own token: hook entries D untouched | same
+PASS H2 A key→B→D→C→B XAH+own token: entry erased | no
+PASS H2 A key→B→D→C→B D opens: gift code | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 A key→B→D→C→B gift code: payout | tesSUCCESS
+PASS H2 A key→B→D→C→B gift code: token at D | D
+PASS H2 A key→B→D→C→B gift code: hook entries D untouched | same
+PASS H2 A key→B→D→C→B gift code: entry erased | no
+PASS H2 A key→B→D→C→B key D→C | tesSUCCESS
+PASS H2 A key→B→D→C→B (neg) previous holder D | tgs: pass | tgs: not holder
+PASS H2 A key→B→D→C→B C opens: XAH+gift code | tesSUCCESS tgs: claiming
+PASS H2 A key→B→D→C→B XAH+gift code: payout | tesSUCCESS
+PASS H2 A key→B→D→C→B XAH+gift code: token at C | C
+PASS H2 A key→B→D→C→B XAH+gift code: entry erased | no
+PASS H2 A key→B→D→C→B key C→B | tesSUCCESS
+PASS H2 A key→B→D→C→B (neg) previous holder C | tgs: not holder
+PASS H2 A key→B→D→C→B B opens: gift code with EXP | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 A key→B→D→C→B gift code with EXP: payout | tesSUCCESS
+PASS H2 A key→B→D→C→B gift code with EXP: token at B | B
+PASS H2 A key→B→D→C→B gift code with EXP: hook entries B untouched | same
+PASS H2 A key→B→D→C→B gift code with EXP: entry erased | no
+PASS H2 A key→B→D→C→B counters A after all | held=0 locks=0
+PASS H2 B key→D→A→C→D PACK under one key: XAH | tgs: packed
+PASS H2 B key→D→A→C→D PACK under one key: own token | tgs: packed
+PASS H2 B key→D→A→C→D PACK under one key: XAH+own token | tgs: packed
+PASS H2 B key→D→A→C→D PACK under one key: gift code | tgs: packed
+PASS H2 B key→D→A→C→D PACK under one key: XAH+gift code | tgs: packed
+PASS H2 B key→D→A→C→D PACK under one key: gift code with EXP | tgs: packed
+PASS H2 B key→D→A→C→D counters B after 6 PACK | held=15600000 locks=5
+PASS H2 B key→D→A→C→D key B→D | tesSUCCESS
+PASS H2 B key→D→A→C→D D opens: XAH | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 B key→D→A→C→D XAH: payout | tesSUCCESS
+PASS H2 B key→D→A→C→D XAH: hook entries D untouched | same
+PASS H2 B key→D→A→C→D XAH: entry erased | no
+PASS H2 B key→D→A→C→D D opens: own token | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 B key→D→A→C→D own token: payout | tesSUCCESS
+PASS H2 B key→D→A→C→D own token: token at D | D
+PASS H2 B key→D→A→C→D own token: hook entries D untouched | same
+PASS H2 B key→D→A→C→D own token: entry erased | no
+PASS H2 B key→D→A→C→D key D→A | tesSUCCESS
+PASS H2 B key→D→A→C→D (neg) previous holder D | tgs: pass | tgs: not holder
+PASS H2 B key→D→A→C→D A opens: XAH+own token | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 B key→D→A→C→D XAH+own token: payout | tesSUCCESS
+PASS H2 B key→D→A→C→D XAH+own token: token at A | A
+PASS H2 B key→D→A→C→D XAH+own token: hook entries A untouched | same
+PASS H2 B key→D→A→C→D XAH+own token: entry erased | no
+PASS H2 B key→D→A→C→D A opens: gift code | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 B key→D→A→C→D gift code: payout | tesSUCCESS
+PASS H2 B key→D→A→C→D gift code: token at A | A
+PASS H2 B key→D→A→C→D gift code: hook entries A untouched | same
+PASS H2 B key→D→A→C→D gift code: entry erased | no
+PASS H2 B key→D→A→C→D key A→C | tesSUCCESS
+PASS H2 B key→D→A→C→D (neg) previous holder A | tgs: pass | tgs: not holder
+PASS H2 B key→D→A→C→D C opens: XAH+gift code | tesSUCCESS tgs: claiming
+PASS H2 B key→D→A→C→D XAH+gift code: payout | tesSUCCESS
+PASS H2 B key→D→A→C→D XAH+gift code: token at C | C
+PASS H2 B key→D→A→C→D XAH+gift code: entry erased | no
+PASS H2 B key→D→A→C→D key C→D | tesSUCCESS
+PASS H2 B key→D→A→C→D (neg) previous holder C | tgs: not holder
+PASS H2 B key→D→A→C→D D opens: gift code with EXP | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 B key→D→A→C→D gift code with EXP: payout | tesSUCCESS
+PASS H2 B key→D→A→C→D gift code with EXP: token at D | D
+PASS H2 B key→D→A→C→D gift code with EXP: hook entries D untouched | same
+PASS H2 B key→D→A→C→D gift code with EXP: entry erased | no
+PASS H2 B key→D→A→C→D counters B after all | held=0 locks=0
+PASS H2 D key→A→B→C→A PACK under one key: XAH | tgs: packed
+PASS H2 D key→A→B→C→A PACK under one key: own token | tgs: packed
+PASS H2 D key→A→B→C→A PACK under one key: XAH+own token | tgs: packed
+PASS H2 D key→A→B→C→A PACK under one key: gift code | tgs: packed
+PASS H2 D key→A→B→C→A PACK under one key: XAH+gift code | tgs: packed
+PASS H2 D key→A→B→C→A PACK under one key: gift code with EXP | tgs: packed
+PASS H2 D key→A→B→C→A counters D after 6 PACK | held=15600000 locks=5
+PASS H2 D key→A→B→C→A key D→A | tesSUCCESS
+PASS H2 D key→A→B→C→A A opens: XAH | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 D key→A→B→C→A XAH: payout | tesSUCCESS
+PASS H2 D key→A→B→C→A XAH: hook entries A untouched | same
+PASS H2 D key→A→B→C→A XAH: entry erased | no
+PASS H2 D key→A→B→C→A A opens: own token | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 D key→A→B→C→A own token: payout | tesSUCCESS
+PASS H2 D key→A→B→C→A own token: token at A | A
+PASS H2 D key→A→B→C→A own token: hook entries A untouched | same
+PASS H2 D key→A→B→C→A own token: entry erased | no
+PASS H2 D key→A→B→C→A key A→B | tesSUCCESS
+PASS H2 D key→A→B→C→A (neg) previous holder A | tgs: pass | tgs: not holder
+PASS H2 D key→A→B→C→A B opens: XAH+own token | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 D key→A→B→C→A XAH+own token: payout | tesSUCCESS
+PASS H2 D key→A→B→C→A XAH+own token: token at B | B
+PASS H2 D key→A→B→C→A XAH+own token: hook entries B untouched | same
+PASS H2 D key→A→B→C→A XAH+own token: entry erased | no
+PASS H2 D key→A→B→C→A B opens: gift code | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 D key→A→B→C→A gift code: payout | tesSUCCESS
+PASS H2 D key→A→B→C→A gift code: token at B | B
+PASS H2 D key→A→B→C→A gift code: hook entries B untouched | same
+PASS H2 D key→A→B→C→A gift code: entry erased | no
+PASS H2 D key→A→B→C→A key B→C | tesSUCCESS
+PASS H2 D key→A→B→C→A (neg) previous holder B | tgs: pass | tgs: not holder
+PASS H2 D key→A→B→C→A C opens: XAH+gift code | tesSUCCESS tgs: claiming
+PASS H2 D key→A→B→C→A XAH+gift code: payout | tesSUCCESS
+PASS H2 D key→A→B→C→A XAH+gift code: token at C | C
+PASS H2 D key→A→B→C→A XAH+gift code: entry erased | no
+PASS H2 D key→A→B→C→A key C→A | tesSUCCESS
+PASS H2 D key→A→B→C→A (neg) previous holder C | tgs: not holder
+PASS H2 D key→A→B→C→A A opens: gift code with EXP | tesSUCCESS tgs: pass | tgs: claiming
+PASS H2 D key→A→B→C→A gift code with EXP: payout | tesSUCCESS
+PASS H2 D key→A→B→C→A gift code with EXP: token at A | A
+PASS H2 D key→A→B→C→A gift code with EXP: hook entries A untouched | same
+PASS H2 D key→A→B→C→A gift code with EXP: entry erased | no
+PASS H2 D key→A→B→C→A counters D after all | held=0 locks=0
+PASS H3 result A: boxes 0 | 4
+PASS H3 result counters A final | held=0 locks=0
+PASS H3 result B: boxes 0 | 4
+PASS H3 result counters B final | held=0 locks=0
+PASS H3 result D: boxes 0 | 4
+PASS H3 result counters D final | held=0 locks=0
+GROUPS {"0":[3,0],"H1":[32,0],"H2":[129,0],"H3":[6,0]}
+RESULT 170 / 170
+TESTNET_STATS tx 163 fees_drops 17290886 accounts rNm9Xm,rHqdBQ,rwxQUx,rNbUmV,rPoppK,rU3WWb,rDc9jQ,rPbKfY,rGL3AY,rnkJ6D,rKW9AC,rUxoQX,rKVP2a,raD3FE,rGJXCs,rH4QrH
+exit 0

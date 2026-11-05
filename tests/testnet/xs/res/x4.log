@@ -1,0 +1,69 @@
+PASS 0 SetHook A | tesSUCCESS
+PASS 0 SetHook B | tesSUCCESS
+PASS 0 SetHook D | tesSUCCESS
+PASS K1 A/B B PACK under key A (key with issuer) | tecHOOK_REJECTED tgs: key issuer
+PASS K1 A/B B PACK under key A (key at issuer): state untouched | same
+PASS K1 A/B B PACK under key A (key at issuer): no box | no
+PASS K1 A/B A PACK under own key (kept) | tgs: packed
+PASS K1 A/B key A→B | tesSUCCESS
+PASS K1 A/B A PACK under own key, already passed on B | tecHOOK_REJECTED tgs: key owner
+PASS K1 A/B rejected: state untouched | same
+PASS K1 A/B rejected: no box | no
+PASS K1 A/B rejected: token at A | A
+PASS K1 A/B B PACK under key A, passed to them | tecHOOK_REJECTED tgs: key issuer
+PASS K1 A/B B PACK under key A, passed to them: state untouched | same
+PASS K1 A/B B PACK under key A, passed to them: no box | no
+PASS K1 A/B B PACK of token under key A, passed to them | tecHOOK_REJECTED tgs: key issuer
+PASS K1 A/B B PACK of token under key A, passed to them: state untouched | same
+PASS K1 A/B B PACK of token under key A, passed to them: no box | no
+PASS K1 A/B B opens XAH | tgs: pass | tgs: claiming
+PASS K1 A/B XAH: payout | tesSUCCESS
+PASS K1 A/B key returned B→A | tesSUCCESS
+PASS K1 A/B A PACK after key return | tgs: packed
+PASS K1 A/B key again A→B | tesSUCCESS
+PASS K1 A/B B opens XAH+code | tgs: pass | tgs: claiming
+PASS K1 A/B XAH+code: payout | tesSUCCESS
+PASS K1 A/B XAH+code: token at B | B
+PASS K1 A/B A PACK under key C (holds it) | tecHOOK_REJECTED tgs: key issuer
+PASS K1 A/B A PACK under key C (holds it): state untouched | same
+PASS K1 A/B A PACK under key C (holds it): no box | no
+PASS K1 A/B A PACK under key D (holds it) | tecHOOK_REJECTED tgs: key issuer
+PASS K1 A/B A PACK under key D (holds it): state untouched | same
+PASS K1 A/B A PACK under key D (holds it): no box | no
+PASS K1 A/B counters A final | held=0 locks=0
+PASS K1 A/B counters B final | held=0 locks=0
+PASS K1 B/A A PACK under key B (key with issuer) | tecHOOK_REJECTED tgs: key issuer
+PASS K1 B/A A PACK under key B (key at issuer): state untouched | same
+PASS K1 B/A A PACK under key B (key at issuer): no box | no
+PASS K1 B/A B PACK under own key (kept) | tgs: packed
+PASS K1 B/A key B→A | tesSUCCESS
+PASS K1 B/A B PACK under own key, already passed on A | tecHOOK_REJECTED tgs: key owner
+PASS K1 B/A rejected: state untouched | same
+PASS K1 B/A rejected: no box | no
+PASS K1 B/A rejected: token at B | B
+PASS K1 B/A A PACK under key B, passed to them | tecHOOK_REJECTED tgs: key issuer
+PASS K1 B/A A PACK under key B, passed to them: state untouched | same
+PASS K1 B/A A PACK under key B, passed to them: no box | no
+PASS K1 B/A A PACK of token under key B, passed to them | tecHOOK_REJECTED tgs: key issuer
+PASS K1 B/A A PACK of token under key B, passed to them: state untouched | same
+PASS K1 B/A A PACK of token under key B, passed to them: no box | no
+PASS K1 B/A A opens XAH | tgs: pass | tgs: claiming
+PASS K1 B/A XAH: payout | tesSUCCESS
+PASS K1 B/A key returned A→B | tesSUCCESS
+PASS K1 B/A B PACK after key return | tgs: packed
+PASS K1 B/A key again B→A | tesSUCCESS
+PASS K1 B/A A opens XAH+code | tgs: pass | tgs: claiming
+PASS K1 B/A XAH+code: payout | tesSUCCESS
+PASS K1 B/A XAH+code: token at A | A
+PASS K1 B/A B PACK under key C (holds it) | tecHOOK_REJECTED tgs: key issuer
+PASS K1 B/A B PACK under key C (holds it): state untouched | same
+PASS K1 B/A B PACK under key C (holds it): no box | no
+PASS K1 B/A B PACK under key D (holds it) | tecHOOK_REJECTED tgs: key issuer
+PASS K1 B/A B PACK under key D (holds it): state untouched | same
+PASS K1 B/A B PACK under key D (holds it): no box | no
+PASS K1 B/A counters B final | held=0 locks=0
+PASS K1 B/A counters A final | held=0 locks=0
+GROUPS {"0":[3,0],"K1":[62,0]}
+RESULT 65 / 65
+TESTNET_STATS tx 90 fees_drops 8358021 accounts rhhV2s,rfzgQD,rweHQx,rNhecU,rnb9v3,rhVwGL,rabvvr,rspjR4,rUkqbb,rpixF2,r3w7hZ,rBjks9,rPm9tT,r3Mutr,rwkfJF,rsAvSD
+exit 0

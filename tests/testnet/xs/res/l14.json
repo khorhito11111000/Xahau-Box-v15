@@ -1,0 +1,212 @@
+[
+ {
+  "sc": "0",
+  "name": "SetHook v14 locally",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "sc": "L1",
+  "name": "round 0: wrong, then right in one ledger",
+  "exp": "bad sig, claiming",
+  "got": "tgs: bad sig | tgs: claiming",
+  "ok": true
+ },
+ {
+  "sc": "L1",
+  "name": "round 0: box paid out and erased",
+  "exp": "no entry",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "sc": "L1",
+  "name": "round 1: wrong, then right in one ledger",
+  "exp": "bad sig, claiming",
+  "got": "tgs: bad sig | tgs: claiming",
+  "ok": true
+ },
+ {
+  "sc": "L1",
+  "name": "round 1: box paid out and erased",
+  "exp": "no entry",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "sc": "L1",
+  "name": "round 2: wrong, then right in one ledger",
+  "exp": "bad sig, claiming",
+  "got": "tgs: bad sig | tgs: claiming",
+  "ok": true
+ },
+ {
+  "sc": "L1",
+  "name": "round 2: box paid out and erased",
+  "exp": "no entry",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "sc": "L2",
+  "name": "claim+open in exp (exp=13739327, open@13739327 claim@13739327)",
+  "exp": "/not expired|busy/,/claiming/ (by actual ledger)",
+  "got": "tgs: busy | tgs: claiming",
+  "ok": true
+ },
+ {
+  "sc": "L2",
+  "name": "open in exp (exp=13739334, open@13739334 claim@-)",
+  "exp": "/not expired/, (by actual ledger)",
+  "got": "tgs: not expired | -",
+  "ok": true
+ },
+ {
+  "sc": "L2",
+  "name": "claim in exp+1 (exp=13739343, open@- claim@13739345)",
+  "exp": ",/expired/ (by actual ledger)",
+  "got": "- | tgs: expired",
+  "ok": true
+ },
+ {
+  "sc": "L2",
+  "name": "open in exp+1 (exp=13739354, open@13739356 claim@-)",
+  "exp": "/opened/, (by actual ledger)",
+  "got": "tgs: opened | -",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "OPEN without EXP",
+  "exp": "not expired",
+  "got": "tgs: not expired",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "OPEN with EXP=00000000",
+  "exp": "not expired",
+  "got": "tgs: not expired",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "CLAIM box without EXP",
+  "exp": "claiming",
+  "got": "tgs: claiming",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "CLAIM box EXP=0",
+  "exp": "claiming",
+  "got": "tgs: claiming",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "Repack with the same key, old signature",
+  "exp": "bad sig",
+  "got": "tgs: bad sig",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "New signature",
+  "exp": "claiming",
+  "got": "tgs: claiming",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "PACK of token with offer",
+  "exp": "token offer",
+  "got": "tgs: token offer",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "PACK of burnable token",
+  "exp": "burnable",
+  "got": "tgs: burnable",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "KTID burnable",
+  "exp": "burnable",
+  "got": "tgs: burnable",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "KTID = AccountRoot",
+  "exp": "ktid",
+  "got": "tgs: ktid",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "PACK VC=TID (token mode)",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "PACK of token whose ID = VC of another box",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "Box VC=TID in place",
+  "exp": "exists",
+  "got": "exists",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "OPEN of token box without EXP while the key is alive",
+  "exp": "not expired",
+  "got": "tgs: not expired",
+  "ok": true
+ },
+ {
+  "sc": "L4",
+  "name": "OPEN after key burn",
+  "exp": "opened",
+  "got": "tgs: opened",
+  "ok": true
+ },
+ {
+  "sc": "L3",
+  "name": "PACK 1000 XAH",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "sc": "L3",
+  "name": "AccountDelete while box closed",
+  "exp": "rejected",
+  "got": "temDISABLED / ",
+  "ok": true
+ },
+ {
+  "sc": "L3",
+  "name": "Hook account after",
+  "exp": "exists",
+  "got": "exists",
+  "ok": true
+ },
+ {
+  "sc": "L3",
+  "name": "CLAIM after attempt",
+  "exp": "claiming",
+  "got": "tgs: claiming",
+  "ok": true
+ }
+]

@@ -1,0 +1,402 @@
+{
+ "suite": "rmk",
+ "hookHash": "4847C361FCB669BD7C7E919092F9EB4831852B1152CA5AE9C08EFA7E741EE6FA",
+ "finished": "2026-11-04T04:48:52.256Z",
+ "pass": 19,
+ "fail": 0,
+ "checks": 19,
+ "txSubmittedOrEmitted": 20,
+ "txInLedger": 20,
+ "accounts": [
+  {
+   "role": "issuer",
+   "address": "radDBCVsZVBwde2qpPUTMpJqWa9QF7h1gv"
+  },
+  {
+   "role": "R1",
+   "address": "r9CyzCh2EdZBSDuCevar2Up7jycDBP7P8Z"
+  },
+  {
+   "role": "R2",
+   "address": "rEkpYnJmJbgaWuXQoqZ67dtaAuuitMfcs1"
+  },
+  {
+   "role": "R3",
+   "address": "rEoCkuVfQ75JdXqKG2BJTXmypM6TY8V7kg"
+  },
+  {
+   "role": "R4(foreign)",
+   "address": "raQHTTKd2fBYr6qb7tDQANNkP5YD1B3Fs9"
+  }
+ ],
+ "rows": [
+  {
+   "sc": "P",
+   "name": "R1box: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "4F6CD96D7FFD8A6389C9A446AD4FA426C6A731DF546F69E4D5D48DBE218BA5E1"
+  },
+  {
+   "sc": "R",
+   "name": "SetRemarks immutable box1 (hook acct)",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS | tgs: out",
+   "ok": true,
+   "hash": "3A10E1A9FDCF865D3C1F901031E5F1930603AB9BC0989C4ADF9F5F9607BE4911"
+  },
+  {
+   "sc": "P",
+   "name": "R2box: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "06B71448AA355D68567AAA8228DAB27CFEA4FCE6EA605B271D28F1ECB4CB0DA2"
+  },
+  {
+   "sc": "R",
+   "name": "add remark box2 after immutable box1",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS | tgs: out",
+   "ok": true,
+   "hash": "25DE5860319616586F78B538FB96466ED214CE0B43EB27FC16BF8071753D5A3A"
+  },
+  {
+   "sc": "R",
+   "name": "issuer modify immutable remark1",
+   "expect": "FAIL",
+   "got": "tecIMMUTABLE | (hook not called)",
+   "ok": true,
+   "hash": "F7F5A5DDF64151AA660864413A38303A41695F8915D72AC7A05143B83021C91A"
+  },
+  {
+   "sc": "R",
+   "name": "issuer modify remark1 flags 0",
+   "expect": "FAIL",
+   "got": "tecIMMUTABLE | (hook not called)",
+   "ok": true,
+   "hash": "8586281529889E9BA545C074249EEA3220F41CDED408B57157C31B87CEF1E7AE"
+  },
+  {
+   "sc": "R",
+   "name": "issuer delete remark1",
+   "expect": "FAIL",
+   "got": "tecIMMUTABLE | (hook not called)",
+   "ok": true,
+   "hash": "F49EBD757C2069F081470BB801B3AD45847C7A740D45DF78B1B86ECB85977AC2"
+  },
+  {
+   "sc": "K",
+   "name": "Remit key to R1",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS | tgs: out",
+   "ok": true,
+   "hash": "4D2301508F2C08B7FCFF8000851213931F91D55B42F55EBA20B88EC2AE993159"
+  },
+  {
+   "sc": "R",
+   "name": "holder adds remark",
+   "expect": "FAIL",
+   "got": "tecNO_PERMISSION | (hook not called)",
+   "ok": true,
+   "hash": "8D415C79251A45110A3945084B9623419E027D1C8A0122F3B1A17B8D24CC8092"
+  },
+  {
+   "sc": "R",
+   "name": "holder modifies remark1",
+   "expect": "FAIL",
+   "got": "tecNO_PERMISSION | (hook not called)",
+   "ok": true,
+   "hash": "D451DD7ABA260D999B8DEA8E69CC3FC40DF337DA3F5E1BB0C650C8CBF77FD685"
+  },
+  {
+   "sc": "R",
+   "name": "issuer adds remark after key transfer",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS | tgs: out",
+   "ok": true,
+   "hash": "5AB88817E05297C861CD9C1F8CB111736131EACB0A333CEB7C4A38B746FD4575"
+  },
+  {
+   "sc": "C",
+   "name": "R1box: CLAIM by key holder (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "686DC51CFE8AF5F4ED6A4C387A8618EB5E382768CAF75DD432260FEABCB1B7C9"
+  },
+  {
+   "sc": "C",
+   "name": "R1box: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "1C29FB1DE3043167127F2D644150E66D07C471210349F1F0821FB084B20AF010"
+  },
+  {
+   "sc": "C",
+   "name": "R1box: XAH arrived (Δ+fee)",
+   "expect": "5200000 drops",
+   "got": "5200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "C",
+   "name": "R1box: token at R1",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true
+  },
+  {
+   "sc": "C",
+   "name": "R2box: CLAIM by key holder (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "21752961A35D95D62CFAA9687DECD7933D6F822FEF697BE200436BF56947E7BD"
+  },
+  {
+   "sc": "C",
+   "name": "R2box: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "D420DB9745C99CB1FC799C1BF8CCBDE471E07D2F8FEC08E5431FA640C2568D96"
+  },
+  {
+   "sc": "C",
+   "name": "R2box: XAH arrived (Δ+fee)",
+   "expect": "3200000 drops",
+   "got": "3200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "C",
+   "name": "R2box: token at R1",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true
+  }
+ ],
+ "txlog": [
+  {
+   "label": "mint key json",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "C5027BE9B3B492B3A2BAFB1308F8F021E16C8354D3D51F27934CA33948415261",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13757292,
+   "inLedger": true
+  },
+  {
+   "label": "mint R1box",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "0E2B616E6E001BFFBEAF936C056A044068344E328E8F58CA65E07609A5B43555",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13757294,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R1box",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "D9DCB56B0DCBB072C0BC91860421F96C3D46C4911DFA0439DF34A2F0DBD98AC3",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96222",
+   "ledger": 13757296,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "4874CA0CDD38F06B7CB1A42957778411E2C7FB45921E927BE150B6A686E0BC01",
+   "result": "tesSUCCESS",
+   "hook": "tgs: audited",
+   "fee": "96032",
+   "ledger": 13757298,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R1box",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "4F6CD96D7FFD8A6389C9A446AD4FA426C6A731DF546F69E4D5D48DBE218BA5E1",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96222",
+   "ledger": 13757300,
+   "inLedger": true
+  },
+  {
+   "label": "rem1",
+   "type": "SetRemarks",
+   "from": "issuer",
+   "hash": "3A10E1A9FDCF865D3C1F901031E5F1930603AB9BC0989C4ADF9F5F9607BE4911",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96125",
+   "ledger": 13757302,
+   "inLedger": true
+  },
+  {
+   "label": "mint R2box",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "781CAB97A6556F5CB9250A2B5A6D038049794A6D6FCCDDAFB09C895F4E890072",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13757304,
+   "inLedger": true
+  },
+  {
+   "label": "PACK R2box",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "06B71448AA355D68567AAA8228DAB27CFEA4FCE6EA605B271D28F1ECB4CB0DA2",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96212",
+   "ledger": 13757306,
+   "inLedger": true
+  },
+  {
+   "label": "rem2",
+   "type": "SetRemarks",
+   "from": "issuer",
+   "hash": "25DE5860319616586F78B538FB96466ED214CE0B43EB27FC16BF8071753D5A3A",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96087",
+   "ledger": 13757307,
+   "inLedger": true
+  },
+  {
+   "label": "mod1",
+   "type": "SetRemarks",
+   "from": "issuer",
+   "hash": "F7F5A5DDF64151AA660864413A38303A41695F8915D72AC7A05143B83021C91A",
+   "result": "tecIMMUTABLE",
+   "hook": "(hook not called)",
+   "fee": "96048",
+   "ledger": 13757309,
+   "inLedger": true
+  },
+  {
+   "label": "mod1b",
+   "type": "SetRemarks",
+   "from": "issuer",
+   "hash": "8586281529889E9BA545C074249EEA3220F41CDED408B57157C31B87CEF1E7AE",
+   "result": "tecIMMUTABLE",
+   "hook": "(hook not called)",
+   "fee": "96048",
+   "ledger": 13757311,
+   "inLedger": true
+  },
+  {
+   "label": "del1",
+   "type": "SetRemarks",
+   "from": "issuer",
+   "hash": "F49EBD757C2069F081470BB801B3AD45847C7A740D45DF78B1B86ECB85977AC2",
+   "result": "tecIMMUTABLE",
+   "hook": "(hook not called)",
+   "fee": "96038",
+   "ledger": 13757313,
+   "inLedger": true
+  },
+  {
+   "label": "Remit key->R1",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "4D2301508F2C08B7FCFF8000851213931F91D55B42F55EBA20B88EC2AE993159",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13757315,
+   "inLedger": true
+  },
+  {
+   "label": "holder add",
+   "type": "SetRemarks",
+   "from": "R1",
+   "hash": "8D415C79251A45110A3945084B9623419E027D1C8A0122F3B1A17B8D24CC8092",
+   "result": "tecNO_PERMISSION",
+   "hook": "(hook not called)",
+   "fee": "48",
+   "ledger": 13757317,
+   "inLedger": true
+  },
+  {
+   "label": "holder mod",
+   "type": "SetRemarks",
+   "from": "R1",
+   "hash": "D451DD7ABA260D999B8DEA8E69CC3FC40DF337DA3F5E1BB0C650C8CBF77FD685",
+   "result": "tecNO_PERMISSION",
+   "hook": "(hook not called)",
+   "fee": "59",
+   "ledger": 13757319,
+   "inLedger": true
+  },
+  {
+   "label": "rem3",
+   "type": "SetRemarks",
+   "from": "issuer",
+   "hash": "5AB88817E05297C861CD9C1F8CB111736131EACB0A333CEB7C4A38B746FD4575",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96054",
+   "ledger": 13757321,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM R1box",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "686DC51CFE8AF5F4ED6A4C387A8618EB5E382768CAF75DD432260FEABCB1B7C9",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96083",
+   "ledger": 13757323,
+   "inLedger": true
+  },
+  {
+   "label": "emit: R1box",
+   "type": "Remit(emit)",
+   "hash": "1C29FB1DE3043167127F2D644150E66D07C471210349F1F0821FB084B20AF010",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13757324,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "CLAIM R2box",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "21752961A35D95D62CFAA9687DECD7933D6F822FEF697BE200436BF56947E7BD",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96083",
+   "ledger": 13757326,
+   "inLedger": true
+  },
+  {
+   "label": "emit: R2box",
+   "type": "Remit(emit)",
+   "hash": "D420DB9745C99CB1FC799C1BF8CCBDE471E07D2F8FEC08E5431FA640C2568D96",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13757327,
+   "inLedger": true,
+   "emitted": true
+  }
+ ]
+}

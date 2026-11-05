@@ -1,0 +1,138 @@
+{
+ "rows": [
+  {
+   "sc": "MULTI",
+   "name": "SignerListSet R1+R2, quorum 2",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "97353EF3FB20F7224C0ED1B5B9894CA33A55BD9C5EB2C148B278BB6687C09A76",
+   "safe": true
+  },
+  {
+   "sc": "MULTI",
+   "name": "Box M (key, token+5 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "67C0CF4AA7BD519DCF1730B3223326D87DACAF018B8FD496BBBB13297670427D"
+  },
+  {
+   "sc": "MULTI",
+   "name": "Control: multisigned AccountSet passes",
+   "expect": "tesSUCCESS (hook called)",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "051AAEE5B19777799B8F6F6A1D6A185009E2664807FD9E1FD69F33246BC37004",
+   "safe": true
+  },
+  {
+   "sc": "MULTI",
+   "name": "Multisign: Remit of locked token → R1",
+   "expect": "rejected tgs: locked",
+   "got": "tecHOOK_REJECTED / tgs: locked",
+   "ok": true,
+   "hash": "BA1E856DD7C8B1C2958412628451EA56D28144EEFA3A69F44206CCBBFBCBD038",
+   "safe": true
+  },
+  {
+   "sc": "MULTI",
+   "name": "Multisign: URITokenBurn of locked token",
+   "expect": "rejected tgs: locked",
+   "got": "tecHOOK_REJECTED / tgs: locked",
+   "ok": true,
+   "hash": "A31571E35C0F6FE84ECD8D1C8FD10D06C35E0A485603667B42FF286FDCBD2DA0",
+   "safe": true
+  },
+  {
+   "sc": "MULTI",
+   "name": "Multisign: Sell offer of locked token for R1 for 0",
+   "expect": "rejected tgs: locked",
+   "got": "tecHOOK_REJECTED / tgs: locked",
+   "ok": true,
+   "hash": "CAEA6F0BC5C8EAF7BE8FC67E33C2F79D996D809CF5804BBD8EBEC01671F38117",
+   "safe": true
+  },
+  {
+   "sc": "MULTI",
+   "name": "Multisign: Payment of almost the whole balance",
+   "expect": "rejected tgs: reserve",
+   "got": "tecHOOK_REJECTED / tgs: reserve",
+   "ok": true,
+   "hash": "129ADE2F4945C2E28CE0119041F456D9BF262E923B51E5408F4410D2FD63B986",
+   "safe": true
+  },
+  {
+   "sc": "MULTI",
+   "name": "Multisign: EscrowCreate of almost the whole balance",
+   "expect": "rejected tgs: reserve",
+   "got": "tecHOOK_REJECTED / tgs: reserve",
+   "ok": true,
+   "hash": "A5A799CFA50B8C0131BA065F75B046B8512CA8A7BA52DBB553A2A5B6FE8981D2",
+   "safe": true
+  },
+  {
+   "sc": "MULTI",
+   "name": "Control: one signature with quorum 2",
+   "expect": "network rejection (tefBAD_QUORUM)",
+   "got": "tefBAD_QUORUM / ",
+   "ok": true,
+   "hash": "DD7A1DEDD24EE8BA13F90E48DAC7D528E5845AE988650BB2B2B2E5775E7F0B78",
+   "safe": true
+  },
+  {
+   "sc": "MULTI",
+   "name": "OPEN box M after expiry",
+   "expect": "tgs: opened",
+   "got": "tesSUCCESS / tgs: opened",
+   "ok": true,
+   "hash": "D10252D74569AAEB852DE34CF02B2B9E7D453A209FC84861337BC08DDDD10165",
+   "safe": true
+  },
+  {
+   "sc": "MULTI",
+   "name": "After OPEN: multisigned URITokenBurn token M",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "860744C4EFC6FD67432A289B3178361F986C7702D2FEF4D85050A690E8063855",
+   "safe": true
+  },
+  {
+   "sc": "CLEANUP",
+   "name": "Signer list deleted",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "65B75AE852D534A700491ED2E6F59D3E1DF2C1C745A29454DC1FAB2DF57379B8",
+   "safe": true
+  },
+  {
+   "sc": "CLEANUP",
+   "name": "Hook state cleared (4 → 0), hook in place",
+   "expect": "tesSUCCESS, 0 entries",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "B636A71C6438C47E41BB40F10E85E03D0F0825ADC4E7E568E187ADFC8DC37588",
+   "safe": true
+  }
+ ],
+ "multisign": {
+  "hookHash": "4847C361FCB669BD7C7E919092F9EB4831852B1152CA5AE9C08EFA7E741EE6FA",
+  "signerLists": 0,
+  "stateBeforeClear": [
+   "33333333",
+   "66666666",
+   "11111111",
+   "44444444"
+  ],
+  "objects": {
+   "Hook": 1
+  },
+  "balance": "2993638630",
+  "finished": "2026-11-03T12:22:32.671Z"
+ },
+ "totalTx": 16,
+ "pass": 13,
+ "fail": 0
+}

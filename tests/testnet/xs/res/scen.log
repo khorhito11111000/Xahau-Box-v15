@@ -1,0 +1,24 @@
+PASS SetHook wasm | tesSUCCESS
+PASS SetHook HookOn+NS | tesSUCCESS
+PASS 1 mint voucher | tesSUCCESS tgs: out
+PASS 2 mint key | tesSUCCESS tgs: out
+PASS (control) PACK without AUDIT | tecHOOK_REJECTED tgs: audit
+PASS 3 AUDIT | tesSUCCESS tgs: audited
+PASS 4 PACK | tesSUCCESS tgs: packed
+PASS 5 (neg) sell offer voucher | tecHOOK_REJECTED tgs: locked
+PASS 6 (neg) OPEN | tecHOOK_REJECTED tgs: not expired
+PASS 7 A offer key->B | tesSUCCESS tgs: out
+PASS 8 B buy key | tesSUCCESS tgs: skip
+PASS key at B | B
+PASS 9 B offer key->C | tesSUCCESS (hook not called)
+PASS 10 C buy key | tesSUCCESS (hook not called)
+PASS 11 (neg) B CLAIM | tecHOOK_REJECTED tgs: not holder
+PASS 11b (neg) A CLAIM | tecHOOK_REJECTED tgs: not holder
+PASS 12 C CLAIM | tesSUCCESS tgs: claiming
+PASS 12 emit Remit | tesSUCCESS
+PASS voucher at C | C
+PASS C received XAH (Δ+fee) | 10200000
+PASS 13 (neg) repeated CLAIM | tecHOOK_REJECTED tgs: unknown
+RESULT 21 / 21
+TESTNET_STATS tx 18 fees_drops 1345129 accounts rN7wHR,rB95vJ,rMHh3Q
+exit 0

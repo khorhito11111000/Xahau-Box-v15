@@ -1,0 +1,49 @@
+{
+ "rows": [],
+ "txlog": [
+  {
+   "label": "ensure: SetHook by HookHash",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "4FF8E4CFD793763E60DCD2ED998747E9620E0B8B83BB2268B5ADE8FCD8956E1E",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13736971,
+   "inLedger": true
+  },
+  {
+   "label": "ensure: SetHook by HookHash",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "567C27BA67D656E34C2B82093FDFDE96CCB201C2BAA4AA7D5E742A3BA4259EE1",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13736974,
+   "inLedger": true
+  },
+  {
+   "label": "ensure: SetHook by HookHash",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "E595BA28B27501184C2105ADB04AA2F3B4DF32AEAAEB89399A25CA39A1BA1734",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13736977,
+   "inLedger": true
+  },
+  {
+   "label": "ensure: SetHook by HookHash",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "636C1B7512F4BBE1CEE099A5B811A456D3AEF32E006099CA3929072C985432BB",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13736981,
+   "inLedger": true
+  }
+ ]
+}

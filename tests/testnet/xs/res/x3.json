@@ -1,0 +1,1192 @@
+[
+ {
+  "g": "0",
+  "n": "SetHook A",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "0",
+  "n": "SetHook B",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "0",
+  "n": "SetHook D",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "PACK gift code with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "gift code with EXP: CLAIM by hook before expiry",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "gift code with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "gift code with EXP: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "gift code with EXP: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "PACK XAH+gift code with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "XAH+gift code with EXP: CLAIM by hook before expiry",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "XAH+gift code with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "XAH+gift code with EXP: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "XAH+gift code with EXP: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "PACK XAH+own token with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "XAH+own token with EXP: CLAIM by hook before expiry",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "XAH+own token with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "XAH+own token with EXP: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "XAH+own token with EXP: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H1 A→B",
+  "n": "counters A ",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "PACK gift code with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "gift code with EXP: CLAIM by hook before expiry",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "gift code with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "gift code with EXP: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "gift code with EXP: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "PACK XAH+gift code with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "XAH+gift code with EXP: CLAIM by hook before expiry",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "XAH+gift code with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "XAH+gift code with EXP: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "XAH+gift code with EXP: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "PACK XAH+own token with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "XAH+own token with EXP: CLAIM by hook before expiry",
+  "exp": "claiming",
+  "got": "tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "XAH+own token with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "XAH+own token with EXP: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "XAH+own token with EXP: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H1 B→A",
+  "n": "counters B ",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "PACK under one key: XAH",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "PACK under one key: own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "PACK under one key: XAH+own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "PACK under one key: gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "PACK under one key: XAH+gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "PACK under one key: gift code with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "counters A after 6 PACK",
+  "exp": "held=15600000 locks=5",
+  "got": "held=15600000 locks=5",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "key A→B",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "B opens: XAH",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "XAH: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "XAH: hook entries B untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "XAH: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "B opens: own token",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "own token: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "own token: hook entries B untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "own token: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "key B→D",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "(neg) previous holder B",
+  "exp": "not holder",
+  "got": "tgs: pass | tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "D opens: XAH+own token",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "XAH+own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "XAH+own token: token at D",
+  "exp": "D",
+  "got": "D",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "XAH+own token: hook entries D untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "XAH+own token: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "D opens: gift code",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "gift code: token at D",
+  "exp": "D",
+  "got": "D",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "gift code: hook entries D untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "gift code: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "key D→C",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "(neg) previous holder D",
+  "exp": "not holder",
+  "got": "tgs: pass | tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "C opens: XAH+gift code",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "XAH+gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "XAH+gift code: token at C",
+  "exp": "C",
+  "got": "C",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "XAH+gift code: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "key C→B",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "(neg) previous holder C",
+  "exp": "not holder",
+  "got": "tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "B opens: gift code with EXP",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "gift code with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "gift code with EXP: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "gift code with EXP: hook entries B untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "gift code with EXP: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 A key→B→D→C→B",
+  "n": "counters A after all",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "PACK under one key: XAH",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "PACK under one key: own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "PACK under one key: XAH+own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "PACK under one key: gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "PACK under one key: XAH+gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "PACK under one key: gift code with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "counters B after 6 PACK",
+  "exp": "held=15600000 locks=5",
+  "got": "held=15600000 locks=5",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "key B→D",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "D opens: XAH",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "XAH: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "XAH: hook entries D untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "XAH: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "D opens: own token",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "own token: token at D",
+  "exp": "D",
+  "got": "D",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "own token: hook entries D untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "own token: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "key D→A",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "(neg) previous holder D",
+  "exp": "not holder",
+  "got": "tgs: pass | tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "A opens: XAH+own token",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "XAH+own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "XAH+own token: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "XAH+own token: hook entries A untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "XAH+own token: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "A opens: gift code",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "gift code: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "gift code: hook entries A untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "gift code: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "key A→C",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "(neg) previous holder A",
+  "exp": "not holder",
+  "got": "tgs: pass | tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "C opens: XAH+gift code",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "XAH+gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "XAH+gift code: token at C",
+  "exp": "C",
+  "got": "C",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "XAH+gift code: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "key C→D",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "(neg) previous holder C",
+  "exp": "not holder",
+  "got": "tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "D opens: gift code with EXP",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "gift code with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "gift code with EXP: token at D",
+  "exp": "D",
+  "got": "D",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "gift code with EXP: hook entries D untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "gift code with EXP: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 B key→D→A→C→D",
+  "n": "counters B after all",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "PACK under one key: XAH",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "PACK under one key: own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "PACK under one key: XAH+own token",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "PACK under one key: gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "PACK under one key: XAH+gift code",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "PACK under one key: gift code with EXP",
+  "exp": "packed",
+  "got": "tgs: packed",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "counters D after 6 PACK",
+  "exp": "held=15600000 locks=5",
+  "got": "held=15600000 locks=5",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "key D→A",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "A opens: XAH",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "XAH: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "XAH: hook entries A untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "XAH: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "A opens: own token",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "own token: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "own token: hook entries A untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "own token: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "key A→B",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "(neg) previous holder A",
+  "exp": "not holder",
+  "got": "tgs: pass | tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "B opens: XAH+own token",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "XAH+own token: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "XAH+own token: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "XAH+own token: hook entries B untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "XAH+own token: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "B opens: gift code",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "gift code: token at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "gift code: hook entries B untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "gift code: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "key B→C",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "(neg) previous holder B",
+  "exp": "not holder",
+  "got": "tgs: pass | tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "C opens: XAH+gift code",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "XAH+gift code: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "XAH+gift code: token at C",
+  "exp": "C",
+  "got": "C",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "XAH+gift code: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "key C→A",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "(neg) previous holder C",
+  "exp": "not holder",
+  "got": "tgs: not holder",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "A opens: gift code with EXP",
+  "exp": "claiming",
+  "got": "tesSUCCESS tgs: pass | tgs: claiming",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "gift code with EXP: payout",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "gift code with EXP: token at A",
+  "exp": "A",
+  "got": "A",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "gift code with EXP: hook entries A untouched",
+  "exp": "same",
+  "got": "same",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "gift code with EXP: entry erased",
+  "exp": "no",
+  "got": "no",
+  "ok": true
+ },
+ {
+  "g": "H2 D key→A→B→C→A",
+  "n": "counters D after all",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "H3 result",
+  "n": "A: boxes 0",
+  "exp": "4",
+  "got": "4",
+  "ok": true
+ },
+ {
+  "g": "H3 result",
+  "n": "counters A final",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "H3 result",
+  "n": "B: boxes 0",
+  "exp": "4",
+  "got": "4",
+  "ok": true
+ },
+ {
+  "g": "H3 result",
+  "n": "counters B final",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ },
+ {
+  "g": "H3 result",
+  "n": "D: boxes 0",
+  "exp": "4",
+  "got": "4",
+  "ok": true
+ },
+ {
+  "g": "H3 result",
+  "n": "counters D final",
+  "exp": "held=0 locks=0",
+  "got": "held=0 locks=0",
+  "ok": true
+ }
+]

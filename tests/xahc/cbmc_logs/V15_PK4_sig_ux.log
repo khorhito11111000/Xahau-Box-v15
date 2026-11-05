@@ -1,0 +1,95 @@
+CBMC version 6.11.0 (cbmc-6.11.0) 64-bit x86_64 linux
+Type-checking world2
+Generating GOTO Program
+Adding CPROVER library (x86_64)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Starting Bounded Model Checking
+Passing problem to propositional reduction
+converting SSA
+Running propositional reduction
+SAT checker: instance is SATISFIABLE
+Running propositional reduction
+SAT checker: instance is UNSATISFIABLE
+
+** Results:
+slice_pack3_v15.c function hook
+[hook.assertion.1] line 108 slice: dropped busy/PEND block is unreachable: SUCCESS
+[hook.assertion.2] line 128 slice: dropped non-Invoke blocks (L127-179) are unreachable: SUCCESS
+[hook.assertion.3] line 261 slice: PACK always returns inside its block: SUCCESS
+
+world2.c function checks
+[checks.assertion.1] line 321 L2a: at most one emitted txn per invocation: SUCCESS
+[checks.assertion.2] line 322 L2d: cbak never emits: SUCCESS
+[checks.assertion.3] line 325 L2d: hook only emits Remit: SUCCESS
+[checks.assertion.4] line 327 P3: InvoiceID field present: SUCCESS
+[checks.assertion.5] line 330 P2: emit only for an existing box record: SUCCESS
+[checks.assertion.6] line 333 P2: payout only from status 0, or from status 2 after LLS+1 when the token is still on the hook (previous Remit did not apply): SUCCESS
+[checks.assertion.7] line 335 P2: box committed as pending (status 2) bound to this emitted hash and LLS: SUCCESS
+[checks.assertion.8] line 336 P3: box contents (TID, AMT, EXP, nonce) unchanged by the claim: SUCCESS
+[checks.assertion.9] line 337 P3: Remit sent from the hook account: SUCCESS
+[checks.assertion.10] line 338 P1/P3: Remit destination == the claiming account: SUCCESS
+[checks.assertion.11] line 342 P3: Amounts/AmountEntry/Amount header: SUCCESS
+[checks.assertion.12] line 344 P3: emitted amount is native positive XAH: SUCCESS
+[checks.assertion.13] line 345 P3: Amounts array closed: SUCCESS
+[checks.assertion.14] line 348 P3: emitted XAH <= recorded box amount: SUCCESS
+[checks.assertion.15] line 349 P3: emitted XAH == recorded box amount (low 62 bits): SUCCESS
+[checks.assertion.16] line 351 P3: URITokenIDs == [recorded TID]: SUCCESS
+[checks.assertion.17] line 354 P3: no other payload fields in the emitted Remit: SUCCESS
+[checks.assertion.18] line 355 P3: never emits a Remit for an empty box: SUCCESS
+[checks.assertion.19] line 364 INV: PEND is only ever cleared: SUCCESS
+[checks.assertion.20] line 366 P2: a box record's TID/AMT/EXP/nonce are never rewritten: SUCCESS
+[checks.assertion.21] line 368 P2: cbak restores only its own failed Remit: SUCCESS
+[checks.assertion.22] line 369 P2: hook restores a pending box only after LLS+1 with the token still on the hook: SUCCESS
+[checks.assertion.23] line 371 P2: status 2 is only written together with its Remit: SUCCESS
+[checks.assertion.24] line 374 P2: box deleted in the same invocation that pays it: SUCCESS
+[checks.assertion.25] line 375 P2: cbak deletes a box only after its own Remit succeeded: SUCCESS
+[checks.assertion.26] line 376 P2/P4: a pending box is finalized only after LLS+1: SUCCESS
+[checks.assertion.27] line 379 P4: only the creator (hook account) can OPEN/reclaim: SUCCESS
+[checks.assertion.28] line 380 P4: reclaim with expiry only after the expiry ledger: SUCCESS
+[checks.assertion.29] line 382 P4: an unclaimed non-empty box is deleted only by OPEN: SUCCESS
+[checks.assertion.30] line 386 P2: new box records only by the owner's PACK, never over an existing key: SUCCESS
+
+world2.c function emit
+[emit.assertion.1] line 256 model: blob fits: SUCCESS
+
+world2.c function fld_of
+[fld_of.assertion.1] line 106 model: table capacity: SUCCESS
+
+world2.c function main
+[main.assertion.1] line 489 every path ends in accept or rollback: SUCCESS
+[main.assertion.2] line 500 REACH: accepted state change reachable (expected FAILURE): FAILURE
+
+world2.c function obj_of
+[obj_of.assertion.1] line 101 model: table capacity: SUCCESS
+
+world2.c function p1_checks
+[p1_checks.assertion.1] line 278 P1: no claim payout after the box expired: SUCCESS
+[p1_checks.assertion.2] line 283 P1: only CLAIM emits: SUCCESS
+[p1_checks.assertion.3] line 289 P1(token): claimer presented VC with BK(VC) == box key: SUCCESS
+[p1_checks.assertion.4] line 291 P1(token): claiming account owns the key token recorded for this box: SUCCESS
+[p1_checks.assertion.5] line 294 P1(sig): util_verify was called and returned 1 (valid signature), unless the presented PK has an invalid key type: SUCCESS
+[p1_checks.assertion.6] line 295 P1(sig-strict): util_verify returned exactly 1 (expected to FAIL: hook accepts any non-zero result, incl. INVALID_KEY): SUCCESS
+[p1_checks.assertion.7] line 296 P1(sig): signature checked against the presented PK: SUCCESS
+[p1_checks.assertion.8] line 303 P1(sig): signed digest binds claimer, vk=H(PK) of this box, hook account, EXP, TID, AMT, nonce: SUCCESS
+
+world2.c function state
+[state.assertion.1] line 76 model: state key is 32 bytes: SUCCESS
+
+world2.c function state_set
+[state_set.assertion.1] line 86 model: state_set key is 32 bytes: SUCCESS
+[state_set.assertion.2] line 87 model: state value fits model: SUCCESS
+[state_set.assertion.3] line 91 model: table capacity: SUCCESS
+
+world2.c function util_keylet
+[util_keylet.assertion.1] line 126 model: table capacity: SUCCESS
+
+world2.c function util_sha512h
+[util_sha512h.assertion.1] line 214 model: sha input fits: SUCCESS
+[util_sha512h.assertion.2] line 217 model: table capacity: SUCCESS
+
+world2.c function util_verify
+[util_verify.assertion.1] line 237 model: verify shapes: SUCCESS
+
+** 1 of 54 failed (2 iterations)
+VERIFICATION FAILED

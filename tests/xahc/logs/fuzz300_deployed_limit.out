@@ -1,0 +1,8 @@
+[1m[31m✗ DISPROVEN[39m[0m  invariant=limit  (300 runs, seed 1)
+  outcomes: 300 accept · 0 rollback · 0 guard-violation · 0 returned
+  [1m[31mCEX:[39m[0m accepted drops=4611686018427387893 > LIM=1000000  [drops=4611686018427387893 tip=10 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted drops=2699744891761289317 > LIM=1000000  [drops=2699744891761289317 tip=10 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted drops=2000000 > LIM=1000000  [drops=2000000 tip=10 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted drops=281474976710656 > LIM=1000000  [drops=281474976710656 tip=10 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted drops=4611686018427387903 > LIM=1000000  [drops=4611686018427387903 tip=10 owner=false dst=0000000000000000000000000000000000000000]
+  -> DISPROVEN: 222 counterexample(s). The hook violates `limit`.

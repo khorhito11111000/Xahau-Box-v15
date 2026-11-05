@@ -1,0 +1,232 @@
+{
+ "rows": [
+  {
+   "sc": "A1b",
+   "name": "A1b-0: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "6A5978E5863604E1D40D8B3E51F4193EC380F4244EDD45425B839A05BF6D3945"
+  },
+  {
+   "sc": "A1b",
+   "name": "round 0: wrong 13738284#4, right 13738284#5 (one ledger, wrong first)",
+   "expect": "wrong: bad sig, then right: claiming",
+   "got": "tgs: bad sig | tgs: claiming",
+   "ok": true,
+   "hash": "84297B17146A0DFDBC40DFC1BFFFB120CBB565697EA9A562C215A71917BCC838"
+  },
+  {
+   "sc": "A1b",
+   "name": "round 0: payout",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "4E66E1547DF4EBB88280F39FE52CEB6EF4E48CC4A510F5F4B8BC2A178B8F6D13"
+  },
+  {
+   "sc": "A1b",
+   "name": "A1b-1: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "6EC251FDCC5D742B7EA8B3D09B5B5F60966C4FE0C3E9878B731594BC23E81BCD"
+  },
+  {
+   "sc": "A1b",
+   "name": "round 1: wrong 13738289#6, right 13738289#7 (one ledger, wrong first)",
+   "expect": "wrong: bad sig, then right: claiming",
+   "got": "tgs: bad sig | tgs: claiming",
+   "ok": true,
+   "hash": "E2A69913D1132D7C8350B80C81B041F24ECF41F8E3F162580E076F1FB97F1B21"
+  },
+  {
+   "sc": "A1b",
+   "name": "round 1: payout",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "B7387DA0754E237E26A8B9E6DFFBD514D2867EA980B201C654F7FDF368FE582A"
+  },
+  {
+   "sc": "A1b",
+   "name": "A1b-2: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "07D183662F8AC2511E695E3E28006304E8671598242446C94652CB3E8C1B38F9"
+  },
+  {
+   "sc": "A1b",
+   "name": "round 2: wrong 13738294#4, right 13738294#5 (one ledger, wrong first)",
+   "expect": "wrong: bad sig, then right: claiming",
+   "got": "tgs: bad sig | tgs: claiming",
+   "ok": true,
+   "hash": "73D6930218F0949E8B20A071403B0E7FE927C121E5D6F74A7EE8653365EFCEFA"
+  },
+  {
+   "sc": "A1b",
+   "name": "round 2: payout",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "FADE608C30DCBF92B5666354791156E1F990C264DD82EF5C6E633EEF66A33016"
+  },
+  {
+   "sc": "A1b",
+   "name": "Rounds “wrong first in the same ledger” with correct outcome",
+   "expect": ">=1",
+   "got": "3",
+   "ok": true
+  },
+  {
+   "sc": "CLEANUP",
+   "name": "state 2→0",
+   "expect": "0",
+   "got": "0",
+   "ok": true,
+   "hash": "AC833645A451B2D0D923999588C671AB1760DABC7B883207E8C1268DB8AE8AA1"
+  }
+ ],
+ "txlog": [
+  {
+   "label": "ensure: SetHook by HookHash",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "3FC01AA5AC01891861E6160338D42EEF9D1BFF9A4987C2F3FD7083A688746EAE",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13738279,
+   "inLedger": true
+  },
+  {
+   "label": "PACK A1b-0",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "6A5978E5863604E1D40D8B3E51F4193EC380F4244EDD45425B839A05BF6D3945",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738282,
+   "inLedger": true
+  },
+  {
+   "label": "A1b wrong",
+   "type": "Invoke",
+   "hash": "029852467003D90CFD66BA0C00F7D55571871B253B4388B5B3C42AAE48FBD6BB",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "ledger": 13738284,
+   "idx": 4
+  },
+  {
+   "label": "A1b right",
+   "type": "Invoke",
+   "hash": "84297B17146A0DFDBC40DFC1BFFFB120CBB565697EA9A562C215A71917BCC838",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13738284,
+   "idx": 5
+  },
+  {
+   "label": "emit: A1b-0",
+   "type": "Remit(emit)",
+   "hash": "4E66E1547DF4EBB88280F39FE52CEB6EF4E48CC4A510F5F4B8BC2A178B8F6D13",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738285,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "PACK A1b-1",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "6EC251FDCC5D742B7EA8B3D09B5B5F60966C4FE0C3E9878B731594BC23E81BCD",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738287,
+   "inLedger": true
+  },
+  {
+   "label": "A1b wrong",
+   "type": "Invoke",
+   "hash": "CFCAE666AB84E97AC4A75A62E0ADFEC37AC3CB807A0B2FADE976C59DAAADAD60",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "ledger": 13738289,
+   "idx": 6
+  },
+  {
+   "label": "A1b right",
+   "type": "Invoke",
+   "hash": "E2A69913D1132D7C8350B80C81B041F24ECF41F8E3F162580E076F1FB97F1B21",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13738289,
+   "idx": 7
+  },
+  {
+   "label": "emit: A1b-1",
+   "type": "Remit(emit)",
+   "hash": "B7387DA0754E237E26A8B9E6DFFBD514D2867EA980B201C654F7FDF368FE582A",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738290,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "PACK A1b-2",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "07D183662F8AC2511E695E3E28006304E8671598242446C94652CB3E8C1B38F9",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738292,
+   "inLedger": true
+  },
+  {
+   "label": "A1b wrong",
+   "type": "Invoke",
+   "hash": "64091BA68863F4B942DA2D2A1C21754D2BB11965F0F5BFF3B3451675F041C88B",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "ledger": 13738294,
+   "idx": 4
+  },
+  {
+   "label": "A1b right",
+   "type": "Invoke",
+   "hash": "73D6930218F0949E8B20A071403B0E7FE927C121E5D6F74A7EE8653365EFCEFA",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13738294,
+   "idx": 5
+  },
+  {
+   "label": "emit: A1b-2",
+   "type": "Remit(emit)",
+   "hash": "FADE608C30DCBF92B5666354791156E1F990C264DD82EF5C6E633EEF66A33016",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738295,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "NSDelete",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "AC833645A451B2D0D923999588C671AB1760DABC7B883207E8C1268DB8AE8AA1",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13738297,
+   "inLedger": true
+  }
+ ]
+}

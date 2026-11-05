@@ -1,0 +1,6 @@
+*SECRET*
+.env
+node_modules/
+*.wasm
+*.c
+*.h

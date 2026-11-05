@@ -1,0 +1,547 @@
+{
+ "rows": [
+  {
+   "sc": "G2",
+   "name": "R3 disallows incoming Remit (asfDisallowIncomingRemit)",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "8A7EC9BE8194A2A2E7E3800207411702985757754243B4E7F6A8101C631A32DB",
+   "safe": true
+  },
+  {
+   "sc": "G2",
+   "name": "Box G2 (key, token+2 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "41597AEE2FC94650263E7BC89850A7586E4F05C7B735E94D12B10F7D9B5AF366"
+  },
+  {
+   "sc": "G2",
+   "name": "CLAIM R3, when R3 disallowed Remit",
+   "expect": "tgs: claiming (hook does not know in advance)",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "9E5C4F82D137105D801B27872843CB4EF7AC272334A677EDC11FC51EC9CB9371",
+   "safe": true
+  },
+  {
+   "sc": "G2",
+   "name": "Emitted Remit to recipient",
+   "expect": "failure (tecNO_PERMISSION or similar)",
+   "got": "tecNO_PERMISSION",
+   "ok": true,
+   "hash": "91E2D520CCD930FF7B63BCD544ECDC3FA7CCDAF2A323B34BF3D4FDA65DB76FF6",
+   "safe": true
+  },
+  {
+   "sc": "G2",
+   "name": "Box token after failed emit",
+   "expect": "stayed with issuer",
+   "got": "issuer",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "G2",
+   "name": "XAH to R3 did not arrive (Δ without fee)",
+   "expect": "0",
+   "got": "0",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "G2",
+   "name": "XAH box still locked (large Payment)",
+   "expect": "rejected tgs: reserve",
+   "got": "tecHOOK_REJECTED / tgs: reserve",
+   "ok": true,
+   "hash": "9B507F5B47A6219D4093116E55BAE46ADFAD31B63EA03FDCB09B4081276E159F",
+   "safe": true
+  },
+  {
+   "sc": "G2",
+   "name": "Box token still locked (Remit)",
+   "expect": "rejected tgs: locked",
+   "got": "tecHOOK_REJECTED / tgs: locked",
+   "ok": true,
+   "hash": "E28226E59CB5EB56E5C39DF61E7DBACDF5C7AD953B3C22A007BC743B8758FB8B",
+   "safe": true
+  },
+  {
+   "sc": "G2",
+   "name": "R3 removes the ban",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "B78D46EECA0C0C8247CE14C8494A0AE3A40F08EEED90135E0A682E048D386A3F",
+   "safe": true
+  },
+  {
+   "sc": "G2",
+   "name": "Repeated CLAIM R3 the same QR/by signature",
+   "expect": "tgs: claiming",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "B6A664D2B84A1689E8A466AAABC3616C058980B6F6E4E797B2C81472AB040F3B",
+   "safe": true
+  },
+  {
+   "sc": "G2",
+   "name": "Box G2 (key, token+2 XAH, EXP): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "930704A22A5410E77E107E9C33AB0698793041CA63B27C6DBDC2BD209972097B"
+  },
+  {
+   "sc": "G2",
+   "name": "Box G2 (key, token+2 XAH, EXP): XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "G2",
+   "name": "Box G2 (key, token+2 XAH, EXP): token at R3",
+   "expect": "R3",
+   "got": "R3",
+   "ok": true
+  },
+  {
+   "sc": "G2",
+   "name": "Third CLAIM after issuing",
+   "expect": "tgs: unknown",
+   "got": "tecHOOK_REJECTED / tgs: unknown",
+   "ok": true,
+   "hash": "060E91EA4EA8E131C56EFF4FA244D8BC3549382A82C7D893C8729141975FB28A",
+   "safe": true
+  },
+  {
+   "sc": "G2",
+   "name": "State entries: before CLAIM 4, after failure 4, after issuing 2",
+   "expect": "after failure the box is in place",
+   "got": "4/4",
+   "ok": true,
+   "safe": true
+  },
+  {
+   "sc": "G3",
+   "name": "Box G3 (key, token+2 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "7EF14159241FB4A0A41546E324156D951E8A610169CAC604ADB652D1AED4D4B5"
+  },
+  {
+   "sc": "G3",
+   "name": "Remit of unrelated token R1",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "66E19270A710AA9B230C4F7B148C699856E9722BA0FF1B831497189EEAE35B10",
+   "safe": true
+  },
+  {
+   "sc": "G3",
+   "name": "Sell offer of unrelated token R2",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "8F14379642D3D10586F13B056C5960F237DE8C0DB700DE31E82BD05B82572F9C",
+   "safe": true
+  },
+  {
+   "sc": "G3",
+   "name": "R2 buys an unrelated token",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS / tgs: skip",
+   "ok": true,
+   "hash": "613B4A03BF36AACF0BB9D7A262B76FF79FBF5BA1F2A3D19BD21D0A90293944EB",
+   "safe": true
+  },
+  {
+   "sc": "G3",
+   "name": "Burn of unrelated token",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "5F30E00CC55D8898BC357C5738F1FA5F8AEA62A923E7F01C397DF4DBA2BE8CDC",
+   "safe": true
+  },
+  {
+   "sc": "G3",
+   "name": "Payment 1 XAH from free",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "AFDBB61462379A1CE95BFFADA5471FAA66E7C3382F65F5713F891D0BF7159B4C",
+   "safe": true
+  },
+  {
+   "sc": "G3",
+   "name": "Remit 1 XAH from free",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "F5C6AB77948B1D1216BAA4F11BA176BDFA69485ECC7C071F01F7721031B2780A",
+   "safe": true
+  },
+  {
+   "sc": "G3",
+   "name": "Remit unrelated+locked in one tx",
+   "expect": "rejected tgs: locked",
+   "got": "tecHOOK_REJECTED / tgs: locked",
+   "ok": true,
+   "hash": "6AD1889525FC33611312ADAF1F308DB98A5DACB31436BBE0FD9A3CE94D3DB3D6",
+   "safe": true
+  },
+  {
+   "sc": "G3",
+   "name": "Control: Remit locked",
+   "expect": "rejected tgs: locked",
+   "got": "tecHOOK_REJECTED / tgs: locked",
+   "ok": true,
+   "hash": "3152D1802A40895DC11012C56209E562C649189121788B3E77ED140BB63F522F",
+   "safe": true
+  },
+  {
+   "sc": "CLEANUP",
+   "name": "OPEN box G3 after expiry",
+   "expect": "tgs: opened",
+   "got": "tesSUCCESS / tgs: opened",
+   "ok": true,
+   "hash": "E4ADADCBE5944B4A0F9FBAA815308217B44E8EADF0763DC80A54B46D6B56E81F",
+   "safe": true
+  },
+  {
+   "sc": "CLEANUP",
+   "name": "Hook state cleared (2 → 0)",
+   "expect": "0 entries",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "422506180B1BD77AFD8AFCB4623B56D679DDAB888AA21F95DD1FDDB9B38F0BCC",
+   "safe": true
+  }
+ ],
+ "txlog": [
+  {
+   "label": "R3 DisallowIncomingRemit",
+   "type": "AccountSet",
+   "from": "R3",
+   "hash": "8A7EC9BE8194A2A2E7E3800207411702985757754243B4E7F6A8101C631A32DB",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13737374,
+   "inLedger": true
+  },
+  {
+   "label": "mint Box G2 (key, token+2 XAH, EXP)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "B80F097119AC6912BC147A150E451C20F8470E73699B0EAA5591B1B10659EFAA",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737376,
+   "inLedger": true
+  },
+  {
+   "label": "PACK Box G2 (key, token+2 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "41597AEE2FC94650263E7BC89850A7586E4F05C7B735E94D12B10F7D9B5AF366",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96161",
+   "ledger": 13737377,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM G2 when disallowed",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "9E5C4F82D137105D801B27872843CB4EF7AC272334A677EDC11FC51EC9CB9371",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96195",
+   "ledger": 13737379,
+   "inLedger": true
+  },
+  {
+   "label": "emit: G2 emit when disallowed",
+   "type": "Remit(emit)",
+   "hash": "91E2D520CCD930FF7B63BCD544ECDC3FA7CCDAF2A323B34BF3D4FDA65DB76FF6",
+   "result": "tecNO_PERMISSION",
+   "hook": "",
+   "ledger": 13737380,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "G2 Payment above free",
+   "type": "Payment",
+   "from": "issuer",
+   "hash": "9B507F5B47A6219D4093116E55BAE46ADFAD31B63EA03FDCB09B4081276E159F",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: reserve",
+   "fee": "96020",
+   "ledger": 13737385,
+   "inLedger": true
+  },
+  {
+   "label": "Remit G2 theft",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "E28226E59CB5EB56E5C39DF61E7DBACDF5C7AD953B3C22A007BC743B8758FB8B",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: locked",
+   "fee": "96020",
+   "ledger": 13737387,
+   "inLedger": true
+  },
+  {
+   "label": "R3 remove ban",
+   "type": "AccountSet",
+   "from": "R3",
+   "hash": "B78D46EECA0C0C8247CE14C8494A0AE3A40F08EEED90135E0A682E048D386A3F",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13737389,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM G2 repeated CLAIM",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "B6A664D2B84A1689E8A466AAABC3616C058980B6F6E4E797B2C81472AB040F3B",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96195",
+   "ledger": 13737391,
+   "inLedger": true
+  },
+  {
+   "label": "emit: Box G2 (key, token+2 XAH, EXP)",
+   "type": "Remit(emit)",
+   "hash": "930704A22A5410E77E107E9C33AB0698793041CA63B27C6DBDC2BD209972097B",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13737392,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "CLAIM G2 third CLAIM",
+   "type": "Invoke",
+   "from": "R3",
+   "hash": "060E91EA4EA8E131C56EFF4FA244D8BC3549382A82C7D893C8729141975FB28A",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "fee": "96195",
+   "ledger": 13737395,
+   "inLedger": true
+  },
+  {
+   "label": "mint Box G3 (key, token+2 XAH, EXP)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "DB560505D5F30C02381027C0C633B5FDDC1CA471B2655D1EE4B2691D8BEDFC9D",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737397,
+   "inLedger": true
+  },
+  {
+   "label": "PACK Box G3 (key, token+2 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "7EF14159241FB4A0A41546E324156D951E8A610169CAC604ADB652D1AED4D4B5",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96161",
+   "ledger": 13737399,
+   "inLedger": true
+  },
+  {
+   "label": "mint G3 unrelated 1",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "2017E46785BF098F7589E5C0D312A0C7533FE082491569AE58BE3265411D81E2",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737401,
+   "inLedger": true
+  },
+  {
+   "label": "mint G3 unrelated 2",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "330B1FCF785DD45F0F0C3B56C367C67A52E8B6E842DF8EB568E76A5E1C6788ED",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737403,
+   "inLedger": true
+  },
+  {
+   "label": "mint G3 unrelated 3",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "A426E97D3BC9031B72564F118A736A0CB9E96AE78DAB9425320E03CC48718B71",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737405,
+   "inLedger": true
+  },
+  {
+   "label": "Remit G3 Remit unrelated",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "66E19270A710AA9B230C4F7B148C699856E9722BA0FF1B831497189EEAE35B10",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737407,
+   "inLedger": true
+  },
+  {
+   "label": "G3 sell unrelated",
+   "type": "URITokenCreateSellOffer",
+   "from": "issuer",
+   "hash": "8F14379642D3D10586F13B056C5960F237DE8C0DB700DE31E82BD05B82572F9C",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737491,
+   "inLedger": true
+  },
+  {
+   "label": "G3 buy",
+   "type": "URITokenBuy",
+   "from": "R2",
+   "hash": "613B4A03BF36AACF0BB9D7A262B76FF79FBF5BA1F2A3D19BD21D0A90293944EB",
+   "result": "tesSUCCESS",
+   "hook": "tgs: skip",
+   "fee": "96020",
+   "ledger": 13737493,
+   "inLedger": true
+  },
+  {
+   "label": "G3 burn unrelated",
+   "type": "URITokenBurn",
+   "from": "issuer",
+   "hash": "5F30E00CC55D8898BC357C5738F1FA5F8AEA62A923E7F01C397DF4DBA2BE8CDC",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737495,
+   "inLedger": true
+  },
+  {
+   "label": "G3 Payment 1 XAH",
+   "type": "Payment",
+   "from": "issuer",
+   "hash": "AFDBB61462379A1CE95BFFADA5471FAA66E7C3382F65F5713F891D0BF7159B4C",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737497,
+   "inLedger": true
+  },
+  {
+   "label": "G3 Remit 1 XAH",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "F5C6AB77948B1D1216BAA4F11BA176BDFA69485ECC7C071F01F7721031B2780A",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737498,
+   "inLedger": true
+  },
+  {
+   "label": "mint G3 unrelated 4",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "F034BF7CA414F161B112C899A9B155286101C67CA9528E7E8111D10548B52EEA",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737500,
+   "inLedger": true
+  },
+  {
+   "label": "G3 Remit mix",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "6AD1889525FC33611312ADAF1F308DB98A5DACB31436BBE0FD9A3CE94D3DB3D6",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: locked",
+   "fee": "96020",
+   "ledger": 13737502,
+   "inLedger": true
+  },
+  {
+   "label": "Remit G3 locked",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "3152D1802A40895DC11012C56209E562C649189121788B3E77ED140BB63F522F",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: locked",
+   "fee": "96020",
+   "ledger": 13737504,
+   "inLedger": true
+  },
+  {
+   "label": "OPEN G3",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "E4ADADCBE5944B4A0F9FBAA815308217B44E8EADF0763DC80A54B46D6B56E81F",
+   "result": "tesSUCCESS",
+   "hook": "tgs: opened",
+   "fee": "96081",
+   "ledger": 13737506,
+   "inLedger": true
+  },
+  {
+   "label": "cleanup burn",
+   "type": "URITokenBurn",
+   "from": "issuer",
+   "hash": "5A1345EC9264F1ED7052540CC47D32AA00B5895563B8D2C1BA7F81BB41837640",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737508,
+   "inLedger": true
+  },
+  {
+   "label": "cleanup burn",
+   "type": "URITokenBurn",
+   "from": "issuer",
+   "hash": "0C632028509BFAC6840064A6A698020EEA43A6EF7BCB9CFDA6A5A47A2FC034BC",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737510,
+   "inLedger": true
+  },
+  {
+   "label": "SetHook NSDelete",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "422506180B1BD77AFD8AFCB4623B56D679DDAB888AA21F95DD1FDDB9B38F0BCC",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13737512,
+   "inLedger": true
+  }
+ ]
+}

@@ -1,0 +1,3 @@
+[1m[33mno counterexample[39m[0m  invariant=guardrail  (300 runs, seed 1)
+  outcomes: 62 accept · 238 rollback · 0 guard-violation · 0 returned
+  -> no counterexample in 300 runs. NOT a proof - run `xahc prove` for ∀-inputs.

@@ -1,0 +1,24 @@
+PASS S0 before SetHook | OwnerCount=22 (Hook 1, URIToken 6, hook entries 15, in boxes 3) F=4 AUDIT=done/3 |  
+PASS S1 SetHook | after: OwnerCount=22 (Hook 1, URIToken 6, hook entries 15, in boxes 3) F=4 AUDIT=done/3 | tesSUCCESS D63D737517E269F0EC43370FF6FFA12A15E8DD01605487D3A01A305E9154558C
+FAIL A1 link box 1 XAH | OwnerCount=22 (Hook 1, URIToken 6, hook entries 15, in boxes 3) F=4 AUDIT=done/3 | page:needed AUDIT | tgs: packed C64ED94965D9425B6C51BF9BF9EEB8B2FFD979F565BEA99194A886FFF6337840
+PASS A2 link box with token t1 (+1 XAH) | OwnerCount=26 (Hook 1, URIToken 7, hook entries 18, in boxes 4) F=4 AUDIT=done/3 | page:without AUDIT | tgs: packed EEAD12C11CA0EF27A16BA81887C795C7731924EA890289626DB5FA02DF2F14BD
+PASS A3 link box with token t2 | OwnerCount=29 (Hook 1, URIToken 8, hook entries 20, in boxes 5) F=4 AUDIT=done/3 | page:without AUDIT | tgs: packed 1AF23682783D111523A78D1C64B8F3794E11CA13C21195292EBECF75F2BC356A
+PASS A4 link box 1 XAH again | OwnerCount=31 (Hook 1, URIToken 8, hook entries 22, in boxes 6) F=3 AUDIT=done/3 | page:without AUDIT | tgs: packed 5F4173F884C1B3F97344D5E11F6D2188F1A61B88554F71E18B535D125BCAAE33
+PASS A5 key token: only 1 XAH (key on the address) | OwnerCount=33 (Hook 1, URIToken 9, hook entries 23, in boxes 6) F=4 AUDIT=done/3 | page:needed AUDIT | tgs: audit 149C98A55D7E78B3985E40D0CB4215C59E705B7DA282A2CC2602C52F4CA6B473
+PASS A6 key token: token t3 (key on the address) | OwnerCount=34 (Hook 1, URIToken 10, hook entries 23, in boxes 6) F=5 AUDIT=done/3 | page:needed AUDIT | tgs: audit 012030327C00D371D8871076CAEDF66419135EA27277E751ABF505DCBCC03A45
+PASS B1 AUDIT | after: OwnerCount=34 (Hook 1, URIToken 10, hook entries 23, in boxes 6) F=5 AUDIT=done/5 | tgs: audited 746DB56B46A51D625AB90E2EEA5138C018BE1F26985333486B93F92487470E72
+PASS B2 key token: token t3 after AUDIT | OwnerCount=34 (Hook 1, URIToken 10, hook entries 23, in boxes 6) F=5 AUDIT=done/5 | page:without AUDIT | tgs: packed 052887F8CB6F27AE69CE332A940C10341ACEB6A8300CC9FB2FC15E390ACBE731
+PASS B3 key token: 1 XAH after AUDIT | OwnerCount=37 (Hook 1, URIToken 10, hook entries 26, in boxes 7) F=4 AUDIT=done/5 | page:without AUDIT | tgs: packed AF4F4B508CB41B48E5A988417EA208128649D119FF7EC4835DE90588CE90D87B
+PASS B4 link box 1 XAH, 2 more free tokens on the address | OwnerCount=41 (Hook 1, URIToken 12, hook entries 28, in boxes 7) F=6 AUDIT=done/5 | page:needed AUDIT | tgs: audit 55AF671F503A8A013E39F4DF21A62AB453B54E2EBD087AE09B1649DA4536B6FF
+FAIL B5 box with t4 (t5 free) | OwnerCount=41 (Hook 1, URIToken 12, hook entries 28, in boxes 7) F=6 AUDIT=done/5 | page:without AUDIT | tgs: packed F3C87635198532D2C1FC409E4E733A2FEE8E021BEAAD464A88D1A126690F1717
+PASS B6 AUDIT | after: OwnerCount=43 (Hook 1, URIToken 12, hook entries 30, in boxes 8) F=5 AUDIT=done/5 | tgs: audited 36662857A2CB1A5CCBB0B16E8CF1418897753C7ACFE36D9A26D5888C3B5C5028
+FAIL B7 box with t4 after 2nd AUDIT | OwnerCount=43 (Hook 1, URIToken 12, hook entries 30, in boxes 8) F=5 AUDIT=done/5 | page:without AUDIT | tgs: locked 84D6D7F68E45CA0CC951AD04F1DC45F1AD3F7BEDD2D651BF1E8FAF695D8A74E7
+PASS C1 hook deletion (without NSDELETE) | OwnerCount=42 (Hook 0, URIToken 12, hook entries 30, in boxes 8) F=4 AUDIT=done/5 | tesSUCCESS A3303CD302DBBC69FF3ACD8C5B78308DB2227E831C4604169283155BCC2A92F6
+PASS C2 reinstall v15 | OwnerCount=43 (Hook 1, URIToken 12, hook entries 30, in boxes 8) F=5 AUDIT=done/5 | tesSUCCESS CC8C704663B9314D9517DCDDB027C826DDCF13E99FCF0DC9571E1B6CE6FEE766
+PASS C3 after reinstall: box with t5 (F within the old AUDIT) | OwnerCount=43 (Hook 1, URIToken 12, hook entries 30, in boxes 8) F=5 AUDIT=done/5 | page:without AUDIT | tgs: packed 330225F6F47B019B2871DA4B162A9CA9129B809566F66013A4A17FCA31D29200
+PASS C4 after reinstall: 1 XAH | OwnerCount=45 (Hook 1, URIToken 12, hook entries 32, in boxes 9) F=4 AUDIT=done/5 | page:without AUDIT | tgs: packed 25CFA5CE5BB14CC08E722BF3821EF99207480402825A1D31B2C4303678FBB7AD
+PASS C5 after reinstall: 1 XAH, +2 new tokens above AUDIT | OwnerCount=48 (Hook 1, URIToken 14, hook entries 33, in boxes 9) F=6 AUDIT=done/5 | page:needed AUDIT | tgs: audit 0792D7699E3BFD267A64406D8391527181189A6865DCB70B97E03D235C97BAA7
+PASS C6 AUDIT | after: OwnerCount=48 (Hook 1, URIToken 14, hook entries 33, in boxes 9) F=6 AUDIT=done/6 | tgs: audited C75FA516D86F5DB4D75BA884C9B1BF71144D055992A530C66D9819602265DED0
+PASS C7 after new AUDIT: box with t6 | OwnerCount=48 (Hook 1, URIToken 14, hook entries 33, in boxes 9) F=6 AUDIT=done/6 | page:without AUDIT | tgs: packed 9FCD313D178254FB4A1F7CAD77B42A72F4916F5C824BC3BFC299D5D9C0AEEC84
+MATCH 13 MISMATCH 2
+exit 0

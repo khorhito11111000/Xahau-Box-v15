@@ -1,0 +1,8 @@
+[1m[31m✗ DISPROVEN[39m[0m  invariant=overflow  (300 runs, seed 1)
+  outcomes: 300 accept · 0 rollback · 0 guard-violation · 0 returned
+  [1m[31mCEX:[39m[0m accepted true(drops+tip)=18446744073710551605 > LIM=1000000 (uint64 wrap bypass)  [drops=1000000 tip=18446744073709551605 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted true(drops+tip)=11923116928616065126 > LIM=1000000 (uint64 wrap bypass)  [drops=1 tip=11923116928616065125 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted true(drops+tip)=2000000 > LIM=1000000 (uint64 wrap bypass)  [drops=0 tip=2000000 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted true(drops+tip)=18447025548686262271 > LIM=1000000 (uint64 wrap bypass)  [drops=281474976710656 tip=18446744073709551615 owner=false dst=0000000000000000000000000000000000000000]
+  [1m[31mCEX:[39m[0m accepted true(drops+tip)=4611686018428387891 > LIM=1000000 (uint64 wrap bypass)  [drops=4611686018427387892 tip=999999 owner=false dst=0000000000000000000000000000000000000000]
+  -> DISPROVEN: 291 counterexample(s). The hook violates `overflow`.

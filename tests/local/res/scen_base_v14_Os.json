@@ -1,0 +1,128 @@
+[
+ {
+  "n": "SetHook wasm",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "n": "SetHook HookOn+NS",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "n": "1 mint voucher",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS tgs: out",
+  "ok": true
+ },
+ {
+  "n": "2 mint key",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS tgs: out",
+  "ok": true
+ },
+ {
+  "n": "(control) PACK without AUDIT",
+  "exp": "tgs: audit",
+  "got": "tecHOOK_REJECTED tgs: audit",
+  "ok": true
+ },
+ {
+  "n": "3 AUDIT",
+  "exp": "tgs: audited",
+  "got": "tesSUCCESS tgs: audited",
+  "ok": true
+ },
+ {
+  "n": "4 PACK",
+  "exp": "tgs: packed",
+  "got": "tesSUCCESS tgs: packed",
+  "ok": true
+ },
+ {
+  "n": "5 (neg) sell offer voucher",
+  "exp": "tgs: locked",
+  "got": "tecHOOK_REJECTED tgs: locked",
+  "ok": true
+ },
+ {
+  "n": "6 (neg) OPEN",
+  "exp": "tgs: not expired",
+  "got": "tecHOOK_REJECTED tgs: not expired",
+  "ok": true
+ },
+ {
+  "n": "7 A offer key->B",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS tgs: out",
+  "ok": true
+ },
+ {
+  "n": "8 B buy key",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS tgs: skip",
+  "ok": true
+ },
+ {
+  "n": "key at B",
+  "exp": "B",
+  "got": "B",
+  "ok": true
+ },
+ {
+  "n": "9 B offer key->C",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS (hook not called)",
+  "ok": true
+ },
+ {
+  "n": "10 C buy key",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS (hook not called)",
+  "ok": true
+ },
+ {
+  "n": "11 (neg) B CLAIM",
+  "exp": "tgs: not holder",
+  "got": "tecHOOK_REJECTED tgs: not holder",
+  "ok": true
+ },
+ {
+  "n": "11b (neg) A CLAIM",
+  "exp": "tgs: not holder",
+  "got": "tecHOOK_REJECTED tgs: not holder",
+  "ok": true
+ },
+ {
+  "n": "12 C CLAIM",
+  "exp": "tgs: claiming",
+  "got": "tesSUCCESS tgs: claiming",
+  "ok": true
+ },
+ {
+  "n": "12 emit Remit",
+  "exp": "tesSUCCESS",
+  "got": "tesSUCCESS",
+  "ok": true
+ },
+ {
+  "n": "voucher at C",
+  "exp": "C",
+  "got": "C",
+  "ok": true
+ },
+ {
+  "n": "C received XAH (Δ+fee)",
+  "exp": "10200000",
+  "got": "10200000",
+  "ok": true
+ },
+ {
+  "n": "13 (neg) repeated CLAIM",
+  "exp": "tgs: unknown",
+  "got": "tecHOOK_REJECTED tgs: unknown",
+  "ok": true
+ }
+]

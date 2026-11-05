@@ -1,0 +1,39 @@
+PASS 0 SetHook v14 locally | tesSUCCESS
+PASS L1 round 0: wrong, then right in one ledger | tgs: bad sig | tgs: claiming
+PASS L1 round 0: box paid out and erased | no
+PASS L1 round 1: wrong, then right in one ledger | tgs: bad sig | tgs: claiming
+PASS L1 round 1: box paid out and erased | no
+PASS L1 round 2: wrong, then right in one ledger | tgs: bad sig | tgs: claiming
+PASS L1 round 2: box paid out and erased | no
+PASS L2 claim+open in exp (exp=13739327, open@13739327 claim@13739327) | tgs: busy | tgs: claiming
+PASS L2 open in exp (exp=13739334, open@13739334 claim@-) | tgs: not expired | -
+PASS L2 claim in exp+1 (exp=13739343, open@- claim@13739345) | - | tgs: expired
+PASS L2 open in exp+1 (exp=13739354, open@13739356 claim@-) | tgs: opened | -
+PASS L4 OPEN without EXP | tgs: not expired
+PASS L4 OPEN with EXP=00000000 | tgs: not expired
+PASS L4 CLAIM box without EXP | tgs: claiming
+PASS L4 CLAIM box EXP=0 | tgs: claiming
+PASS L4 Repack with the same key, old signature | tgs: bad sig
+PASS L4 New signature | tgs: claiming
+mint tesSUCCESS tgs: out
+offer tesSUCCESS tgs: out
+PASS L4 PACK of token with offer | tgs: token offer
+mint tesSUCCESS tgs: out
+PASS L4 PACK of burnable token | tgs: burnable
+mint tesSUCCESS tgs: out
+PASS L4 KTID burnable | tgs: burnable
+PASS L4 KTID = AccountRoot | tgs: ktid
+mint tesSUCCESS tgs: out
+mint tesSUCCESS tgs: out
+PASS L4 PACK VC=TID (token mode) | tgs: packed
+PASS L4 PACK of token whose ID = VC of another box | tgs: packed
+PASS L4 Box VC=TID in place | exists
+PASS L4 OPEN of token box without EXP while the key is alive | tgs: not expired
+PASS L4 OPEN after key burn | tgs: opened
+PASS L3 PACK 1000 XAH | tgs: packed
+PASS L3 AccountDelete while box closed | temDISABLED / 
+PASS L3 Hook account after | exists
+PASS L3 CLAIM after attempt | tgs: claiming
+LOCAL 30/30
+TESTNET_STATS tx 62 fees_drops 4614895 accounts r4DsrW,rpL2ai,rBW7Jw,rpL5LR,rGfzi3,rPiNXQ,rsbFRE,rhGgWz,rDNnAw,rMzYa7,r4MpnV,rBpjxX,rJ4hbw,rfACff,rGRdLX,rnQSCn
+exit 0

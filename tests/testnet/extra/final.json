@@ -1,0 +1,2402 @@
+{
+ "suite": "extra",
+ "hookHash": "4847C361FCB669BD7C7E919092F9EB4831852B1152CA5AE9C08EFA7E741EE6FA",
+ "finished": "2026-11-03T13:07:53.694Z",
+ "pass": 113,
+ "fail": 2,
+ "checks": 115,
+ "txSubmittedOrEmitted": 132,
+ "txInLedger": 132,
+ "accounts": [
+  {
+   "role": "issuer",
+   "address": "rPeF6hVB8MhAk4ohoUK6FpUtUantkqdQMN"
+  },
+  {
+   "role": "R1",
+   "address": "rnU9LLoG7nzWmPg4qpLu6jGkVvkkcUarrX"
+  },
+  {
+   "role": "R2",
+   "address": "rUyeXAv9xFJi7EGSgmAGi91ExxNqE4CfRd"
+  },
+  {
+   "role": "H2(R3, second hook)",
+   "address": "rDioDvHSYpgUY1xYUb5jUr2oreS69awPCs"
+  },
+  {
+   "role": "R4(foreign)",
+   "address": "rLwFH3YD6Ze9MYoLzRY6zViiRZEqfn7izY"
+  }
+ ],
+ "rows": [
+  {
+   "sc": "X1",
+   "name": "X1 base (key, token+1 XAH): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "72B0AC10D6FBE0B25C80A00F3663C2769B2C682969675ECBA166C1C2BC69A81A"
+  },
+  {
+   "sc": "X1",
+   "name": "EXP in the past (validated ledger)",
+   "expect": "tgs: exp past",
+   "got": "tecHOOK_REJECTED / tgs: exp past",
+   "ok": true,
+   "hash": "25CA4D73C56AA4FF038ABD919E3A7054257B3E5FB2559208956CB10E6B6B93F4"
+  },
+  {
+   "sc": "X1",
+   "name": "EXP of 3 bytes",
+   "expect": "tgs: exp",
+   "got": "tecHOOK_REJECTED / tgs: exp",
+   "ok": true,
+   "hash": "6FE747B9CEF3386107FE3E09E67CE41A704D838C2A2F520F3B6DDB07D9DF2FD5"
+  },
+  {
+   "sc": "X1",
+   "name": "AMT of 7 bytes",
+   "expect": "tgs: amt",
+   "got": "tecHOOK_REJECTED / tgs: amt",
+   "ok": true,
+   "hash": "B7E8287BE2291605B60D1932D585F88A5840022BE3603507D039037872D21CAD"
+  },
+  {
+   "sc": "X1",
+   "name": "AMT with flag 0x40 in the high byte",
+   "expect": "tgs: amt",
+   "got": "tecHOOK_REJECTED / tgs: amt",
+   "ok": true,
+   "hash": "8FF3663247698FAD57CE31DDD92C8C5584ECB7FA4FF70AE5807091C5542A6DA9"
+  },
+  {
+   "sc": "X1",
+   "name": "AMT more than 10^17 drops",
+   "expect": "tgs: amt",
+   "got": "tecHOOK_REJECTED / tgs: amt",
+   "ok": true,
+   "hash": "0589FEA97021D4F7DC03CAB18848C0D2080B99919BAA0441C32FCFA4EB1C1783"
+  },
+  {
+   "sc": "X1",
+   "name": "Empty box (no token, AMT=0)",
+   "expect": "tgs: empty",
+   "got": "tecHOOK_REJECTED / tgs: empty",
+   "ok": true,
+   "hash": "F64889EADC069F2CA01935F208DAD1D7495FE78D9E31A03C1516F9971CE1A70C"
+  },
+  {
+   "sc": "X1",
+   "name": "VC = 32 zero",
+   "expect": "tgs: vc",
+   "got": "tecHOOK_REJECTED / tgs: vc",
+   "ok": true,
+   "hash": "800ED1A5346B068F6CBAB326E600BE7BB66DBA3AD1BDB01597FD5742906525C0"
+  },
+  {
+   "sc": "X1",
+   "name": "VC = service key PEND (22…22)",
+   "expect": "tgs: vc",
+   "got": "tecHOOK_REJECTED / tgs: vc",
+   "ok": true,
+   "hash": "EE231865454417B37EE696CFDE3F8D71BBFAFE1F9039302C5C6E8DC2ABE6614E"
+  },
+  {
+   "sc": "X1",
+   "name": "VC of 31 bytes",
+   "expect": "tgs: vc",
+   "got": "tecHOOK_REJECTED / tgs: vc",
+   "ok": true,
+   "hash": "9BC764A71A02F9BC478F6BFE5734FDB8038C0043DA347DA7A346980460CB5565"
+  },
+  {
+   "sc": "X1",
+   "name": "MODE=02",
+   "expect": "tgs: mode",
+   "got": "tecHOOK_REJECTED / tgs: mode",
+   "ok": true,
+   "hash": "814206CE93B839EEBFA226C99E92E49C1572F012B07A9C59371CAE53F593A7FC"
+  },
+  {
+   "sc": "X1",
+   "name": "MODE of 2 bytes",
+   "expect": "tgs: mode",
+   "got": "tecHOOK_REJECTED / tgs: mode",
+   "ok": true,
+   "hash": "1B27B159360FE84B26E26C9C15B127DE9E6EB02F87CB509367464FEEFE70CF3B"
+  },
+  {
+   "sc": "X1",
+   "name": "TID of nonexistent token",
+   "expect": "tgs: token",
+   "got": "tecHOOK_REJECTED / tgs: token",
+   "ok": true,
+   "hash": "ECAFBA5A827DF720AB230E804462561886D3CF6E4D0772D508E9933EA98AEBF4"
+  },
+  {
+   "sc": "X1",
+   "name": "TID of foreign token (owner R1)",
+   "expect": "tgs: token",
+   "got": "tecHOOK_REJECTED / tgs: token",
+   "ok": true,
+   "hash": "955650684C983649CA731E314CE0CC0C747F51B6A1AB761EF6D9E4171369520C"
+  },
+  {
+   "sc": "X1",
+   "name": "Token mode: KTID = TID",
+   "expect": "tgs: ktid=tid",
+   "got": "tecHOOK_REJECTED / tgs: ktid=tid",
+   "ok": true,
+   "hash": "99363F35F0391A2A17B4107C756BF79E142CF47716063C566B3C752D8A2411BE"
+  },
+  {
+   "sc": "X1",
+   "name": "Token mode: KTID = token locked in another box",
+   "expect": "tgs: ktid locked",
+   "got": "tecHOOK_REJECTED / tgs: ktid locked",
+   "ok": true,
+   "hash": "75A6C8988F7F73F8E29D7374FE5A2B6DA997A634AEB24B2B5653FC8AF451B91D"
+  },
+  {
+   "sc": "X1",
+   "name": "Token mode: KTID = zeros",
+   "expect": "tgs: ktid",
+   "got": "tecHOOK_REJECTED / tgs: ktid",
+   "ok": true,
+   "hash": "80A6D3886EDC9DACECEFF432231230EBFC6D0BCFDB578DAB29AD58B59DE172D5"
+  },
+  {
+   "sc": "X1",
+   "name": "PACK from a foreign account (R1)",
+   "expect": "tgs: owner",
+   "got": "tecHOOK_REJECTED / tgs: owner",
+   "ok": true,
+   "hash": "B8388AB9B87F220BEB243F061CEEF6D848059F79F3F794D7A37331222C5B1861"
+  },
+  {
+   "sc": "X1",
+   "name": "AUDIT from a foreign account (R1)",
+   "expect": "tgs: owner",
+   "got": "tecHOOK_REJECTED / tgs: owner",
+   "ok": true,
+   "hash": "55E98B5E1CF495B3F06538E3779273CF1AB0A409D3981FAAA64521E945C16992"
+  },
+  {
+   "sc": "X1",
+   "name": "Unknown command XXXX",
+   "expect": "tgs: cmd",
+   "got": "tecHOOK_REJECTED / tgs: cmd",
+   "ok": true,
+   "hash": "E06BE456E1CE52A696CBB60CE74D5F52586957DABCD0C89674DE976B8CEFF290"
+  },
+  {
+   "sc": "X1",
+   "name": "Invoke without CMD",
+   "expect": "tgs: cmd",
+   "got": "tecHOOK_REJECTED / tgs: cmd",
+   "ok": true,
+   "hash": "62AAB19419D53E98A7C7BB1707AFEA18229405C64785AFEF1F4D766AB19A6101"
+  },
+  {
+   "sc": "X1",
+   "name": "After all rejections no entries were added (base only)",
+   "expect": "1 box",
+   "got": "1",
+   "ok": true
+  },
+  {
+   "sc": "X1",
+   "name": "X1 base (key, token+1 XAH): CLAIM (R2)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "1C0E80CCB095D12DB3E9E2D8DFFDE073BAA4B8391C9A0C3DFF94C49BCE244C3C"
+  },
+  {
+   "sc": "X1",
+   "name": "X1 base (key, token+1 XAH): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "A183011DD3E76D8A4F87A4A4C21296EE7D112498581F708740464394E8AC91F0"
+  },
+  {
+   "sc": "X1",
+   "name": "X1 base (key, token+1 XAH): XAH arrived (Δ+fee)",
+   "expect": "1200000 drops",
+   "got": "1200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "X1",
+   "name": "X1 base (key, token+1 XAH): token at R2",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true
+  },
+  {
+   "sc": "X2",
+   "name": "X2 key box: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "2A6CFF2F301C0FA069C5847B31231308B12D310E21ADF4765DA6ED08EDBE7CA2"
+  },
+  {
+   "sc": "X2",
+   "name": "PK of 32 bytes",
+   "expect": "tgs: pk",
+   "got": "tecHOOK_REJECTED / tgs: pk",
+   "ok": true,
+   "hash": "C6694D21EF68971465B2FE730C3AAC145D5512EB655AB820E796F89C01443CBF"
+  },
+  {
+   "sc": "X2",
+   "name": "SIG shorter than 64 bytes",
+   "expect": "tgs: sig",
+   "got": "tecHOOK_REJECTED / tgs: sig",
+   "ok": true,
+   "hash": "FD883934511991A91E9EBD39CE4678708F748477BDD09922C336993295CCAF47"
+  },
+  {
+   "sc": "X2",
+   "name": "SIG longer than 72 bytes",
+   "expect": "tgs: sig",
+   "got": "tecHOOK_REJECTED / tgs: sig",
+   "ok": true,
+   "hash": "BE37D2442E75F830523A9B4E37A70F1D0202AC094C7A6CA3AC0B088573458E25"
+  },
+  {
+   "sc": "X2",
+   "name": "Key box is taken back as a token box (VC without PK)",
+   "expect": "tgs: key box",
+   "got": "tecHOOK_REJECTED / tgs: key box",
+   "ok": true,
+   "hash": "FB3F1EE6AD95E6CF2576B3E7AA5865B1D64FB7E9E1A4A8C61CB7B417F24F00AC"
+  },
+  {
+   "sc": "X2",
+   "name": "CLAIM with VC of nonexistent box",
+   "expect": "tgs: unknown",
+   "got": "tecHOOK_REJECTED / tgs: unknown",
+   "ok": true,
+   "hash": "D436187DAA57F87F85553C03A675D5DDC016DCA0F32E7B94B3331E72C61E2EBA"
+  },
+  {
+   "sc": "X2",
+   "name": "X2 token box with VC=hash(PK): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "E5B93B8D945E0832DF3124365B73F3B95DF619C81F9DB353DC9C8984480E6FC3"
+  },
+  {
+   "sc": "X2",
+   "name": "Token box is taken back by signature (PK/SIG)",
+   "expect": "tgs: token box",
+   "got": "tecHOOK_REJECTED / tgs: token box",
+   "ok": true,
+   "hash": "FCF4F1D3728A3A0BA9CE5A291453318590552E2D176DC5CCB3F622C7FC184A65"
+  },
+  {
+   "sc": "X2",
+   "name": "SYNC without VC, nothing pending",
+   "expect": "tgs: idle",
+   "got": "tecHOOK_REJECTED / tgs: idle",
+   "ok": true,
+   "hash": "C47A32B94C8D98FA478498FB96D37BFBAB68BF0EC8E5A4D3EDF97F29BECA157B"
+  },
+  {
+   "sc": "X2",
+   "name": "SYNC with VC of closed box",
+   "expect": "tgs: idle",
+   "got": "tecHOOK_REJECTED / tgs: idle",
+   "ok": true,
+   "hash": "5DFC2DA2979949B6AAA32F8B5A701A2CBFAC316E9A3164DD32FC914CD0CE6695"
+  },
+  {
+   "sc": "X2",
+   "name": "X2 key box: CLAIM (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "5B731394211F2D96A452F9F8EFAE766C6DA6292D22F437F954544A1B1AB1D3D5"
+  },
+  {
+   "sc": "X2",
+   "name": "X2 key box: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "49EB979B0002B738ECBA0392EE1265FDD6F0F9EB4D9622BC437A375B1821C044"
+  },
+  {
+   "sc": "X2",
+   "name": "X2 key box: XAH arrived (Δ+fee)",
+   "expect": "1000000 drops",
+   "got": "1000000 drops",
+   "ok": true
+  },
+  {
+   "sc": "X2",
+   "name": "X2 token box with VC=hash(PK): CLAIM by key holder (R2)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "021E5ADEA67BD4EA4B3E2D88265FB381CEF2E793EC3FE2885A56587717B1E983"
+  },
+  {
+   "sc": "X2",
+   "name": "X2 token box with VC=hash(PK): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "A1A958140DE044E2117412772459F444541BB1C5CBD68323B80B5C1B4D70C403"
+  },
+  {
+   "sc": "X2",
+   "name": "X2 token box with VC=hash(PK): XAH arrived (Δ+fee)",
+   "expect": "1000000 drops",
+   "got": "1000000 drops",
+   "ok": true
+  },
+  {
+   "sc": "X3",
+   "name": "X3 (key, token+1.5 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "23DF09979389755A3992CD69708FA4430FB886E43A4FAFA8A260E3E2D19C05E1"
+  },
+  {
+   "sc": "X3",
+   "name": "Signature with field “foreign NetworkID 21337 (mainnet-similar)”",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "238B3AEA4F64A15FBA66582CA6C1CF315816A2F153840CCB07D23DE806FB9FC5"
+  },
+  {
+   "sc": "X3",
+   "name": "Signature with field “NetworkID 0”",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "1F423F6A20D8507FC3CBE6E57597821E82BC3EA9FEA6877E2E04F78EEC67DE00"
+  },
+  {
+   "sc": "X3",
+   "name": "Signature with field “another hook account (H2)”",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "032ECCE6F20E2A218AE1F5EF75C1C7FA37D19C4CC2D84358FF74D84EA338F04C"
+  },
+  {
+   "sc": "X3",
+   "name": "Signature with field “EXP+1”",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "C37CB9A2376569C99801C3D7E4471F5EC1AA68FEAADD7725F50FDF51D787AFF9"
+  },
+  {
+   "sc": "X3",
+   "name": "Signature with field “EXP=0 instead of the real”",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "EF9FC63270C3966D85A72C79E74B3407C963EF97F096E396EB659273F46077C2"
+  },
+  {
+   "sc": "X3",
+   "name": "Signature with field “foreign TID”",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "4CB95C4FCF669191A91AD451092711B5117B0674C9DBBFA0FE727161D49FDFC5"
+  },
+  {
+   "sc": "X3",
+   "name": "Signature with field “TID=zeros (as if XAH-box)”",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "E34ACC449C606A4CC64762D2C4D1C574A1994D47B1F8F70D6EB93F64F9F99E5D"
+  },
+  {
+   "sc": "X3",
+   "name": "Signature with field “AMT+1 drop”",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "809E1DB4C63697AA640ED2F90C48B4FAFBA81FF2C00F3F2CFA943C07B14801F3"
+  },
+  {
+   "sc": "X3",
+   "name": "Signature with field “NONCE+1”",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "78A6C82FA53B6358F383A9B5F72C673A2ED2B8AFE48625C7A2C0ACD64284FBD1"
+  },
+  {
+   "sc": "X3",
+   "name": "Signature with field “NONCE-1”",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "5E921CE2ED4C1F6A84C531A3FC7FF1E54E736DDFB9565708FB33B53323B298F3"
+  },
+  {
+   "sc": "X3",
+   "name": "Signature with field “recipient R2, sends R1”",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "1D90262D72ED30AA9A7C3E9860817776E49DCC4D3EE2C7FBDB6B0ED898FB3E4D"
+  },
+  {
+   "sc": "X3",
+   "name": "PK box + signature by another key over the right message",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "78619F780189F6BE4C5C56284E643FF2E3755121FC86A105D52FDB3905FC0AB7"
+  },
+  {
+   "sc": "X3",
+   "name": "Box X3 untouched after 12 wrong signatures",
+   "expect": "status 00",
+   "got": "00",
+   "ok": true
+  },
+  {
+   "sc": "X3",
+   "name": "X3 (key, token+1.5 XAH, EXP): CLAIM (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "74AFB0DE4AFC60F3184733E151AF5CA275F7606D48B7D7B36A9490769564BDF5"
+  },
+  {
+   "sc": "X3",
+   "name": "X3 (key, token+1.5 XAH, EXP): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "6915603257B5BBE6752F3F41AD5FF88220EE4DC762D80C6C15BA67C892CD28AC"
+  },
+  {
+   "sc": "X3",
+   "name": "X3 (key, token+1.5 XAH, EXP): XAH arrived (Δ+fee)",
+   "expect": "1700000 drops",
+   "got": "1700000 drops",
+   "ok": true
+  },
+  {
+   "sc": "X3",
+   "name": "X3 (key, token+1.5 XAH, EXP): token at R1",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true
+  },
+  {
+   "sc": "X4",
+   "name": "Second hook H2 (R3) installed by HookHash",
+   "expect": "HookHash 4847C361",
+   "got": "4847C361",
+   "ok": true
+  },
+  {
+   "sc": "X4",
+   "name": "X4 on H1: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "F2FB87670B47A144EEAA08C208EEFEF097DCB5EA84CDA76FDD43B2ACEEB38FA4"
+  },
+  {
+   "sc": "X4",
+   "name": "PACK on H2 with the same key and amount",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "7EFF0F85E3CD0746BBAB6346AD8960ADB0B1BEDCA1BB58B443B431EE9BB166A6"
+  },
+  {
+   "sc": "X4",
+   "name": "NONCE on H1=00000005, on H2=00000001",
+   "expect": "(observation)",
+   "got": "",
+   "ok": true,
+   "info": true
+  },
+  {
+   "sc": "X4",
+   "name": "Signature for H1 presented on H2",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "E705C9C289BDA103DFE533B5A84DB0D66174B75F715B8528A4CEF23E2D95AB52"
+  },
+  {
+   "sc": "X4",
+   "name": "Signature for H2, but with NONCE from H1 (different)",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "6629C1EE6F4F74BC139A7662ED326EB3CC4CAA51DDB047863FFAAE652D2A1070"
+  },
+  {
+   "sc": "X4",
+   "name": "X4 on H1: CLAIM (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "4A264B7C76C3062743E47E2B2028589D323175E4F560C51E84B59CB03FC07573"
+  },
+  {
+   "sc": "X4",
+   "name": "X4 on H1: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "5F59F4E1D975E6317E2B5D995A4BA45302AA8B7C7186A86F0977AB8241D9A4D8"
+  },
+  {
+   "sc": "X4",
+   "name": "X4 on H1: XAH arrived (Δ+fee)",
+   "expect": "1000000 drops",
+   "got": "1000000 drops",
+   "ok": true
+  },
+  {
+   "sc": "X4",
+   "name": "Legitimate CLAIM on H2",
+   "expect": "tgs: claiming",
+   "got": "tesSUCCESS / tgs: claiming",
+   "ok": true,
+   "hash": "1D2EC1EB170D5D63A22DD8866B46C1FBBC7F47E9B534993D4198BCCB244832E9"
+  },
+  {
+   "sc": "X4",
+   "name": "R2 received 1 XAH with H2",
+   "expect": "1000000",
+   "got": "1000000",
+   "ok": true,
+   "hash": "982BD491C8459EDE1148F6F8F75652BF604BFA0281FF35E77B00F33C243E2196"
+  },
+  {
+   "sc": "X5",
+   "name": "X5a: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "AC6F74CC1A89C1EAA95255687318F8478CA71B63A2D7CB9D9E46699C72268CD2"
+  },
+  {
+   "sc": "X5",
+   "name": "X5a: CLAIM (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "9D5EC1AF063AE0F985457DD8AA41228B9E522E9E1A90E18B8C007EA7C1110925"
+  },
+  {
+   "sc": "X5",
+   "name": "X5a: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "BBDDC1C2D444EBBA6092D5784F9846202F083B95E7A8910DAE8B5795FF86E314"
+  },
+  {
+   "sc": "X5",
+   "name": "X5a: XAH arrived (Δ+fee)",
+   "expect": "1000000 drops",
+   "got": "1000000 drops",
+   "ok": true
+  },
+  {
+   "sc": "X5",
+   "name": "X5b (same key, same amount): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "179D9108DA084A805A04B585FA3B7D30DAE6FB2AB934D8C43BC4031F14D74C1F"
+  },
+  {
+   "sc": "X5",
+   "name": "NONCE changed",
+   "expect": "≠ 00000006",
+   "got": "00000007",
+   "ok": true
+  },
+  {
+   "sc": "X5",
+   "name": "Old signature R1 onto a new identical box",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "82FA5C219C6DD5FBDBB6F470505FC701DE862D900F1191AEE5078FDC70E8EA98"
+  },
+  {
+   "sc": "X5",
+   "name": "New signature but with the old NONCE",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "1B6C85422703E96CD00FD25A3245F9219119BC34801C7A6532BEAD481AF47DF4"
+  },
+  {
+   "sc": "X5",
+   "name": "X5b (same key, same amount): CLAIM (R2)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "32DF04A41C6B877EBAE537D89DAC8501C65A979A36D3C034E099BAA1176C82F1"
+  },
+  {
+   "sc": "X5",
+   "name": "X5b (the same key, the same amount): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "89F31E6EDACF2664AF8EDCECA10555388C2C61007E8DF9B8370C38F036D379A8"
+  },
+  {
+   "sc": "X5",
+   "name": "X5b (same key, same amount): XAH arrived (Δ+fee)",
+   "expect": "1000000 drops",
+   "got": "1000000 drops",
+   "ok": true
+  },
+  {
+   "sc": "X5",
+   "name": "X5c (EXP, then OPEN): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "3C980850009FB2CB87F2E18E6BF924BA81DC58E1B567EF5F724ED7BA8B5881F7"
+  },
+  {
+   "sc": "X5",
+   "name": "OPEN X5c after expiry",
+   "expect": "tgs: opened",
+   "got": "tesSUCCESS / tgs: opened",
+   "ok": true,
+   "hash": "97F44E78252A480C83EB364A6C932A9F5C912D419B203EA79CD5BDF331EED67B"
+  },
+  {
+   "sc": "X5",
+   "name": "X5d (after OPEN): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "2AA21A9DE66A6FC27F0BEFBE14CDC81878ADA8C86369A57866BBF23D755C37A8"
+  },
+  {
+   "sc": "X5",
+   "name": "Signature from X5c on X5d",
+   "expect": "tgs: bad sig",
+   "got": "tecHOOK_REJECTED / tgs: bad sig",
+   "ok": true,
+   "hash": "92025D4F50BFE679E38C37728F8821BA637FDD9CE299710E09B9B7BB4424919E"
+  },
+  {
+   "sc": "X5",
+   "name": "X5d (after OPEN): CLAIM (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "D70A293F3268F1407AE9256C8EAD49364EDFF1952A2A5CEF569F21E9D4737EC7"
+  },
+  {
+   "sc": "X5",
+   "name": "X5d (after OPEN): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "025FC284A8008E24D71AB707644BBD0ADE8D365FD46E738DBB67D839E231ED29"
+  },
+  {
+   "sc": "X5",
+   "name": "X5d (after OPEN): XAH arrived (Δ+fee)",
+   "expect": "1000000 drops",
+   "got": "1000000 drops",
+   "ok": true
+  },
+  {
+   "sc": "X6",
+   "name": "X6-0 (key, token+2 XAH): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "3056E8E23BAB1FCC47F86BB393A9D40073027586FDED5F60A3F08CB241FC035C"
+  },
+  {
+   "sc": "X6",
+   "name": "round 0: #1 13738488#4 “tgs: claiming”, #2 13738488#6 “tgs: busy”",
+   "expect": "exactly 1 claiming, second busy/claimed/unknown",
+   "got": "1",
+   "ok": true,
+   "hash": "CA5188ED6C73F6D42EAC879F6316A6B5F81CF8F16EB41B907614D9041E31A5E4"
+  },
+  {
+   "sc": "X6",
+   "name": "round 0: payout exactly once",
+   "expect": "2200000",
+   "got": "2200000 (emit tesSUCCESS)",
+   "ok": true,
+   "hash": "9A6D7A84A69A5A15F55CD40BA82046F07D771513DD191D3F067380FA624AD41F"
+  },
+  {
+   "sc": "X6",
+   "name": "X6-1 (key, token+2 XAH): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "B0E6B1F94BBE5ACD5A04B19FF21606832710CCF937384EC0522C2371A51BC5CA"
+  },
+  {
+   "sc": "X6",
+   "name": "round 1: #1 13738495#4 “tgs: claiming”, #2 13738495#6 “tgs: busy”",
+   "expect": "exactly 1 claiming, second busy/claimed/unknown",
+   "got": "1",
+   "ok": true,
+   "hash": "57AFB5C800359DE540B6122109F4869347C250DE0B3DD78934319B3901C9FC40"
+  },
+  {
+   "sc": "X6",
+   "name": "round 1: payout exactly once",
+   "expect": "2200000",
+   "got": "2200000 (emit tesSUCCESS)",
+   "ok": true,
+   "hash": "D5127E13391A2D3FC3EB2D62DD0C16F254BADCFA9D6B4658F7099E62F0C7A97C"
+  },
+  {
+   "sc": "X7",
+   "name": "X7-0 (key, token+1 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "73B8B45613A59C5004DDF92F45EB0A01C86D6A14A1067BC8CB3E34CC3F65FA3B"
+  },
+  {
+   "sc": "X7",
+   "name": "round 0: EXP=13738504; OPEN in 13738504#5 “tgs: busy”; CLAIM in 13738504#4 “tgs: claiming”",
+   "expect": "at most one winner; assets with the winner; rule EXP held; without a winner the box is intact",
+   "got": "winners 1, R1 Δ=1200000, token at R1, box no",
+   "ok": true,
+   "hash": "8DF50CAE4B48C5522F84CE9ED281C822F11BA6804FAB9955F0EC7C5D58FE380D"
+  },
+  {
+   "sc": "X7",
+   "name": "X7-1 (key, token+1 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "9A83175B254E8C3C5629E10D5DA822593CB37C526DB7E1E894DDECA192FB1A98"
+  },
+  {
+   "sc": "X7",
+   "name": "round 1: EXP=13738514; OPEN in 13738515#4 “tgs: opened”; CLAIM in 13738515#6 “tgs: unknown”",
+   "expect": "at most one winner; assets with the winner; rule EXP held; without a winner the box is intact",
+   "got": "winners 1, R1 Δ=0, token at issuer, box no",
+   "ok": true,
+   "hash": "55CD9A56412EFFCAC78AFC9290901FB1B4D547BF38A463C73EB12E2CD1B72454"
+  },
+  {
+   "sc": "X7",
+   "name": "X7-2 (key, token+1 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "3DE3701475B0DAF4B1A0B9C896F324CA7F155DC1EA09F4B94A8BB557AD6AF7AF"
+  },
+  {
+   "sc": "X7",
+   "name": "round 2: EXP=13738524; OPEN in 13738524#5 “tgs: busy”; CLAIM in 13738524#4 “tgs: claiming”",
+   "expect": "at most one winner; assets with the winner; rule EXP held; without a winner the box is intact",
+   "got": "winners 1, R1 Δ=1200000, token at R1, box no",
+   "ok": true,
+   "hash": "7F67C8F324C53377FEAED7D872A5A72094ED1981C003BC239EED2AF5D2509ED8"
+  },
+  {
+   "sc": "X7",
+   "name": "X7-3 (key, token+1 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "6353F54597B8B12EB1447BE9174C3689ED15DD4DCBB48937A6FBBF771FF0339A"
+  },
+  {
+   "sc": "X7",
+   "name": "round 3: EXP=13738534; OPEN in 13738535#5 “tgs: opened”; CLAIM in 13738535#6 “tgs: unknown”",
+   "expect": "at most one winner; assets with the winner; rule EXP held; without a winner the box is intact",
+   "got": "winners 1, R1 Δ=0, token at issuer, box no",
+   "ok": true,
+   "hash": "8DCCE71EB539AB8DC22EF5723D12A09B405FC6AAE71F9DE843894CDADB7C407D"
+  },
+  {
+   "sc": "X7",
+   "name": "X7-4 (key, token+1 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: exp past",
+   "ok": false,
+   "hash": "231382868A63BBDB3E9F2876CE1F136A0091C148FAD22FC6783B0C05249D7D22"
+  },
+  {
+   "sc": "X7",
+   "name": "round 4: EXP=13738544; OPEN in 13738546#5 “tgs: unknown”; CLAIM in 13738546#4 “tgs: unknown”",
+   "expect": "at most one winner; assets with the winner; rule EXP held; without a winner the box is intact",
+   "got": "winners 0, R1 Δ=0, token at issuer, box no",
+   "ok": false,
+   "hash": "16F92B67CC25D00444F7D6F6612EDC6B32152FF108E8B8F08082E051B1E4E94C"
+  },
+  {
+   "sc": "X7",
+   "name": "X7-5 (key, token+1 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "25CF81D73F97E4EF9A7BA98510DAE4CAD3A6D14254BA24A79A36BB1D5EBEE4FA"
+  },
+  {
+   "sc": "X7",
+   "name": "round 5: EXP=13738555; OPEN in 13738556#4 “tgs: opened”; CLAIM in 13738556#5 “tgs: unknown”",
+   "expect": "at most one winner; assets with the winner; rule EXP held; without a winner the box is intact",
+   "got": "winners 1, R1 Δ=0, token at issuer, box no",
+   "ok": true,
+   "hash": "38BB527D41D7DEE55821D77FFC55D2EB16E259A3B3426D91EBA4C1731EA0604F"
+  },
+  {
+   "sc": "X8",
+   "name": "X8 big (XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "455FEE82AEC1DD7CB24213B9C2263C3BE743D16937677E8EEF89CF3B4567A569"
+  },
+  {
+   "sc": "X8",
+   "name": "TicketCreate 200 (reserve 40 XAH with 30 free)",
+   "expect": "tgs: reserve",
+   "got": "tecHOOK_REJECTED / tgs: reserve",
+   "ok": true,
+   "hash": "CAE2CD0E8EC3D4D9E0D6740067D6FE0A6AE2C70F105169690BD19FE889A4C192"
+  },
+  {
+   "sc": "X8",
+   "name": "TicketCreate 2 (enough free)",
+   "expect": "tgs: out",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "1670D4FA4506C2CCB0ABC1F47F84EA6BDC2EF2710E15EDC037E44D2CDD523A34"
+  },
+  {
+   "sc": "X8",
+   "name": "Remit 29 XAH (more than free)",
+   "expect": "tgs: reserve",
+   "got": "tecHOOK_REJECTED / tgs: reserve",
+   "ok": true,
+   "hash": "3A5BF7027011B43421BD5238BC7F471E05490735CB914ED1A75131C27F8ABDC6"
+  },
+  {
+   "sc": "X8",
+   "name": "Payment 29 XAH to a nonexistent account (+1 XAH reserve to new)",
+   "expect": "tgs: reserve",
+   "got": "tecHOOK_REJECTED / tgs: reserve",
+   "ok": true,
+   "hash": "6828AA80D99DD5C68BD876E3959837E3F9C942A5F7F8D9856A7BA4E0E48AFC43"
+  },
+  {
+   "sc": "X8",
+   "name": "OPEN of the big box after expiry",
+   "expect": "tgs: opened",
+   "got": "tesSUCCESS / tgs: opened",
+   "ok": true,
+   "hash": "1970B91FE115C5F0CDCB8A6B2D502516A297C200931C7CFA9F8594BE36521179"
+  },
+  {
+   "sc": "RESULT",
+   "name": "On H1 no boxes left (85-byte entries)",
+   "expect": "0",
+   "got": "0",
+   "ok": true
+  },
+  {
+   "sc": "RESULT",
+   "name": "On H1 no token locks left",
+   "expect": "0",
+   "got": "0",
+   "ok": true
+  },
+  {
+   "sc": "RESULT",
+   "name": "held and locks in META = 0",
+   "expect": "0/0",
+   "got": "0/0",
+   "ok": true
+  }
+ ],
+ "txlog": [
+  {
+   "label": "ensure: SetHook by HookHash",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "D9F6E3B2310BB03C01EEED0E8C05608A943C182D3CACE3324B8629C65ADAF89F",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13738315,
+   "inLedger": true
+  },
+  {
+   "label": "mint X1 base (key, token+1 XAH)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "D1F81C730B0CC7A44041197488B01F2F9309EC231AE94E22AC9647F25B15809D",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738318,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X1 base (key, token+1 XAH)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "72B0AC10D6FBE0B25C80A00F3663C2769B2C682969675ECBA166C1C2BC69A81A",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738320,
+   "inLedger": true
+  },
+  {
+   "label": "PACK EXP past",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "25CA4D73C56AA4FF038ABD919E3A7054257B3E5FB2559208956CB10E6B6B93F4",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: exp past",
+   "fee": "96161",
+   "ledger": 13738322,
+   "inLedger": true
+  },
+  {
+   "label": "PACK EXP 3 bytes",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "6FE747B9CEF3386107FE3E09E67CE41A704D838C2A2F520F3B6DDB07D9DF2FD5",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: exp",
+   "fee": "96159",
+   "ledger": 13738324,
+   "inLedger": true
+  },
+  {
+   "label": "PACK AMT 7 bytes",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "B7E8287BE2291605B60D1932D585F88A5840022BE3603507D039037872D21CAD",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: amt",
+   "fee": "96149",
+   "ledger": 13738326,
+   "inLedger": true
+  },
+  {
+   "label": "PACK AMT flag",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "8FF3663247698FAD57CE31DDD92C8C5584ECB7FA4FF70AE5807091C5542A6DA9",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: amt",
+   "fee": "96150",
+   "ledger": 13738328,
+   "inLedger": true
+  },
+  {
+   "label": "PACK AMT huge",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "0589FEA97021D4F7DC03CAB18848C0D2080B99919BAA0441C32FCFA4EB1C1783",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: amt",
+   "fee": "96150",
+   "ledger": 13738330,
+   "inLedger": true
+  },
+  {
+   "label": "PACK empty",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "F64889EADC069F2CA01935F208DAD1D7495FE78D9E31A03C1516F9971CE1A70C",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: empty",
+   "fee": "96150",
+   "ledger": 13738332,
+   "inLedger": true
+  },
+  {
+   "label": "PACK VC 0",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "800ED1A5346B068F6CBAB326E600BE7BB66DBA3AD1BDB01597FD5742906525C0",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: vc",
+   "fee": "96150",
+   "ledger": 13738334,
+   "inLedger": true
+  },
+  {
+   "label": "PACK VC PEND",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "EE231865454417B37EE696CFDE3F8D71BBFAFE1F9039302C5C6E8DC2ABE6614E",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: vc",
+   "fee": "96150",
+   "ledger": 13738336,
+   "inLedger": true
+  },
+  {
+   "label": "PACK VC 31",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "9BC764A71A02F9BC478F6BFE5734FDB8038C0043DA347DA7A346980460CB5565",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: vc",
+   "fee": "96149",
+   "ledger": 13738338,
+   "inLedger": true
+  },
+  {
+   "label": "PACK MODE 02",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "814206CE93B839EEBFA226C99E92E49C1572F012B07A9C59371CAE53F593A7FC",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: mode",
+   "fee": "96158",
+   "ledger": 13738340,
+   "inLedger": true
+  },
+  {
+   "label": "PACK MODE 2 bytes",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "1B27B159360FE84B26E26C9C15B127DE9E6EB02F87CB509367464FEEFE70CF3B",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: mode",
+   "fee": "96159",
+   "ledger": 13738342,
+   "inLedger": true
+  },
+  {
+   "label": "PACK TID no",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "ECAFBA5A827DF720AB230E804462561886D3CF6E4D0772D508E9933EA98AEBF4",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: token",
+   "fee": "96150",
+   "ledger": 13738344,
+   "inLedger": true
+  },
+  {
+   "label": "mint R1",
+   "type": "URITokenMint",
+   "from": "R1",
+   "hash": "0D9B2CC4E54ADD5E0CE1639B966FBDBE880CE470940C39F29353321F273EDC46",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13738346,
+   "inLedger": true
+  },
+  {
+   "label": "PACK PACK foreign TID",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "955650684C983649CA731E314CE0CC0C747F51B6A1AB761EF6D9E4171369520C",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: token",
+   "fee": "96150",
+   "ledger": 13738348,
+   "inLedger": true
+  },
+  {
+   "label": "mint X1 kt",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "1F82B9FE87A01F24772924C1198B18D585DF44E226ADDE598E6552AD9D8A3739",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738350,
+   "inLedger": true
+  },
+  {
+   "label": "PACK PACK ktid=tid",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "99363F35F0391A2A17B4107C756BF79E142CF47716063C566B3C752D8A2411BE",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: ktid=tid",
+   "fee": "96212",
+   "ledger": 13738352,
+   "inLedger": true
+  },
+  {
+   "label": "PACK PACK ktid locked",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "75A6C8988F7F73F8E29D7374FE5A2B6DA997A634AEB24B2B5653FC8AF451B91D",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: ktid locked",
+   "fee": "96212",
+   "ledger": 13738354,
+   "inLedger": true
+  },
+  {
+   "label": "PACK ktid 0",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "80A6D3886EDC9DACECEFF432231230EBFC6D0BCFDB578DAB29AD58B59DE172D5",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: ktid",
+   "fee": "96212",
+   "ledger": 13738356,
+   "inLedger": true
+  },
+  {
+   "label": "PACK foreign",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "B8388AB9B87F220BEB243F061CEEF6D848059F79F3F794D7A37331222C5B1861",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: owner",
+   "fee": "96150",
+   "ledger": 13738358,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT foreign",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "55E98B5E1CF495B3F06538E3779273CF1AB0A409D3981FAAA64521E945C16992",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: owner",
+   "fee": "96032",
+   "ledger": 13738360,
+   "inLedger": true
+  },
+  {
+   "label": "CMD XXXX",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "E06BE456E1CE52A696CBB60CE74D5F52586957DABCD0C89674DE976B8CEFF290",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: cmd",
+   "fee": "96030",
+   "ledger": 13738362,
+   "inLedger": true
+  },
+  {
+   "label": "without CMD",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "62AAB19419D53E98A7C7BB1707AFEA18229405C64785AFEF1F4D766AB19A6101",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: cmd",
+   "fee": "96026",
+   "ledger": 13738364,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM X1 base (key, token+1 XAH)",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "1C0E80CCB095D12DB3E9E2D8DFFDE073BAA4B8391C9A0C3DFF94C49BCE244C3C",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96195",
+   "ledger": 13738366,
+   "inLedger": true
+  },
+  {
+   "label": "emit: X1 base (key, token+1 XAH)",
+   "type": "Remit(emit)",
+   "hash": "A183011DD3E76D8A4F87A4A4C21296EE7D112498581F708740464394E8AC91F0",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738367,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "PACK X2 key box",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "184BA9F95D5C81A14A63FB4FE133E1FB27FB3AEF9F0F463F70B75912E8D5E7B0",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96150",
+   "ledger": 13738369,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "717C60C3065BE8B3307BFD78A53222239528EFBC5712032CD6E13A13E6BA683C",
+   "result": "tesSUCCESS",
+   "hook": "tgs: audited",
+   "fee": "96032",
+   "ledger": 13738371,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X2 key box",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "2A6CFF2F301C0FA069C5847B31231308B12D310E21ADF4765DA6ED08EDBE7CA2",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738373,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM PK32",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "C6694D21EF68971465B2FE730C3AAC145D5512EB655AB820E796F89C01443CBF",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: pk",
+   "fee": "96192",
+   "ledger": 13738375,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM SIG63",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "FD883934511991A91E9EBD39CE4678708F748477BDD09922C336993295CCAF47",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: sig",
+   "fee": "96183",
+   "ledger": 13738376,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM SIG73",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "BE37D2442E75F830523A9B4E37A70F1D0202AC094C7A6CA3AC0B088573458E25",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: sig",
+   "fee": "96198",
+   "ledger": 13738378,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM VC on key box",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "FB3F1EE6AD95E6CF2576B3E7AA5865B1D64FB7E9E1A4A8C61CB7B417F24F00AC",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: key box",
+   "fee": "96083",
+   "ledger": 13738380,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM VC no",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "D436187DAA57F87F85553C03A675D5DDC016DCA0F32E7B94B3331E72C61E2EBA",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "fee": "96083",
+   "ledger": 13738382,
+   "inLedger": true
+  },
+  {
+   "label": "mint X2 key",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "5A6B5B39AB3FD51BC7426C8016A471FD5A6F02D8F519E08274E533038FA6EA0E",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738384,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X2 token box with VC=hash(PK)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "61F22B5532CC0F755935D3336B576B3D51DD378C826FCBCB24123774012D3672",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96212",
+   "ledger": 13738386,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "E04BD8AF62A8C8F91E858B0E34A7107C0B0D51AAC1855DEF4252012F30519F27",
+   "result": "tesSUCCESS",
+   "hook": "tgs: audited",
+   "fee": "96032",
+   "ledger": 13738388,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X2 token box with VC=hash(PK)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "E5B93B8D945E0832DF3124365B73F3B95DF619C81F9DB353DC9C8984480E6FC3",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96212",
+   "ledger": 13738389,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM PK on token box",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "FCF4F1D3728A3A0BA9CE5A291453318590552E2D176DC5CCB3F622C7FC184A65",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: token box",
+   "fee": "96195",
+   "ledger": 13738391,
+   "inLedger": true
+  },
+  {
+   "label": "SYNC",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "C47A32B94C8D98FA478498FB96D37BFBAB68BF0EC8E5A4D3EDF97F29BECA157B",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: idle",
+   "fee": "96030",
+   "ledger": 13738393,
+   "inLedger": true
+  },
+  {
+   "label": "SYNC VC",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "5DFC2DA2979949B6AAA32F8B5A701A2CBFAC316E9A3164DD32FC914CD0CE6695",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: idle",
+   "fee": "96081",
+   "ledger": 13738395,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM X2 key box",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "5B731394211F2D96A452F9F8EFAE766C6DA6292D22F437F954544A1B1AB1D3D5",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96194",
+   "ledger": 13738397,
+   "inLedger": true
+  },
+  {
+   "label": "emit: X2 key box",
+   "type": "Remit(emit)",
+   "hash": "49EB979B0002B738ECBA0392EE1265FDD6F0F9EB4D9622BC437A375B1821C044",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738398,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "Remit X2 key→R2",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "C0618A0B73788D1D56793B099A488D9267DD2E6C34BFA662D3C25B656002AF31",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738401,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM X2 token box with VC=hash(PK)",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "021E5ADEA67BD4EA4B3E2D88265FB381CEF2E793EC3FE2885A56587717B1E983",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96083",
+   "ledger": 13738403,
+   "inLedger": true
+  },
+  {
+   "label": "emit: X2 token box with VC=hash(PK)",
+   "type": "Remit(emit)",
+   "hash": "A1A958140DE044E2117412772459F444541BB1C5CBD68323B80B5C1B4D70C403",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738404,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "mint X3 (key, token+1.5 XAH, EXP)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "1F27D563880D97465ADB953579CCC27760DDB3AD9B0D3EFFB9C755764F0B6677",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738406,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X3 (key, token+1.5 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "23DF09979389755A3992CD69708FA4430FB886E43A4FAFA8A260E3E2D19C05E1",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96161",
+   "ledger": 13738408,
+   "inLedger": true
+  },
+  {
+   "label": "X3 foreign NetworkID 21337 (mainnet-similar)",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "238B3AEA4F64A15FBA66582CA6C1CF315816A2F153840CCB07D23DE806FB9FC5",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96195",
+   "ledger": 13738410,
+   "inLedger": true
+  },
+  {
+   "label": "X3 NetworkID 0",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "1F423F6A20D8507FC3CBE6E57597821E82BC3EA9FEA6877E2E04F78EEC67DE00",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96194",
+   "ledger": 13738412,
+   "inLedger": true
+  },
+  {
+   "label": "X3 another hook account (H2)",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "032ECCE6F20E2A218AE1F5EF75C1C7FA37D19C4CC2D84358FF74D84EA338F04C",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96195",
+   "ledger": 13738414,
+   "inLedger": true
+  },
+  {
+   "label": "X3 EXP+1",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "C37CB9A2376569C99801C3D7E4471F5EC1AA68FEAADD7725F50FDF51D787AFF9",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96194",
+   "ledger": 13738416,
+   "inLedger": true
+  },
+  {
+   "label": "X3 EXP=0 instead of the real",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "EF9FC63270C3966D85A72C79E74B3407C963EF97F096E396EB659273F46077C2",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96195",
+   "ledger": 13738418,
+   "inLedger": true
+  },
+  {
+   "label": "X3 foreign TID",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "4CB95C4FCF669191A91AD451092711B5117B0674C9DBBFA0FE727161D49FDFC5",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96194",
+   "ledger": 13738420,
+   "inLedger": true
+  },
+  {
+   "label": "X3 TID=zeros (as if XAH-box)",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "E34ACC449C606A4CC64762D2C4D1C574A1994D47B1F8F70D6EB93F64F9F99E5D",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96195",
+   "ledger": 13738422,
+   "inLedger": true
+  },
+  {
+   "label": "X3 AMT+1 drop",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "809E1DB4C63697AA640ED2F90C48B4FAFBA81FF2C00F3F2CFA943C07B14801F3",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96194",
+   "ledger": 13738424,
+   "inLedger": true
+  },
+  {
+   "label": "X3 NONCE+1",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "78A6C82FA53B6358F383A9B5F72C673A2ED2B8AFE48625C7A2C0ACD64284FBD1",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96194",
+   "ledger": 13738426,
+   "inLedger": true
+  },
+  {
+   "label": "X3 NONCE-1",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "5E921CE2ED4C1F6A84C531A3FC7FF1E54E736DDFB9565708FB33B53323B298F3",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96195",
+   "ledger": 13738428,
+   "inLedger": true
+  },
+  {
+   "label": "X3 recipient R2, sends R1",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "1D90262D72ED30AA9A7C3E9860817776E49DCC4D3EE2C7FBDB6B0ED898FB3E4D",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96194",
+   "ledger": 13738430,
+   "inLedger": true
+  },
+  {
+   "label": "X3 foreign key",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "78619F780189F6BE4C5C56284E643FF2E3755121FC86A105D52FDB3905FC0AB7",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96195",
+   "ledger": 13738432,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM X3 (key, token+1.5 XAH, EXP)",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "74AFB0DE4AFC60F3184733E151AF5CA275F7606D48B7D7B36A9490769564BDF5",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96195",
+   "ledger": 13738434,
+   "inLedger": true
+  },
+  {
+   "label": "emit: X3 (key, token+1.5 XAH, EXP)",
+   "type": "Remit(emit)",
+   "hash": "6915603257B5BBE6752F3F41AD5FF88220EE4DC762D80C6C15BA67C892CD28AC",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738435,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "ensure: SetHook by HookHash",
+   "type": "SetHook",
+   "from": "H2(R3, second hook)",
+   "hash": "DF30CC6537C974A7D07C5445D9B7935A5B5C439DA475EA064F2C874D67513A7A",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13738437,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X4 on H1",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "F2FB87670B47A144EEAA08C208EEFEF097DCB5EA84CDA76FDD43B2ACEEB38FA4",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738440,
+   "inLedger": true
+  },
+  {
+   "label": "PACK on H2",
+   "type": "Invoke",
+   "from": "H2(R3, second hook)",
+   "hash": "7EFF0F85E3CD0746BBAB6346AD8960ADB0B1BEDCA1BB58B443B431EE9BB166A6",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738442,
+   "inLedger": true
+  },
+  {
+   "label": "X4 replay on H2",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "E705C9C289BDA103DFE533B5A84DB0D66174B75F715B8528A4CEF23E2D95AB52",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96194",
+   "ledger": 13738444,
+   "inLedger": true
+  },
+  {
+   "label": "X4 nonce H1 on H2",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "6629C1EE6F4F74BC139A7662ED326EB3CC4CAA51DDB047863FFAAE652D2A1070",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96195",
+   "ledger": 13738446,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM X4 on H1",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "4A264B7C76C3062743E47E2B2028589D323175E4F560C51E84B59CB03FC07573",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96194",
+   "ledger": 13738448,
+   "inLedger": true
+  },
+  {
+   "label": "emit: X4 on H1",
+   "type": "Remit(emit)",
+   "hash": "5F59F4E1D975E6317E2B5D995A4BA45302AA8B7C7186A86F0977AB8241D9A4D8",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738449,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "X4 legitimate on H2",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "1D2EC1EB170D5D63A22DD8866B46C1FBBC7F47E9B534993D4198BCCB244832E9",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96194",
+   "ledger": 13738451,
+   "inLedger": true
+  },
+  {
+   "label": "emit: X4 H2",
+   "type": "Remit(emit)",
+   "hash": "982BD491C8459EDE1148F6F8F75652BF604BFA0281FF35E77B00F33C243E2196",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738452,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "PACK X5a",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "AC6F74CC1A89C1EAA95255687318F8478CA71B63A2D7CB9D9E46699C72268CD2",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738454,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM X5a",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "9D5EC1AF063AE0F985457DD8AA41228B9E522E9E1A90E18B8C007EA7C1110925",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96195",
+   "ledger": 13738456,
+   "inLedger": true
+  },
+  {
+   "label": "emit: X5a",
+   "type": "Remit(emit)",
+   "hash": "BBDDC1C2D444EBBA6092D5784F9846202F083B95E7A8910DAE8B5795FF86E314",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738457,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "PACK X5b (same key, same amount)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "179D9108DA084A805A04B585FA3B7D30DAE6FB2AB934D8C43BC4031F14D74C1F",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738459,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM X5 old",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "82FA5C219C6DD5FBDBB6F470505FC701DE862D900F1191AEE5078FDC70E8EA98",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96195",
+   "ledger": 13738461,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM X5 old nonce",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "1B6C85422703E96CD00FD25A3245F9219119BC34801C7A6532BEAD481AF47DF4",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96195",
+   "ledger": 13738463,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM X5b (same key, same amount)",
+   "type": "Invoke",
+   "from": "R2",
+   "hash": "32DF04A41C6B877EBAE537D89DAC8501C65A979A36D3C034E099BAA1176C82F1",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96195",
+   "ledger": 13738465,
+   "inLedger": true
+  },
+  {
+   "label": "emit: X5b (same key, same amount)",
+   "type": "Remit(emit)",
+   "hash": "89F31E6EDACF2664AF8EDCECA10555388C2C61007E8DF9B8370C38F036D379A8",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738466,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "PACK X5c (EXP, then OPEN)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "3C980850009FB2CB87F2E18E6BF924BA81DC58E1B567EF5F724ED7BA8B5881F7",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96161",
+   "ledger": 13738468,
+   "inLedger": true
+  },
+  {
+   "label": "OPEN X5c",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "97F44E78252A480C83EB364A6C932A9F5C912D419B203EA79CD5BDF331EED67B",
+   "result": "tesSUCCESS",
+   "hook": "tgs: opened",
+   "fee": "96081",
+   "ledger": 13738476,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X5d (after OPEN)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "2AA21A9DE66A6FC27F0BEFBE14CDC81878ADA8C86369A57866BBF23D755C37A8",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738478,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM X5 c→d",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "92025D4F50BFE679E38C37728F8821BA637FDD9CE299710E09B9B7BB4424919E",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: bad sig",
+   "fee": "96194",
+   "ledger": 13738479,
+   "inLedger": true
+  },
+  {
+   "label": "CLAIM X5d (after OPEN)",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "D70A293F3268F1407AE9256C8EAD49364EDFF1952A2A5CEF569F21E9D4737EC7",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "fee": "96195",
+   "ledger": 13738481,
+   "inLedger": true
+  },
+  {
+   "label": "emit: X5d (after OPEN)",
+   "type": "Remit(emit)",
+   "hash": "025FC284A8008E24D71AB707644BBD0ADE8D365FD46E738DBB67D839E231ED29",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738482,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "mint X6-0 (key, token+2 XAH)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "D2B59DCA0D7F6638507895D425DFE2AF2FB8820311FCEB04DC6CDA59E998984B",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738484,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X6-0 (key, token+2 XAH)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "3056E8E23BAB1FCC47F86BB393A9D40073027586FDED5F60A3F08CB241FC035C",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738486,
+   "inLedger": true
+  },
+  {
+   "label": "X6 CLAIM #1",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "6280DC9C88C356FA0C24CED732A3445F0F35EB0CC8D086011EA3645BDB1D1726",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13738488,
+   "txIndex": 4,
+   "fee": "96194",
+   "inLedger": true
+  },
+  {
+   "label": "X6 CLAIM #2",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "CA5188ED6C73F6D42EAC879F6316A6B5F81CF8F16EB41B907614D9041E31A5E4",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13738488,
+   "txIndex": 6,
+   "fee": "96194",
+   "inLedger": true
+  },
+  {
+   "label": "emit: X6",
+   "type": "Remit(emit)",
+   "hash": "9A6D7A84A69A5A15F55CD40BA82046F07D771513DD191D3F067380FA624AD41F",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738489,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "mint X6-1 (key, token+2 XAH)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "E5634F0C7F19978C5E279D754B02CFB4C34814DBCF4F36352E035BFD9FF7507C",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738491,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X6-1 (key, token+2 XAH)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "B0E6B1F94BBE5ACD5A04B19FF21606832710CCF937384EC0522C2371A51BC5CA",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13738493,
+   "inLedger": true
+  },
+  {
+   "label": "X6 CLAIM #1",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "B467BAEB4D7BC84A71AFEE1A6C178514F62845CE251C838D373206CBE16EB218",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13738495,
+   "txIndex": 4,
+   "fee": "96195",
+   "inLedger": true
+  },
+  {
+   "label": "X6 CLAIM #2",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "57AFB5C800359DE540B6122109F4869347C250DE0B3DD78934319B3901C9FC40",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13738495,
+   "txIndex": 6,
+   "fee": "96195",
+   "inLedger": true
+  },
+  {
+   "label": "emit: X6",
+   "type": "Remit(emit)",
+   "hash": "D5127E13391A2D3FC3EB2D62DD0C16F254BADCFA9D6B4658F7099E62F0C7A97C",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738496,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "mint X7-0 (key, token+1 XAH, EXP)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "44F439F3FB6D9C4C4DD1AFB8EE4FC59FC0231CB51A20D2F28A81CA47C8BC3356",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738498,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X7-0 (key, token+1 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "73B8B45613A59C5004DDF92F45EB0A01C86D6A14A1067BC8CB3E34CC3F65FA3B",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96161",
+   "ledger": 13738500,
+   "inLedger": true
+  },
+  {
+   "label": "X7 OPEN",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "9E302C02D9BDD76B0B21B8B8B9E9A55B7E85EEDFD1535163FD0104CEE37A144B",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13738504,
+   "txIndex": 5,
+   "fee": "96081",
+   "inLedger": true
+  },
+  {
+   "label": "X7 CLAIM",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "8DF50CAE4B48C5522F84CE9ED281C822F11BA6804FAB9955F0EC7C5D58FE380D",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13738504,
+   "txIndex": 4,
+   "fee": "96195",
+   "inLedger": true
+  },
+  {
+   "label": "emit: X7",
+   "type": "Remit(emit)",
+   "hash": "5A32F8356D05E8E360AE4EE2B68C55D2357595F00017B4D7FB63C69498BBE6A0",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738505,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "mint X7-1 (key, token+1 XAH, EXP)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "3A10E5C7B7F82E45AD0C426113117840762538B7715EF6D1F47AA63A47688CA3",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738508,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X7-1 (key, token+1 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "9A83175B254E8C3C5629E10D5DA822593CB37C526DB7E1E894DDECA192FB1A98",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96161",
+   "ledger": 13738510,
+   "inLedger": true
+  },
+  {
+   "label": "X7 OPEN",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "C2CA21B40240BEB0841745B38D856618E95E87E486B1A8101C5D14339983199B",
+   "result": "tesSUCCESS",
+   "hook": "tgs: opened",
+   "ledger": 13738515,
+   "txIndex": 4,
+   "fee": "96081",
+   "inLedger": true
+  },
+  {
+   "label": "X7 CLAIM",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "55CD9A56412EFFCAC78AFC9290901FB1B4D547BF38A463C73EB12E2CD1B72454",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "ledger": 13738515,
+   "txIndex": 6,
+   "fee": "96195",
+   "inLedger": true
+  },
+  {
+   "label": "mint X7-2 (key, token+1 XAH, EXP)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "5FC64088BADBAE59BB81CAF7517BAE4A3F5A2A300A979BF3A6DBF85BDD65D000",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738518,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X7-2 (key, token+1 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "3DE3701475B0DAF4B1A0B9C896F324CA7F155DC1EA09F4B94A8BB557AD6AF7AF",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96161",
+   "ledger": 13738520,
+   "inLedger": true
+  },
+  {
+   "label": "X7 OPEN",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "A41123F82858F9F4BFDC6CABA600B37E20AC725B47CD3630E8305B60F8D58CAB",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: busy",
+   "ledger": 13738524,
+   "txIndex": 5,
+   "fee": "96081",
+   "inLedger": true
+  },
+  {
+   "label": "X7 CLAIM",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "7F67C8F324C53377FEAED7D872A5A72094ED1981C003BC239EED2AF5D2509ED8",
+   "result": "tesSUCCESS",
+   "hook": "tgs: claiming",
+   "ledger": 13738524,
+   "txIndex": 4,
+   "fee": "96195",
+   "inLedger": true
+  },
+  {
+   "label": "emit: X7",
+   "type": "Remit(emit)",
+   "hash": "7FAE2C4970D1FF6F796AF55EFD7BA47B9904A80F7FCC7F559C65E174096122A0",
+   "result": "tesSUCCESS",
+   "hook": "",
+   "ledger": 13738525,
+   "inLedger": true,
+   "emitted": true
+  },
+  {
+   "label": "mint X7-3 (key, token+1 XAH, EXP)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "75A6B5D7E6381F6FAA34E6741E22C4048CE77C2E147A495FA4275EE81C73750C",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738528,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X7-3 (key, token+1 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "6353F54597B8B12EB1447BE9174C3689ED15DD4DCBB48937A6FBBF771FF0339A",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96161",
+   "ledger": 13738530,
+   "inLedger": true
+  },
+  {
+   "label": "X7 OPEN",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "3CA80585BD93BE66CED369174CB1267A4BEB089FFB56F8648336824AC5C92DDF",
+   "result": "tesSUCCESS",
+   "hook": "tgs: opened",
+   "ledger": 13738535,
+   "txIndex": 5,
+   "fee": "96081",
+   "inLedger": true
+  },
+  {
+   "label": "X7 CLAIM",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "8DCCE71EB539AB8DC22EF5723D12A09B405FC6AAE71F9DE843894CDADB7C407D",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "ledger": 13738535,
+   "txIndex": 6,
+   "fee": "96194",
+   "inLedger": true
+  },
+  {
+   "label": "mint X7-4 (key, token+1 XAH, EXP)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "C43A4FF5F87B81D00551414BD0C352712428C969F9D120CE4AF0BCE1DCB2138D",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738538,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X7-4 (key, token+1 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "964170AB8F925EC2CF4C985BCF0535691D3C0997A5434EC99F7AA32605C27E9D",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96161",
+   "ledger": 13738540,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "81210B27E257A6A2C8D8577756D1740A7079D32AC58D2CA027058A72BE743937",
+   "result": "tesSUCCESS",
+   "hook": "tgs: audited",
+   "fee": "96032",
+   "ledger": 13738542,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X7-4 (key, token+1 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "231382868A63BBDB3E9F2876CE1F136A0091C148FAD22FC6783B0C05249D7D22",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: exp past",
+   "fee": "96161",
+   "ledger": 13738544,
+   "inLedger": true
+  },
+  {
+   "label": "X7 OPEN",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "04BFB35E4897AC96FDBBBC922B4108F2DE745F29557DFA7D863BBF3D6A5C3801",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "ledger": 13738546,
+   "txIndex": 5,
+   "fee": "96081",
+   "inLedger": true
+  },
+  {
+   "label": "X7 CLAIM",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "16F92B67CC25D00444F7D6F6612EDC6B32152FF108E8B8F08082E051B1E4E94C",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "ledger": 13738546,
+   "txIndex": 4,
+   "fee": "96194",
+   "inLedger": true
+  },
+  {
+   "label": "mint X7-5 (key, token+1 XAH, EXP)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "05F26665E384DC1FB33BBBD2C8BEC7F962BD2F53E9BAD89B634B70AB2E5766AD",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738549,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X7-5 (key, token+1 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "25CF81D73F97E4EF9A7BA98510DAE4CAD3A6D14254BA24A79A36BB1D5EBEE4FA",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96161",
+   "ledger": 13738551,
+   "inLedger": true
+  },
+  {
+   "label": "X7 OPEN",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "624E5599A8F7D2B737510542EFECD00A48E55E87659A542A6D596B3666A4E2B1",
+   "result": "tesSUCCESS",
+   "hook": "tgs: opened",
+   "ledger": 13738556,
+   "txIndex": 4,
+   "fee": "96081",
+   "inLedger": true
+  },
+  {
+   "label": "X7 CLAIM",
+   "type": "Invoke",
+   "from": "R1",
+   "hash": "38BB527D41D7DEE55821D77FFC55D2EB16E259A3B3426D91EBA4C1731EA0604F",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: unknown",
+   "ledger": 13738556,
+   "txIndex": 5,
+   "fee": "96194",
+   "inLedger": true
+  },
+  {
+   "label": "PACK X8 big (XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "A369CE47B331ABA66C016C0DFD793886C4E6E233BF2A6570B17B33BD51FF56A3",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96161",
+   "ledger": 13738559,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "60745CF0F7B026F2456304DA948907FD82F476004B196825E3820BFD267B3DF3",
+   "result": "tesSUCCESS",
+   "hook": "tgs: audited",
+   "fee": "96032",
+   "ledger": 13738561,
+   "inLedger": true
+  },
+  {
+   "label": "PACK X8 big (XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "455FEE82AEC1DD7CB24213B9C2263C3BE743D16937677E8EEF89CF3B4567A569",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96161",
+   "ledger": 13738562,
+   "inLedger": true
+  },
+  {
+   "label": "X8 TicketCreate 200",
+   "type": "TicketCreate",
+   "from": "issuer",
+   "hash": "CAE2CD0E8EC3D4D9E0D6740067D6FE0A6AE2C70F105169690BD19FE889A4C192",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: reserve",
+   "fee": "96020",
+   "ledger": 13738564,
+   "inLedger": true
+  },
+  {
+   "label": "X8 TicketCreate 2",
+   "type": "TicketCreate",
+   "from": "issuer",
+   "hash": "1670D4FA4506C2CCB0ABC1F47F84EA6BDC2EF2710E15EDC037E44D2CDD523A34",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13738566,
+   "inLedger": true
+  },
+  {
+   "label": "X8 Remit 29",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "3A5BF7027011B43421BD5238BC7F471E05490735CB914ED1A75131C27F8ABDC6",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: reserve",
+   "fee": "96020",
+   "ledger": 13738568,
+   "inLedger": true
+  },
+  {
+   "label": "X8 Payment to a new account",
+   "type": "Payment",
+   "from": "issuer",
+   "hash": "6828AA80D99DD5C68BD876E3959837E3F9C942A5F7F8D9856A7BA4E0E48AFC43",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: reserve",
+   "fee": "96020",
+   "ledger": 13738570,
+   "inLedger": true
+  },
+  {
+   "label": "OPEN X8",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "1970B91FE115C5F0CDCB8A6B2D502516A297C200931C7CFA9F8594BE36521179",
+   "result": "tesSUCCESS",
+   "hook": "tgs: opened",
+   "fee": "96081",
+   "ledger": 13738602,
+   "inLedger": true
+  }
+ ]
+}

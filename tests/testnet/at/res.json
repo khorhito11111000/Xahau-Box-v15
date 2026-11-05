@@ -1,0 +1,502 @@
+{
+ "rows": [
+  {
+   "sc": "S0",
+   "name": "before SetHook | OwnerCount=0 (Hook 0, URIToken 0, hook entries 0, in boxes 0) F=0 AUDIT=no",
+   "expect": "info",
+   "got": "",
+   "ok": true
+  },
+  {
+   "sc": "S1",
+   "name": "SetHook | after: OwnerCount=1 (Hook 1, URIToken 0, hook entries 0, in boxes 0) F=1 AUDIT=no",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "91F1E58519A65D6CED06A66B44E86C20240B6B5D3E43A351E92DBE91A24C7253"
+  },
+  {
+   "sc": "A1",
+   "name": "link box 1 XAH | OwnerCount=1 (Hook 1, URIToken 0, hook entries 0, in boxes 0) F=1 AUDIT=no | page:without AUDIT",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "9A98D6C2A26B3BC47BC34703E2914253D2D8A8EE382B07FA26989E60A291F9EA"
+  },
+  {
+   "sc": "A2",
+   "name": "link box with token t1 (+1 XAH) | OwnerCount=5 (Hook 1, URIToken 1, hook entries 3, in boxes 0) F=2 AUDIT=no | page:without AUDIT",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "DCC0BD0E926DE1309CD9F4D7D33FF698C3A194CDE766D336198824C5985BAECD"
+  },
+  {
+   "sc": "A3",
+   "name": "link box with token t2 | OwnerCount=8 (Hook 1, URIToken 2, hook entries 5, in boxes 1) F=2 AUDIT=no | page:without AUDIT",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "777E485B17BA5C6684004DEE9947CDA255BDEAD225B44B3865C937B5F8943097"
+  },
+  {
+   "sc": "A4",
+   "name": "link box 1 XAH again | OwnerCount=10 (Hook 1, URIToken 2, hook entries 7, in boxes 2) F=1 AUDIT=no | page:without AUDIT",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "80CCF3B1A1F8F5DB6D0A55C9ADECAEC2D6E7AF00DA1E1B5D5FB43ED6A06B9F45"
+  },
+  {
+   "sc": "A5",
+   "name": "key token: only 1 XAH (key on the address) | OwnerCount=12 (Hook 1, URIToken 3, hook entries 8, in boxes 2) F=2 AUDIT=no | page:needed AUDIT",
+   "expect": "tgs: audit",
+   "got": "tgs: audit",
+   "ok": true,
+   "hash": "7EA5567BC48FFDD45C7054FF63B365287A9F964C56F877AC48BC28157329958A"
+  },
+  {
+   "sc": "A6",
+   "name": "key token: token t3 (key on the address) | OwnerCount=13 (Hook 1, URIToken 4, hook entries 8, in boxes 2) F=3 AUDIT=no | page:needed AUDIT",
+   "expect": "tgs: audit",
+   "got": "tgs: audit",
+   "ok": true,
+   "hash": "1DE80A8B61DF000B16A3F0B44523873879B9A49B1E6119BE3D1FEEFCF0716688"
+  },
+  {
+   "sc": "B1",
+   "name": "AUDIT | after: OwnerCount=15 (Hook 1, URIToken 4, hook entries 10, in boxes 2) F=3 AUDIT=done/3",
+   "expect": "tgs: audited",
+   "got": "tgs: audited",
+   "ok": true,
+   "hash": "BC37B78085DD5FB642D79708AEEEC332509CA4CBD6CD32AF3AD6683B318EEA8D"
+  },
+  {
+   "sc": "B2",
+   "name": "key token: token t3 after AUDIT | OwnerCount=15 (Hook 1, URIToken 4, hook entries 10, in boxes 2) F=3 AUDIT=done/3 | page:without AUDIT",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "C4086A6E207EE57DCD0B9F6F186E01A588E77134EA91BFAEBC9DBBCBF8BF7214"
+  },
+  {
+   "sc": "B3",
+   "name": "key token: 1 XAH after AUDIT | OwnerCount=18 (Hook 1, URIToken 4, hook entries 13, in boxes 3) F=2 AUDIT=done/3 | page:without AUDIT",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "96F4C60C428674FE6BEB326A237A6C4547BD6D40C6CEC92EC4D6485F026792FC"
+  },
+  {
+   "sc": "B4",
+   "name": "link box 1 XAH, 2 more free tokens on the address | OwnerCount=22 (Hook 1, URIToken 6, hook entries 15, in boxes 3) F=4 AUDIT=done/3 | page:needed AUDIT",
+   "expect": "tgs: audit",
+   "got": "tgs: audit",
+   "ok": true,
+   "hash": "A2AFB0CFEE5A4614716F682A9D2A531FC68DE2E1CC237A539B1F436EE8737A4A"
+  },
+  {
+   "sc": "B5",
+   "name": "box with t4 (t5 free) | OwnerCount=22 (Hook 1, URIToken 6, hook entries 15, in boxes 3) F=4 AUDIT=done/3 | page:without AUDIT",
+   "expect": "tgs: audit",
+   "got": "tgs: packed",
+   "ok": false,
+   "hash": "37A03876BEDFF7718C7543AE25B76A24D3C363DDF0939EED0D7470563EE436FF"
+  },
+  {
+   "sc": "B6",
+   "name": "AUDIT | after: OwnerCount=24 (Hook 1, URIToken 6, hook entries 17, in boxes 4) F=3 AUDIT=done/3",
+   "expect": "tgs: audited",
+   "got": "tgs: audited",
+   "ok": true,
+   "hash": "215EEC60CEDF494705EACF33CCA002B599C6CCCF9F3BA69169C9484AE264AF5D"
+  },
+  {
+   "sc": "B7",
+   "name": "box with t4 after 2nd AUDIT | OwnerCount=24 (Hook 1, URIToken 6, hook entries 17, in boxes 4) F=3 AUDIT=done/3 | page:without AUDIT",
+   "expect": "tgs: packed",
+   "got": "tgs: locked",
+   "ok": false,
+   "hash": "E784339B42F4230291A6579713B0BC8C779C56196BEC55029768C599CDA9B716"
+  },
+  {
+   "sc": "C1",
+   "name": "hook deletion (without NSDELETE) | OwnerCount=23 (Hook 0, URIToken 6, hook entries 17, in boxes 4) F=2 AUDIT=done/3",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "D93A8119F8B34BF1C6B2666EA8ACA86A1ACA2A7F531BC6124DCB4B036C4F687F"
+  },
+  {
+   "sc": "C2",
+   "name": "reinstall v15 | OwnerCount=24 (Hook 1, URIToken 6, hook entries 17, in boxes 4) F=3 AUDIT=done/3",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "1A384CDB7326560D132B929C44EF94F62747E24790D6634572C74E63BD6A3D5E"
+  },
+  {
+   "sc": "C3",
+   "name": "after reinstall: box with t5 (F within the old AUDIT) | OwnerCount=24 (Hook 1, URIToken 6, hook entries 17, in boxes 4) F=3 AUDIT=done/3 | page:without AUDIT",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "9368F12BED6FD142A1B1CE846236E60FD0C3EF202A49B9483A09F805A636E08C"
+  },
+  {
+   "sc": "C4",
+   "name": "after reinstall: 1 XAH | OwnerCount=26 (Hook 1, URIToken 6, hook entries 19, in boxes 5) F=2 AUDIT=done/3 | page:without AUDIT",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "21FAA820472D280AB1440AA0237A357A0F7C0268FC4081F853A6A6C9B3793AB2"
+  },
+  {
+   "sc": "C5",
+   "name": "after reinstall: 1 XAH, +2 new tokens above AUDIT | OwnerCount=29 (Hook 1, URIToken 8, hook entries 20, in boxes 5) F=4 AUDIT=done/3 | page:needed AUDIT",
+   "expect": "tgs: audit",
+   "got": "tgs: audit",
+   "ok": true,
+   "hash": "71246FCAB37210B37FB55C25DCE1F33AFB0C3DAFFD8CC2FDFD76E08C208FADCB"
+  },
+  {
+   "sc": "C6",
+   "name": "AUDIT | after: OwnerCount=29 (Hook 1, URIToken 8, hook entries 20, in boxes 5) F=4 AUDIT=done/4",
+   "expect": "tgs: audited",
+   "got": "tgs: audited",
+   "ok": true,
+   "hash": "CE57606B824FF2660B19B86168B361ADF315F45D26A4F7C223BEEC4704551327"
+  },
+  {
+   "sc": "C7",
+   "name": "after new AUDIT: box with t6 | OwnerCount=29 (Hook 1, URIToken 8, hook entries 20, in boxes 5) F=4 AUDIT=done/4 | page:without AUDIT",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "5025A6A94705876F695AEEFB5564717A71278BAAAA7A0786D031733CED84956A"
+  }
+ ],
+ "txlog": [
+  {
+   "label": "SetHook",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "91F1E58519A65D6CED06A66B44E86C20240B6B5D3E43A351E92DBE91A24C7253",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13767881,
+   "inLedger": true
+  },
+  {
+   "label": "PACK link box 1 XAH",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "9A98D6C2A26B3BC47BC34703E2914253D2D8A8EE382B07FA26989E60A291F9EA",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13767883,
+   "inLedger": true
+  },
+  {
+   "label": "mint t1",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "A9AF5E160F65B4169F53863AD4D6D7C368D045DB34D738E2CBFE969266AA5521",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13767884,
+   "inLedger": true
+  },
+  {
+   "label": "PACK link box with token t1 (+1 XAH)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "DCC0BD0E926DE1309CD9F4D7D33FF698C3A194CDE766D336198824C5985BAECD",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13767886,
+   "inLedger": true
+  },
+  {
+   "label": "mint t2",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "9007582517B2410B323A100678CBC0ECDB10C1DEC14ECCF9E31C15FBCA8770B6",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13767888,
+   "inLedger": true
+  },
+  {
+   "label": "PACK link box with token t2",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "777E485B17BA5C6684004DEE9947CDA255BDEAD225B44B3865C937B5F8943097",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13767890,
+   "inLedger": true
+  },
+  {
+   "label": "PACK link box 1 XAH again",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "80CCF3B1A1F8F5DB6D0A55C9ADECAEC2D6E7AF00DA1E1B5D5FB43ED6A06B9F45",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13767892,
+   "inLedger": true
+  },
+  {
+   "label": "mint key",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "6E4268129D033A98F66D0121AE58C38A04E3C99E006C07D2FA4BBA0304FA5D8D",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13767894,
+   "inLedger": true
+  },
+  {
+   "label": "PACK key token: only 1 XAH (key on the address)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "7EA5567BC48FFDD45C7054FF63B365287A9F964C56F877AC48BC28157329958A",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96212",
+   "ledger": 13767896,
+   "inLedger": true
+  },
+  {
+   "label": "mint t3",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "6214B65B11CB147274FAF13DC1D152CD10039A8041452F10B1F9EB1223D4C2E9",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13767898,
+   "inLedger": true
+  },
+  {
+   "label": "PACK key token: token t3 (key on the address)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "1DE80A8B61DF000B16A3F0B44523873879B9A49B1E6119BE3D1FEEFCF0716688",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96212",
+   "ledger": 13767900,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "BC37B78085DD5FB642D79708AEEEC332509CA4CBD6CD32AF3AD6683B318EEA8D",
+   "result": "tesSUCCESS",
+   "hook": "tgs: audited",
+   "fee": "96032",
+   "ledger": 13767902,
+   "inLedger": true
+  },
+  {
+   "label": "PACK key token: token t3 after AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "C4086A6E207EE57DCD0B9F6F186E01A588E77134EA91BFAEBC9DBBCBF8BF7214",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96212",
+   "ledger": 13767904,
+   "inLedger": true
+  },
+  {
+   "label": "PACK key token: 1 XAH after AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "96F4C60C428674FE6BEB326A237A6C4547BD6D40C6CEC92EC4D6485F026792FC",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96212",
+   "ledger": 13767906,
+   "inLedger": true
+  },
+  {
+   "label": "mint t4",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "D2149442791D6A56D34F665B3DE503E85F0874C91EA418EFA35D11360A768490",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13767908,
+   "inLedger": true
+  },
+  {
+   "label": "mint t5",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "BCFAAA363144D800313976CAD9A7E310DAEA3AEC84EEEFCB295A8786870A7BEB",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13767910,
+   "inLedger": true
+  },
+  {
+   "label": "PACK link box 1 XAH, 2 more free tokens on the address",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "A2AFB0CFEE5A4614716F682A9D2A531FC68DE2E1CC237A539B1F436EE8737A4A",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96150",
+   "ledger": 13767912,
+   "inLedger": true
+  },
+  {
+   "label": "PACK box with t4 (t5 free)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "37A03876BEDFF7718C7543AE25B76A24D3C363DDF0939EED0D7470563EE436FF",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13767914,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "215EEC60CEDF494705EACF33CCA002B599C6CCCF9F3BA69169C9484AE264AF5D",
+   "result": "tesSUCCESS",
+   "hook": "tgs: audited",
+   "fee": "96032",
+   "ledger": 13767916,
+   "inLedger": true
+  },
+  {
+   "label": "PACK box with t4 after 2nd AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "E784339B42F4230291A6579713B0BC8C779C56196BEC55029768C599CDA9B716",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: locked",
+   "fee": "96150",
+   "ledger": 13767918,
+   "inLedger": true
+  },
+  {
+   "label": "SetHook delete",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "D93A8119F8B34BF1C6B2666EA8ACA86A1ACA2A7F531BC6124DCB4B036C4F687F",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13767920,
+   "inLedger": true
+  },
+  {
+   "label": "SetHook reinstall",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "1A384CDB7326560D132B929C44EF94F62747E24790D6634572C74E63BD6A3D5E",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13767922,
+   "inLedger": true
+  },
+  {
+   "label": "PACK after reinstall: box with t5 (F within the old AUDIT)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "9368F12BED6FD142A1B1CE846236E60FD0C3EF202A49B9483A09F805A636E08C",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13767924,
+   "inLedger": true
+  },
+  {
+   "label": "PACK after reinstall: 1 XAH",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "21FAA820472D280AB1440AA0237A357A0F7C0268FC4081F853A6A6C9B3793AB2",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13767926,
+   "inLedger": true
+  },
+  {
+   "label": "mint t6",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "AF2222B5D8D39C25D2E1F52C1FD1B56570110BE38F4092179EBAC5984E30E0D8",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13767928,
+   "inLedger": true
+  },
+  {
+   "label": "mint t7",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "C4E4DB446EE8CDE11573946017F07F67EB0D769211B9138742D153875B97E1E3",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13767930,
+   "inLedger": true
+  },
+  {
+   "label": "PACK after reinstall: 1 XAH, +2 new tokens above AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "71246FCAB37210B37FB55C25DCE1F33AFB0C3DAFFD8CC2FDFD76E08C208FADCB",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96150",
+   "ledger": 13767932,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "CE57606B824FF2660B19B86168B361ADF315F45D26A4F7C223BEEC4704551327",
+   "result": "tesSUCCESS",
+   "hook": "tgs: audited",
+   "fee": "96032",
+   "ledger": 13767934,
+   "inLedger": true
+  },
+  {
+   "label": "PACK after new AUDIT: box with t6",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "5025A6A94705876F695AEEFB5564717A71278BAAAA7A0786D031733CED84956A",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13767936,
+   "inLedger": true
+  }
+ ],
+ "PP": 14,
+ "MM": 1
+}

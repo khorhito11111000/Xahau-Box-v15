@@ -1,0 +1,142 @@
+{
+ "rows": [
+  {
+   "sc": "OWNER",
+   "name": "Box Y2 (key, token+1 XAH): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "9EA13D729AD2688EB46A1A6BF887AE17F33B9F196DD26A3079EA18BE518BA1D5"
+  },
+  {
+   "sc": "OWNER",
+   "name": "[limitation] Issuer deletes the hook while the box is closed",
+   "expect": "SetHook does not pass through the hook → deletion possible (trust in issuer)",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "41E8FA55B1DCF902353A680960B1E1175768D5FF95E0AD5EC5DC977AB042EEB8",
+   "safe": false,
+   "lim": true
+  },
+  {
+   "sc": "OWNER",
+   "name": "[limitation] Remit of closed box token after hook deletion",
+   "expect": "tesSUCCESS = token left (no protection without the hook)",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "7301E5573F79006CFF97CF926AEFD6BD96475F66B1A3DB3287B4681167752445",
+   "safe": false,
+   "lim": true
+  },
+  {
+   "sc": "CLEANUP",
+   "name": "Hook restored by HookHash (with HookOn)",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "F4025C1E0BE5347E94307BA618376C9FA66CFA6EAA92E9A9424023FB2494819A",
+   "safe": true
+  },
+  {
+   "sc": "CLEANUP",
+   "name": "State deletion (hsfNSDelete): entries 4 → 0",
+   "expect": "tesSUCCESS, 0 entries",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "2B7FCEF6E1851AC3DCD36B1882ADDF81C14C8D993282FDEC7BB6456EE80CC909",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "Box W (key, token+100 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "E7ABD7E59DBF77403919E1424AE4B336787B638C07F1277822B988FC422CB7ED"
+  },
+  {
+   "sc": "ESC2",
+   "name": "EscrowCreate more than free, box closed",
+   "expect": "rejected tgs: reserve",
+   "got": "tecHOOK_REJECTED / tgs: reserve",
+   "ok": true,
+   "hash": "4ABE6F217B740C3D00FA859756A135CD4ACEBFA483A30EAC67A631F1E90EC787",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "EscrowCreate 1 XAH from free",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "D0286DEF1EFA587503D100B2E4B03BAE53953048C773C4729D769D1F350F589E",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "EscrowFinish R1: only 1 leaves XAH of escrow",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: skip",
+   "ok": true,
+   "hash": "31FC518CA21C3447550CB81E2A2B03F7370454C6729ADAD213682C99A312AF33",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "OPEN box W after expiry",
+   "expect": "tgs: opened",
+   "got": "tesSUCCESS / tgs: opened",
+   "ok": true,
+   "hash": "9D94627E3B782B54F7722B570675456CD872375794F350A94AD95681AE695F19",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "Same large amount in EscrowCreate after OPEN",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "F5C847D2C14397A686EE1B12A1C64EDEC5EFFBE4BDD8FF3A09B96D0AB137E9D2",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "EscrowCancel: large amount returned",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "B28894C241C1FA604ED1939999F189B1660CFF1FA01C93382ACBD489A25ADF35",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "PaymentChannelCreate large after OPEN",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "66FEA4A35CDDA4D23F1B3D3A5F249890C5FAAE936965B2AAB7B159DF34FFBAAD",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "Channel closed, XAH returned",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "E8DAB1F1B9C64F796BE6A9000CA947BFB67769A53DFC78B80E640BE436B894A2",
+   "safe": true
+  }
+ ],
+ "escape2": {
+  "hookStateEntries": 4,
+  "objects": {
+   "Hook": 1,
+   "URIToken": 2
+  },
+  "balance": "2994654955",
+  "finished": "2026-11-03T12:01:36.958Z"
+ },
+ "totalTx": 20,
+ "pass": 14,
+ "fail": 0
+}

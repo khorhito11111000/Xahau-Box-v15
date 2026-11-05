@@ -1,0 +1,241 @@
+{
+ "suite": "kc",
+ "hookHash": "4847C361FCB669BD7C7E919092F9EB4831852B1152CA5AE9C08EFA7E741EE6FA",
+ "finished": "2026-11-04T05:10:06.994Z",
+ "pass": 5,
+ "fail": 0,
+ "checks": 5,
+ "txSubmittedOrEmitted": 15,
+ "txInLedger": 15,
+ "accounts": [
+  {
+   "role": "issuer",
+   "address": "rnaRkXEC9qvaNTWFk8STcrwQrV298G5aJs"
+  },
+  {
+   "role": "R1",
+   "address": "rpEsHBkPQ6y9QEHbybZsdmRTRcWtKHm5ia"
+  },
+  {
+   "role": "R2",
+   "address": "rJKeiaQaxhWbNvnh29cgR1s4wQmqDfJoTS"
+  },
+  {
+   "role": "R3",
+   "address": "rM1dbMct464bKKWtHg3z2dSQrrMnduWoYZ"
+  },
+  {
+   "role": "R4(foreign)",
+   "address": "r9T3S13PpTJNRWJos2aW9gSadyTwFLWEPN"
+  }
+ ],
+ "rows": [
+  {
+   "sc": "P",
+   "name": "KC1: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "7CDC4020FF616C48089CF0BFF334D7FA0288F486E52C4FB054342D9FE6A4D3D3"
+  },
+  {
+   "sc": "P",
+   "name": "KC2: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "A9FE616DE5635C15B2D84D6A06DA890023C849D2AB442BD24254FA9D82DCD386"
+  },
+  {
+   "sc": "P",
+   "name": "KC3: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "3EEA803D6D15AE42271D4A0E454EEB8D15D876FFC6FAFF85F10EE5B692094757"
+  },
+  {
+   "sc": "P",
+   "name": "KC4: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "39433BAA10CC7FE6552CE6ECEF2E8E19FC635D8FD11004CDA4F0EB4EA6476ADB"
+  },
+  {
+   "sc": "P",
+   "name": "KC5: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "ECA59AA429246146F55CE0E74C0A2AEC80CE71BAB08B776485C23A95A191DC5C"
+  }
+ ],
+ "txlog": [
+  {
+   "label": "ensure: SetHook by HookHash",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "FA2DD7B884F10692B7A2B44962CEC79F8AC2D212A312DDE42BDA61865F54F0B4",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13757722,
+   "inLedger": true
+  },
+  {
+   "label": "mint key5",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "22AC0250B18C124B8308D3DCE08EB0FA40227E517BEC24F39D827C4B20CC6199",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13757725,
+   "inLedger": true
+  },
+  {
+   "label": "mint kc1",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "72FA36831CB7B48BB0CA7EE9EA40A7981D58DCC4465C7DE89C5699C7E6BF4EE3",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13757727,
+   "inLedger": true
+  },
+  {
+   "label": "PACK KC1",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "51389829379B6DA60F161767F8BFEF34C2882A45DBE4338A8B88E02FE3D7380E",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96212",
+   "ledger": 13757729,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "AA9CBA90B19500699BABEE910789E9A3B61B0C836DE41A1F49E32A318AAF749A",
+   "result": "tesSUCCESS",
+   "hook": "tgs: audited",
+   "fee": "96032",
+   "ledger": 13757731,
+   "inLedger": true
+  },
+  {
+   "label": "PACK KC1",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "7CDC4020FF616C48089CF0BFF334D7FA0288F486E52C4FB054342D9FE6A4D3D3",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96212",
+   "ledger": 13757733,
+   "inLedger": true
+  },
+  {
+   "label": "mint kc2",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "1CE4F94DA5A3BF03F42A4B10B6B6B761BFEAB0D78D4376F8DC54A8D5BFC0E8C5",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13757734,
+   "inLedger": true
+  },
+  {
+   "label": "PACK KC2",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "A9FE616DE5635C15B2D84D6A06DA890023C849D2AB442BD24254FA9D82DCD386",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96212",
+   "ledger": 13757736,
+   "inLedger": true
+  },
+  {
+   "label": "mint kc3",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "3EAF3C3F307E4BD31C2FF378F66E5D42C756FC77515A33144D0C362EA00ECA2A",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13757738,
+   "inLedger": true
+  },
+  {
+   "label": "PACK KC3",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "3EEA803D6D15AE42271D4A0E454EEB8D15D876FFC6FAFF85F10EE5B692094757",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96222",
+   "ledger": 13757739,
+   "inLedger": true
+  },
+  {
+   "label": "PACK KC4",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "39433BAA10CC7FE6552CE6ECEF2E8E19FC635D8FD11004CDA4F0EB4EA6476ADB",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96212",
+   "ledger": 13757741,
+   "inLedger": true
+  },
+  {
+   "label": "mint gc",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "85F182F1B4F3F07A8630F16AEB1030F744125C354E36D3D4D4925D3E548D6727",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13757743,
+   "inLedger": true
+  },
+  {
+   "label": "PACK KC5",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "ECA59AA429246146F55CE0E74C0A2AEC80CE71BAB08B776485C23A95A191DC5C",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96212",
+   "ledger": 13757745,
+   "inLedger": true
+  },
+  {
+   "label": "mint emptykey",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "43E3F3244B23C3A102B6EBB8A9D3829A7E4B15A3FC5C3C296456B4BF935B8518",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13757747,
+   "inLedger": true
+  },
+  {
+   "label": "mint plain",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "838ECD3FA753120E0AAFA45233DB51BFB974C8893B23D85980A0886C53FF723D",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13757749,
+   "inLedger": true
+  }
+ ]
+}

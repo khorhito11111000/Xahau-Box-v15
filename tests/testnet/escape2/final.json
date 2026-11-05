@@ -1,0 +1,382 @@
+{
+ "suite": "escape2",
+ "hookHash": "4847C361FCB669BD7C7E919092F9EB4831852B1152CA5AE9C08EFA7E741EE6FA",
+ "finished": "2026-11-03T12:01:36.959Z",
+ "pass": 14,
+ "fail": 0,
+ "checks": 14,
+ "txSubmittedOrEmitted": 20,
+ "txInLedger": 20,
+ "accounts": [
+  {
+   "role": "issuer",
+   "address": "rLiFzhS2XYhh77JxeTGLybVBhFAHVPhTAk"
+  },
+  {
+   "role": "R1",
+   "address": "rNt18vZPRh1GJGSCtoC3eoyTbP8FT5Lxr8"
+  },
+  {
+   "role": "R2",
+   "address": "rwSSu5Ud8r4cnZSgf95JkUXn6jjLbtgENQ"
+  },
+  {
+   "role": "R3",
+   "address": "rUQxX4DY9XmwsfBSKBQ9xQQ2J5BaFhrqnn"
+  },
+  {
+   "role": "R4(foreign)",
+   "address": "rQK5B6S5mQF83aZG4KgodrrKA9645RLp6r"
+  }
+ ],
+ "rows": [
+  {
+   "sc": "OWNER",
+   "name": "Box Y2 (key, token+1 XAH): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "9EA13D729AD2688EB46A1A6BF887AE17F33B9F196DD26A3079EA18BE518BA1D5"
+  },
+  {
+   "sc": "OWNER",
+   "name": "[limitation] Issuer deletes the hook while the box is closed",
+   "expect": "SetHook does not pass through the hook → deletion possible (trust in issuer)",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "41E8FA55B1DCF902353A680960B1E1175768D5FF95E0AD5EC5DC977AB042EEB8",
+   "safe": false,
+   "lim": true
+  },
+  {
+   "sc": "OWNER",
+   "name": "[limitation] Remit of closed box token after hook deletion",
+   "expect": "tesSUCCESS = token left (no protection without the hook)",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "7301E5573F79006CFF97CF926AEFD6BD96475F66B1A3DB3287B4681167752445",
+   "safe": false,
+   "lim": true
+  },
+  {
+   "sc": "CLEANUP",
+   "name": "Hook restored by HookHash (with HookOn)",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "F4025C1E0BE5347E94307BA618376C9FA66CFA6EAA92E9A9424023FB2494819A",
+   "safe": true
+  },
+  {
+   "sc": "CLEANUP",
+   "name": "State deletion (hsfNSDelete): entries 4 → 0",
+   "expect": "tesSUCCESS, 0 entries",
+   "got": "tesSUCCESS / (hook not called)",
+   "ok": true,
+   "hash": "2B7FCEF6E1851AC3DCD36B1882ADDF81C14C8D993282FDEC7BB6456EE80CC909",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "Box W (key, token+100 XAH, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "E7ABD7E59DBF77403919E1424AE4B336787B638C07F1277822B988FC422CB7ED"
+  },
+  {
+   "sc": "ESC2",
+   "name": "EscrowCreate more than free, box closed",
+   "expect": "rejected tgs: reserve",
+   "got": "tecHOOK_REJECTED / tgs: reserve",
+   "ok": true,
+   "hash": "4ABE6F217B740C3D00FA859756A135CD4ACEBFA483A30EAC67A631F1E90EC787",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "EscrowCreate 1 XAH from free",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "D0286DEF1EFA587503D100B2E4B03BAE53953048C773C4729D769D1F350F589E",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "EscrowFinish R1: only 1 leaves XAH of escrow",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: skip",
+   "ok": true,
+   "hash": "31FC518CA21C3447550CB81E2A2B03F7370454C6729ADAD213682C99A312AF33",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "OPEN box W after expiry",
+   "expect": "tgs: opened",
+   "got": "tesSUCCESS / tgs: opened",
+   "ok": true,
+   "hash": "9D94627E3B782B54F7722B570675456CD872375794F350A94AD95681AE695F19",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "Same large amount in EscrowCreate after OPEN",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "F5C847D2C14397A686EE1B12A1C64EDEC5EFFBE4BDD8FF3A09B96D0AB137E9D2",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "EscrowCancel: large amount returned",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "B28894C241C1FA604ED1939999F189B1660CFF1FA01C93382ACBD489A25ADF35",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "PaymentChannelCreate large after OPEN",
+   "expect": "allowed",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "66FEA4A35CDDA4D23F1B3D3A5F249890C5FAAE936965B2AAB7B159DF34FFBAAD",
+   "safe": true
+  },
+  {
+   "sc": "ESC2",
+   "name": "Channel closed, XAH returned",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "E8DAB1F1B9C64F796BE6A9000CA947BFB67769A53DFC78B80E640BE436B894A2",
+   "safe": true
+  }
+ ],
+ "txlog": [
+  {
+   "label": "mint Box Y2 (key, token+1 XAH)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "469E22AE15914FFCF2F1A9A8CC59BA5CBA6C7ED1DD66503E69907CEA15E353DF",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737287,
+   "inLedger": true
+  },
+  {
+   "label": "PACK Box Y2 (key, token+1 XAH)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "9EA13D729AD2688EB46A1A6BF887AE17F33B9F196DD26A3079EA18BE518BA1D5",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96150",
+   "ledger": 13737288,
+   "inLedger": true
+  },
+  {
+   "label": "SetHook delete hook",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "41E8FA55B1DCF902353A680960B1E1175768D5FF95E0AD5EC5DC977AB042EEB8",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13737290,
+   "inLedger": true
+  },
+  {
+   "label": "Remit Y2 without hook",
+   "type": "Remit",
+   "from": "issuer",
+   "hash": "7301E5573F79006CFF97CF926AEFD6BD96475F66B1A3DB3287B4681167752445",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13737292,
+   "inLedger": true
+  },
+  {
+   "label": "return Y2",
+   "type": "Remit",
+   "from": "R1",
+   "hash": "CA24BDF1609DB3D79E9E52CDF9DF3FB8B56A89C76B6E24491049B2209BE9EDB6",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13737294,
+   "inLedger": true
+  },
+  {
+   "label": "SetHook return",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "F4025C1E0BE5347E94307BA618376C9FA66CFA6EAA92E9A9424023FB2494819A",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13737296,
+   "inLedger": true
+  },
+  {
+   "label": "SetHook NSDelete",
+   "type": "SetHook",
+   "from": "issuer",
+   "hash": "2B7FCEF6E1851AC3DCD36B1882ADDF81C14C8D993282FDEC7BB6456EE80CC909",
+   "result": "tesSUCCESS",
+   "hook": "(hook not called)",
+   "fee": "35",
+   "ledger": 13737298,
+   "inLedger": true
+  },
+  {
+   "label": "mint Box W (key, token+100 XAH, EXP)",
+   "type": "URITokenMint",
+   "from": "issuer",
+   "hash": "84F1D6D64BA51CDB61CC54139CFB48B63351E8626DB7AFAEE312B4A7B5065B4C",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737300,
+   "inLedger": true
+  },
+  {
+   "label": "PACK Box W (key, token+100 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "65D05E7CBB7B27EF0564126FE48D5DA4C260CC14198B00A526ADEE03127B9587",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: audit",
+   "fee": "96161",
+   "ledger": 13737302,
+   "inLedger": true
+  },
+  {
+   "label": "AUDIT",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "5BE3BAEC3926F7B9558BE6ADAA483AD435B46C0C7DFC96860EE1C0D1D53069B8",
+   "result": "tesSUCCESS",
+   "hook": "tgs: audited",
+   "fee": "96032",
+   "ledger": 13737304,
+   "inLedger": true
+  },
+  {
+   "label": "PACK Box W (key, token+100 XAH, EXP)",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "E7ABD7E59DBF77403919E1424AE4B336787B638C07F1277822B988FC422CB7ED",
+   "result": "tesSUCCESS",
+   "hook": "tgs: packed",
+   "fee": "96161",
+   "ledger": 13737306,
+   "inLedger": true
+  },
+  {
+   "label": "EscrowCreate large before OPEN",
+   "type": "EscrowCreate",
+   "from": "issuer",
+   "hash": "4ABE6F217B740C3D00FA859756A135CD4ACEBFA483A30EAC67A631F1E90EC787",
+   "result": "tecHOOK_REJECTED",
+   "hook": "tgs: reserve",
+   "fee": "96020",
+   "ledger": 13737308,
+   "inLedger": true
+  },
+  {
+   "label": "EscrowCreate 1 XAH",
+   "type": "EscrowCreate",
+   "from": "issuer",
+   "hash": "D0286DEF1EFA587503D100B2E4B03BAE53953048C773C4729D769D1F350F589E",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737310,
+   "inLedger": true
+  },
+  {
+   "label": "EscrowFinish",
+   "type": "EscrowFinish",
+   "from": "R1",
+   "hash": "31FC518CA21C3447550CB81E2A2B03F7370454C6729ADAD213682C99A312AF33",
+   "result": "tesSUCCESS",
+   "hook": "tgs: skip",
+   "fee": "96020",
+   "ledger": 13737318,
+   "inLedger": true
+  },
+  {
+   "label": "OPEN W",
+   "type": "Invoke",
+   "from": "issuer",
+   "hash": "9D94627E3B782B54F7722B570675456CD872375794F350A94AD95681AE695F19",
+   "result": "tesSUCCESS",
+   "hook": "tgs: opened",
+   "fee": "96081",
+   "ledger": 13737344,
+   "inLedger": true
+  },
+  {
+   "label": "EscrowCreate large after OPEN",
+   "type": "EscrowCreate",
+   "from": "issuer",
+   "hash": "F5C847D2C14397A686EE1B12A1C64EDEC5EFFBE4BDD8FF3A09B96D0AB137E9D2",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737346,
+   "inLedger": true
+  },
+  {
+   "label": "EscrowCancel",
+   "type": "EscrowCancel",
+   "from": "issuer",
+   "hash": "B28894C241C1FA604ED1939999F189B1660CFF1FA01C93382ACBD489A25ADF35",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737362,
+   "inLedger": true
+  },
+  {
+   "label": "PayChan large after OPEN",
+   "type": "PaymentChannelCreate",
+   "from": "issuer",
+   "hash": "66FEA4A35CDDA4D23F1B3D3A5F249890C5FAAE936965B2AAB7B159DF34FFBAAD",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737364,
+   "inLedger": true
+  },
+  {
+   "label": "PayChan close 1",
+   "type": "PaymentChannelClaim",
+   "from": "issuer",
+   "hash": "C9502FFE77A985A0DC69AEFFBF6CBA189DFD3758A30F366F20A4F5C38FC403A7",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737366,
+   "inLedger": true
+  },
+  {
+   "label": "PayChan close 2",
+   "type": "PaymentChannelClaim",
+   "from": "issuer",
+   "hash": "E8DAB1F1B9C64F796BE6A9000CA947BFB67769A53DFC78B80E640BE436B894A2",
+   "result": "tesSUCCESS",
+   "hook": "tgs: out",
+   "fee": "96020",
+   "ledger": 13737372,
+   "inLedger": true
+  }
+ ]
+}

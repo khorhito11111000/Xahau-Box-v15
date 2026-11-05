@@ -1,0 +1,1115 @@
+tgstkshookbox_15.c:19:9: warning: 'NOPE' macro redefined [-Wmacro-redefined]
+   19 | #define NOPE(m) rollback(SBUF(m), __LINE__)
+      |         ^
+inc/macro.h:33:9: note: previous definition is here
+   33 | #define NOPE(x)\
+      |         ^
+tgstkshookbox_15.c:70:9: warning: incompatible pointer to integer conversion passing 'uint8_t[85]' (aka 'unsigned char[85]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   70 | if(!ok){RESTORE(box,iv);return accept(0,0,0);}
+      |         ^~~~~~~~~~~~~~~
+tgstkshookbox_15.c:46:93: note: expanded from macro 'RESTORE'
+   46 | #define RESTORE(b,k) do{int _j;(b)[44]=0;for(_j=45;GUARD(36),_j<81;++_j)(b)[_j]=0;state_set((b),85,(k),32);}while(0)
+      |                                                                                             ^~~
+inc/extern.h:256:14: note: passing argument to parameter 'read_ptr' here
+  256 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:70:9: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   70 | if(!ok){RESTORE(box,iv);return accept(0,0,0);}
+      |         ^~~~~~~~~~~~~~~
+tgstkshookbox_15.c:46:100: note: expanded from macro 'RESTORE'
+   46 | #define RESTORE(b,k) do{int _j;(b)[44]=0;for(_j=45;GUARD(36),_j<81;++_j)(b)[_j]=0;state_set((b),85,(k),32);}while(0)
+      |                                                                                                    ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:71:21: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   71 | if(state(SBUF(meta),META,32)!=17) return accept(0,0,0);
+      |                     ^~~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:73:1: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   73 | FIN(box,iv);
+      | ^~~~~~~~~~~
+tgstkshookbox_15.c:45:197: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                     ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:73:1: warning: incompatible pointer to integer conversion passing 'uint8_t[85]' (aka 'unsigned char[85]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   73 | FIN(box,iv);
+      | ^~~~~~~~~~~
+tgstkshookbox_15.c:45:226: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                                                  ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:73:1: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   73 | FIN(box,iv);
+      | ^~~~~~~~~~~
+tgstkshookbox_15.c:45:251: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                                                                           ^~~~~~~~~~~~~
+tgstkshookbox_15.c:39:192: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                ^~~~~
+inc/extern.h:43:14: note: passing argument to parameter 'write_ptr' here
+   43 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:73:1: warning: incompatible pointer to integer conversion passing 'uint8_t[33]' (aka 'unsigned char[33]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   73 | FIN(box,iv);
+      | ^~~~~~~~~~~
+tgstkshookbox_15.c:45:251: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                                                                           ^~~~~~~~~~~~~
+tgstkshookbox_15.c:39:201: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                         ^~
+inc/extern.h:45:14: note: passing argument to parameter 'read_ptr' here
+   45 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:73:1: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   73 | FIN(box,iv);
+      | ^~~~~~~~~~~
+tgstkshookbox_15.c:45:279: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                                                                                                       ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:73:1: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   73 | FIN(box,iv);
+      | ^~~~~~~~~~~
+tgstkshookbox_15.c:45:302: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                                                                                                                              ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:76:28: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   76 | {int64_t _pl=state(SBUF(p),PEND,32); if((_pl!=64&&_pl!=68)||Z32(p)) return accept(0,0,0);}
+      |                            ^~~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:80:14: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   80 | if(reserved){CLEAR_PEND();return accept(0,0,0);}
+      |              ^~~~~~~~~~~~
+tgstkshookbox_15.c:42:124: note: expanded from macro 'CLEAR_PEND'
+   42 | #define CLEAR_PEND() do{uint8_t _z[64];int _i;for(_i=0;GUARD(8),_i<8;++_i)__builtin_memset(_z+_i*8,0,8);state_set(SBUF(_z),PEND,32);}while(0)
+      |                                                                                                                            ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:81:125: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   81 | {int64_t ms=meta_slot(0);uint8_t tr[1];if(ms>=0&&slot_subfield(ms,sfTransactionResult,2)>=0&&slot(SBUF(tr),2)==1&&tr[0]!=0){CLEAR_PEND();return accept(0,0,0);}}
+      |                                                                                                                             ^~~~~~~~~~~~
+tgstkshookbox_15.c:42:124: note: expanded from macro 'CLEAR_PEND'
+   42 | #define CLEAR_PEND() do{uint8_t _z[64];int _i;for(_i=0;GUARD(8),_i<8;++_i)__builtin_memset(_z+_i*8,0,8);state_set(SBUF(_z),PEND,32);}while(0)
+      |                                                                                                                            ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:82:20: warning: incompatible pointer to integer conversion passing 'uint8_t[68]' (aka 'unsigned char[68]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   82 | if(state(SBUF(box),p,32)!=45||box[44]){CLEAR_PEND();return accept(0,0,0);}
+      |                    ^
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:82:40: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   82 | if(state(SBUF(box),p,32)!=45||box[44]){CLEAR_PEND();return accept(0,0,0);}
+      |                                        ^~~~~~~~~~~~
+tgstkshookbox_15.c:42:124: note: expanded from macro 'CLEAR_PEND'
+   42 | #define CLEAR_PEND() do{uint8_t _z[64];int _i;for(_i=0;GUARD(8),_i<8;++_i)__builtin_memset(_z+_i*8,0,8);state_set(SBUF(_z),PEND,32);}while(0)
+      |                                                                                                                            ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:83:21: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   83 | if(state(SBUF(meta),META,32)!=17){CLEAR_PEND();return accept(0,0,0);}
+      |                     ^~~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:83:35: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   83 | if(state(SBUF(meta),META,32)!=17){CLEAR_PEND();return accept(0,0,0);}
+      |                                   ^~~~~~~~~~~~
+tgstkshookbox_15.c:42:124: note: expanded from macro 'CLEAR_PEND'
+   42 | #define CLEAR_PEND() do{uint8_t _z[64];int _i;for(_i=0;GUARD(8),_i<8;++_i)__builtin_memset(_z+_i*8,0,8);state_set(SBUF(_z),PEND,32);}while(0)
+      |                                                                                                                            ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:84:18: warning: incompatible pointer to integer conversion passing 'uint8_t[68]' (aka 'unsigned char[68]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   84 | if(state_set(0,0,p,32)<0) return accept(0,0,0);
+      |                  ^
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:91:22: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   91 | state_set(SBUF(meta),META,32);
+      |                      ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:92:22: warning: incompatible pointer to integer conversion passing 'uint8_t[85]' (aka 'unsigned char[85]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   92 | if(hn) state_set(0,0,box,32);
+      |                      ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:93:17: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   93 | {uint8_t mk[32];MKEY(p,mk);state_set(0,0,mk,32);}
+      |                 ^~~~~~~~~~
+tgstkshookbox_15.c:39:192: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                ^~~~~
+inc/extern.h:43:14: note: passing argument to parameter 'write_ptr' here
+   43 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:93:17: warning: incompatible pointer to integer conversion passing 'uint8_t[33]' (aka 'unsigned char[33]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   93 | {uint8_t mk[32];MKEY(p,mk);state_set(0,0,mk,32);}
+      |                 ^~~~~~~~~~
+tgstkshookbox_15.c:39:201: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                         ^~
+inc/extern.h:45:14: note: passing argument to parameter 'read_ptr' here
+   45 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:93:42: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   93 | {uint8_t mk[32];MKEY(p,mk);state_set(0,0,mk,32);}
+      |                                          ^~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:94:1: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+   94 | CLEAR_PEND();
+      | ^~~~~~~~~~~~
+tgstkshookbox_15.c:42:124: note: expanded from macro 'CLEAR_PEND'
+   42 | #define CLEAR_PEND() do{uint8_t _z[64];int _i;for(_i=0;GUARD(8),_i<8;++_i)__builtin_memset(_z+_i*8,0,8);state_set(SBUF(_z),PEND,32);}while(0)
+      |                                                                                                                            ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:102:21: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  102 | if(state(SBUF(meta),META,32)!=17){int i;for(i=0;GUARD(17),i<17;++i) meta[i]=0;}
+      |                     ^~~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:105:29: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  105 | int64_t pl=state(SBUF(pend),PEND,32);
+      |                             ^~~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:111:19: warning: incompatible pointer to integer conversion passing 'uint8_t[68]' (aka 'unsigned char[68]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  111 | if(state(SBUF(sb),pend,32)==45){
+      |                   ^~~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:114:70: warning: incompatible pointer to integer conversion passing 'uint8_t[45]' (aka 'unsigned char[45]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  114 | if(th){uint8_t k[34],ow[20]; if(util_keylet(SBUF(k),KEYLET_UNCHECKED,sb,32,0,0,0,0)==34){int64_t s=slot_set(SBUF(k),0); if(s>=0&&slot_subfield(s,sfOwner,1)>=0&&slot(SBUF(ow),1)==20&&EQ(ow,ha)) fin=0;}}
+      |                                                                      ^~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:118:25: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  118 | if(state_set(SBUF(meta),META,32)!=17) NOPE("tgs: meta");
+      |                         ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:119:22: warning: incompatible pointer to integer conversion passing 'uint8_t[45]' (aka 'unsigned char[45]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  119 | if(th&&state_set(0,0,sb,32)<0) NOPE("tgs: unlock");
+      |                      ^~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:120:17: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  120 | {uint8_t mk[32];MKEY(pend,mk);if(state_set(0,0,mk,32)<0) NOPE("tgs: unmode");}
+      |                 ^~~~~~~~~~~~~
+tgstkshookbox_15.c:39:192: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                ^~~~~
+inc/extern.h:43:14: note: passing argument to parameter 'write_ptr' here
+   43 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:120:17: warning: incompatible pointer to integer conversion passing 'uint8_t[33]' (aka 'unsigned char[33]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  120 | {uint8_t mk[32];MKEY(pend,mk);if(state_set(0,0,mk,32)<0) NOPE("tgs: unmode");}
+      |                 ^~~~~~~~~~~~~
+tgstkshookbox_15.c:39:201: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                         ^~
+inc/extern.h:45:14: note: passing argument to parameter 'read_ptr' here
+   45 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:120:48: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  120 | {uint8_t mk[32];MKEY(pend,mk);if(state_set(0,0,mk,32)<0) NOPE("tgs: unmode");}
+      |                                                ^~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:121:18: warning: incompatible pointer to integer conversion passing 'uint8_t[68]' (aka 'unsigned char[68]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  121 | if(state_set(0,0,pend,32)<0) NOPE("tgs: mark");
+      |                  ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:124:1: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  124 | CLEAR_PEND(); busy=0; synced=1;
+      | ^~~~~~~~~~~~
+tgstkshookbox_15.c:42:124: note: expanded from macro 'CLEAR_PEND'
+   42 | #define CLEAR_PEND() do{uint8_t _z[64];int _i;for(_i=0;GUARD(8),_i<8;++_i)__builtin_memset(_z+_i*8,0,8);state_set(SBUF(_z),PEND,32);}while(0)
+      |                                                                                                                            ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:129:44: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  129 | if(otxn_field(SBUF(tid),sfURITokenID)==32){LOCKED(tid,bad); if(bad) NOPE("tgs: locked");}
+      |                                            ^~~~~~~~~~~~~~~
+tgstkshookbox_15.c:38:67: note: expanded from macro 'LOCKED'
+   38 | #define LOCKED(id,bad) do{uint8_t _f[1];(bad)=0;if(state(SBUF(_f),(id),32)==1&&_f[0]==1)(bad)=1;}while(0)
+      |                                                                   ^~~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:138:55: warning: incompatible pointer to integer conversion passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  138 | for(i=0;GUARD(32),i<k;++i){ uint8_t* id=ids+h+(i<<5); LOCKED(id,bad); if(bad) NOPE("tgs: locked"); }
+      |                                                       ^~~~~~~~~~~~~~
+tgstkshookbox_15.c:38:67: note: expanded from macro 'LOCKED'
+   38 | #define LOCKED(id,bad) do{uint8_t _f[1];(bad)=0;if(state(SBUF(_f),(id),32)==1&&_f[0]==1)(bad)=1;}while(0)
+      |                                                                   ^~~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:144:59: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  144 | uint64_t oc,add=0,live,unt; uint8_t tr[48]; int tdirty=0; LOADOC(oc); TRKLOAD(tr);
+      |                                                           ^~~~~~~~~~
+tgstkshookbox_15.c:50:60: note: expanded from macro 'LOADOC'
+   50 | #define LOADOC(v) do{uint8_t _o[8];(v)=0;if(state(SBUF(_o),OCK,32)==8)(v)=U64(_o);}while(0)
+      |                                                            ^~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:144:71: warning: incompatible pointer to integer conversion passing 'uint8_t[48]' (aka 'unsigned char[48]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  144 | uint64_t oc,add=0,live,unt; uint8_t tr[48]; int tdirty=0; LOADOC(oc); TRKLOAD(tr);
+      |                                                                       ^~~~~~~~~~~
+tgstkshookbox_15.c:52:33: note: expanded from macro 'TRKLOAD'
+   52 | #define TRKLOAD(tr) do{if(state((tr),48,TRK,32)!=48){int _i;for(_i=0;GUARD(6),_i<6;++_i)__builtin_memset((tr)+_i*8,0,8);}}while(0)
+      |                                 ^~~~
+inc/extern.h:274:14: note: passing argument to parameter 'write_ptr' here
+  274 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:144:71: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  144 | uint64_t oc,add=0,live,unt; uint8_t tr[48]; int tdirty=0; LOADOC(oc); TRKLOAD(tr);
+      |                                                                       ^~~~~~~~~~~
+tgstkshookbox_15.c:52:41: note: expanded from macro 'TRKLOAD'
+   52 | #define TRKLOAD(tr) do{if(state((tr),48,TRK,32)!=48){int _i;for(_i=0;GUARD(6),_i<6;++_i)__builtin_memset((tr)+_i*8,0,8);}}while(0)
+      |                                         ^~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:145:1: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  145 | TRKSUM(tr,live,tdirty); unt=oc; oc+=live;
+      | ^~~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:53:205: note: expanded from macro 'TRKSUM'
+   53 | #define TRKSUM(tr,live,dirty) do{int _i;int64_t _TS=0,_TQ=0;(live)=0;for(_i=0;GUARD(8),_i<8;++_i){uint8_t* _e=(tr)+_i*5;if(_e[0]){uint8_t _k[34];if(util_keylet(SBUF(_k),_e[0]==1?KEYLET_OFFER:KEYLET_CHECK,ha,20,U32B(_e+1),0,0,0)!=34) NOPE("tgs: trk");int64_t _s=slot_set(SBUF(_k),_TS);if(_s==DOESNT_EXIST){_e[0]=0;(dirty)=1;}else{if(_s<0) NOPE("tgs: trk");_TS=_s;int64_t _q=slot_subfield(_s,_e[0]==1?sfTakerGets:sfSendMax,_TQ);if(_q<0) NOPE("tgs: trk");_TQ=_q;(live)+=XD(_q);}}}}while(0)
+      |                                                                                                                                                                                                             ^~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:153:26: warning: incompatible pointer to integer conversion passing 'uint8_t[512]' (aka 'unsigned char[512]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  153 | int64_t loc=sto_subarray(am,an,i); if(loc<0) break;
+      |                          ^~
+inc/extern.h:67:23: note: passing argument to parameter 'read_ptr' here
+   67 | sto_subarray(uint32_t read_ptr, uint32_t read_len, uint32_t array_id);
+      |                       ^
+tgstkshookbox_15.c:156:57: warning: incompatible pointer to integer conversion passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  156 | uint8_t* e=am+o; int32_t bl=ln; int64_t in=sto_subfield(e,ln,sfAmount);
+      |                                                         ^
+inc/extern.h:64:23: note: passing argument to parameter 'read_ptr' here
+   64 | sto_subfield(uint32_t read_ptr, uint32_t read_len, uint32_t field_id);
+      |                       ^
+tgstkshookbox_15.c:157:34: warning: incompatible pointer to integer conversion passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  157 | if(in<0){int64_t wr=sto_subfield(e,ln,sfAmountEntry); if(wr>=0){int32_t wo=(int32_t)(wr>>32), wl=(int32_t)wr; if(wo>=0&&wl>0&&wo+wl<=ln){e+=wo; bl=wl; in=sto_subfield(e,bl,sfAmount);}}}
+      |                                  ^
+inc/extern.h:64:23: note: passing argument to parameter 'read_ptr' here
+   64 | sto_subfield(uint32_t read_ptr, uint32_t read_len, uint32_t field_id);
+      |                       ^
+tgstkshookbox_15.c:157:168: warning: incompatible pointer to integer conversion passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  157 | if(in<0){int64_t wr=sto_subfield(e,ln,sfAmountEntry); if(wr>=0){int32_t wo=(int32_t)(wr>>32), wl=(int32_t)wr; if(wo>=0&&wl>0&&wo+wl<=ln){e+=wo; bl=wl; in=sto_subfield(e,bl,sfAmount);}}}
+      |                                                                                                                                                                        ^
+inc/extern.h:64:23: note: passing argument to parameter 'read_ptr' here
+   64 | sto_subfield(uint32_t read_ptr, uint32_t read_len, uint32_t field_id);
+      |                       ^
+tgstkshookbox_15.c:161:104: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  161 | {uint8_t da[20],dk[34]; if(otxn_field(SBUF(da),sfDestination)==20&&util_keylet(SBUF(dk),KEYLET_ACCOUNT,da,20,0,0,0,0)==34&&slot_set(SBUF(dk),0)==DOESNT_EXIST) extra+=BASE_RESERVE;}
+      |                                                                                                        ^~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:164:14: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  164 | int64_t bal; LOADBAL(ha,bal);
+      |              ^~~~~~~~~~~~~~~
+tgstkshookbox_15.c:35:98: note: expanded from macro 'LOADBAL'
+   35 | #define LOADBAL(acc,var) do{uint8_t _k[34],_b[8];(var)=-1;if(util_keylet(SBUF(_k),KEYLET_ACCOUNT,(acc),20,0,0,0,0)==34){int64_t _s=slot_set(SBUF(_k),0);if(_s>=0&&slot_subfield(_s,sfBalance,1)>=0&&slot(SBUF(_b),1)==8)(var)=(int64_t)DROP(_b);}}while(0)
+      |                                                                                                  ^~~~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:165:10: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  165 | {int ok; RESERVE_NOW(ha,rv,ok); if(!ok) NOPE("tgs: reserve");}
+      |          ^~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:36:119: note: expanded from macro 'RESERVE_NOW'
+   36 | #define RESERVE_NOW(acc,out,ok) do{uint8_t _rk[34],_rb[4];uint32_t _oc;(ok)=0;if(util_keylet(SBUF(_rk),KEYLET_ACCOUNT,(acc),20,0,0,0,0)==34){int64_t _rs=slot_set(SBUF(_rk),0);if(_rs>=0&&slot_subfield(_rs,sfOwnerCount,1)>=0&&slot(SBUF(_rb),1)==4){_oc=((uint32_t)_rb[0]<<24)|((uint32_t)_rb[1]<<16)|((uint32_t)_rb[2]<<8)|_rb[3];(out)=BASE_RESERVE+(uint64_t)_oc*OWNER_RESERVE;(ok)=1;}}}while(0)
+      |                                                                                                                       ^~~~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:174:67: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  174 | else{uint8_t _o[8];unt+=add;PUT64(_o,0,unt);if(state_set(SBUF(_o),OCK,32)!=8) NOPE("tgs: ocommit");}}
+      |                                                                   ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:175:22: warning: incompatible pointer to integer conversion passing 'uint8_t[48]' (aka 'unsigned char[48]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  175 | if(tdirty&&state_set(tr,48,TRK,32)!=48) NOPE("tgs: trk");
+      |                      ^~
+inc/extern.h:256:14: note: passing argument to parameter 'read_ptr' here
+  256 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:175:28: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  175 | if(tdirty&&state_set(tr,48,TRK,32)!=48) NOPE("tgs: trk");
+      |                            ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:178:99: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  178 | if(otxn_type()==ttURITOKEN_BUY){uint8_t t2[32];int b2=0;if(otxn_field(SBUF(t2),sfURITokenID)==32){LOCKED(t2,b2);if(b2) NOPE("tgs: locked");}}
+      |                                                                                                   ^~~~~~~~~~~~~
+tgstkshookbox_15.c:38:67: note: expanded from macro 'LOCKED'
+   38 | #define LOCKED(id,bad) do{uint8_t _f[1];(bad)=0;if(state(SBUF(_f),(id),32)==1&&_f[0]==1)(bad)=1;}while(0)
+      |                                                                   ^~~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:181:33: warning: incompatible pointer to integer conversion passing 'char[4]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  181 | int64_t nc=otxn_param(SBUF(cmd),"CMD",3);
+      |                                 ^~~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:187:30: warning: incompatible pointer to integer conversion passing 'char[3]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  187 | if(sync&&otxn_param(SBUF(vc),"VC",2)!=32){ if(synced) OK("tgs: synced"); if(busy) NOPE("tgs: pending"); NOPE("tgs: idle"); }
+      |                              ^~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:191:24: warning: incompatible pointer to integer conversion passing 'char[3]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  191 | if(otxn_param(SBUF(vc),"VC",2)!=32) NOPE("tgs: vc");
+      |                        ^~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:194:33: warning: incompatible pointer to integer conversion passing 'char[5]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  194 | {int64_t nm=otxn_param(SBUF(md),"MODE",4);
+      |                                 ^~~~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:198:35: warning: incompatible pointer to integer conversion passing 'char[5]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  198 | if(tok){ if(otxn_param(SBUF(ktid),"KTID",4)!=32||Z32(ktid)) NOPE("tgs: ktid");
+      |                                   ^~~~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:199:81: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  199 | {uint8_t kk[34],lt[2],fl[4];int64_t ks;if(util_keylet(SBUF(kk),KEYLET_UNCHECKED,ktid,32,0,0,0,0)!=34||(ks=slot_set(SBUF(kk),0))<0) NOPE("tgs: ktid");
+      |                                                                                 ^~~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:205:25: warning: incompatible pointer to integer conversion passing 'char[4]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  205 | if(otxn_param(SBUF(tid),"TID",3)!=32) NOPE("tgs: tid");
+      |                         ^~~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:206:25: warning: incompatible pointer to integer conversion passing 'char[4]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  206 | if(otxn_param(SBUF(amt),"AMT",3)!=8) NOPE("tgs: amt");
+      |                         ^~~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:208:33: warning: incompatible pointer to integer conversion passing 'char[4]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  208 | int64_t ne=otxn_param(SBUF(exp),"EXP",3);
+      |                                 ^~~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:217:1: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  217 | LOCKED(tid,bad); if(bad) NOPE("tgs: locked");
+      | ^~~~~~~~~~~~~~~
+tgstkshookbox_15.c:38:67: note: expanded from macro 'LOCKED'
+   38 | #define LOCKED(id,bad) do{uint8_t _f[1];(bad)=0;if(state(SBUF(_f),(id),32)==1&&_f[0]==1)(bad)=1;}while(0)
+      |                                                                   ^~~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:219:41: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  219 | if(util_keylet(SBUF(k),KEYLET_UNCHECKED,tid,32,0,0,0,0)!=34) NOPE("tgs: token");
+      |                                         ^~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:227:33: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  227 | if(same) NOPE("tgs: ktid=tid"); LOCKED(ktid,bad); if(bad) NOPE("tgs: ktid locked"); }
+      |                                 ^~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:38:67: note: expanded from macro 'LOCKED'
+   38 | #define LOCKED(id,bad) do{uint8_t _f[1];(bad)=0;if(state(SBUF(_f),(id),32)==1&&_f[0]==1)(bad)=1;}while(0)
+      |                                                                   ^~~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:229:14: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  229 | {uint64_t F; ACCF(F); if(hn&&F) F-=1;
+      |              ^~~~~~~
+tgstkshookbox_15.c:55:116: note: expanded from macro 'ACCF'
+   55 | #define ACCF(F) do{uint8_t _ak[34],_ab[4];uint64_t _oc=0,_ex=locks;int _ok;if(util_keylet(SBUF(_ak),KEYLET_ACCOUNT,ha,20,0,0,0,0)!=34) NOPE("tgs: acc3");int64_t _as=slot_set(SBUF(_ak),0);if(_as<0) NOPE("tgs: acc3");\
+      |                                                                                                                    ^~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:229:14: warning: incompatible pointer to integer conversion passing 'uint8_t[4]' (aka 'unsigned char[4]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  229 | {uint64_t F; ACCF(F); if(hn&&F) F-=1;
+      |              ^~~~~~~
+tgstkshookbox_15.c:55:216: note: expanded from macro 'ACCF'
+   55 | #define ACCF(F) do{uint8_t _ak[34],_ab[4];uint64_t _oc=0,_ex=locks;int _ok;if(util_keylet(SBUF(_ak),KEYLET_ACCOUNT,ha,20,0,0,0,0)!=34) NOPE("tgs: acc3");int64_t _as=slot_set(SBUF(_ak),0);if(_as<0) NOPE("tgs: acc3");\
+      |                                                                                                                                                                                                                        ^
+   56 | SLOTU(_as,sfOwnerCount,_ab,4,_ok);if(_ok)_oc=U32B(_ab);\
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:54:93: note: expanded from macro '\
+SLOTU'
+   54 | #define SLOTU(par,fld,buf,n,ok) do{int64_t _q=slot_subfield((par),(fld),0);(ok)=_q>=0&&slot((buf),(n),_q)==(n);}while(0)
+      |                                                                                             ^~~~~
+inc/extern.h:228:15: note: passing argument to parameter 'write_ptr' here
+  228 | slot(uint32_t write_ptr, uint32_t write_len, uint32_t slot);
+      |               ^
+tgstkshookbox_15.c:229:14: warning: incompatible pointer to integer conversion passing 'uint8_t[4]' (aka 'unsigned char[4]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  229 | {uint64_t F; ACCF(F); if(hn&&F) F-=1;
+      |              ^~~~~~~
+tgstkshookbox_15.c:57:17: note: expanded from macro 'ACCF'
+   57 | {uint64_t _sc=1;SLOTU(_as,sfHookStateScale,_ab,2,_ok);if(_ok)_sc=((uint64_t)_ab[0]<<8)|_ab[1];if(!_sc)_sc=1;\
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:54:93: note: expanded from macro 'SLOTU'
+   54 | #define SLOTU(par,fld,buf,n,ok) do{int64_t _q=slot_subfield((par),(fld),0);(ok)=_q>=0&&slot((buf),(n),_q)==(n);}while(0)
+      |                                                                                             ^~~~~
+inc/extern.h:228:15: note: passing argument to parameter 'write_ptr' here
+  228 | slot(uint32_t write_ptr, uint32_t write_len, uint32_t slot);
+      |               ^
+tgstkshookbox_15.c:229:14: warning: incompatible pointer to integer conversion passing 'uint8_t[4]' (aka 'unsigned char[4]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  229 | {uint64_t F; ACCF(F); if(hn&&F) F-=1;
+      |              ^~~~~~~
+tgstkshookbox_15.c:57:109: note: expanded from macro 'ACCF'
+   57 | {uint64_t _sc=1;SLOTU(_as,sfHookStateScale,_ab,2,_ok);if(_ok)_sc=((uint64_t)_ab[0]<<8)|_ab[1];if(!_sc)_sc=1;\
+      |                                                                                                             ^
+   58 | SLOTU(_as,sfHookStateCount,_ab,4,_ok);if(_ok)_ex+=(uint64_t)U32B(_ab)*_sc;}\
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:54:93: note: expanded from macro '\
+SLOTU'
+   54 | #define SLOTU(par,fld,buf,n,ok) do{int64_t _q=slot_subfield((par),(fld),0);(ok)=_q>=0&&slot((buf),(n),_q)==(n);}while(0)
+      |                                                                                             ^~~~~
+inc/extern.h:228:15: note: passing argument to parameter 'write_ptr' here
+  228 | slot(uint32_t write_ptr, uint32_t write_len, uint32_t slot);
+      |               ^
+tgstkshookbox_15.c:229:14: warning: incompatible pointer to integer conversion passing 'uint8_t[4]' (aka 'unsigned char[4]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  229 | {uint64_t F; ACCF(F); if(hn&&F) F-=1;
+      |              ^~~~~~~
+tgstkshookbox_15.c:58:76: note: expanded from macro 'ACCF'
+   58 | SLOTU(_as,sfHookStateCount,_ab,4,_ok);if(_ok)_ex+=(uint64_t)U32B(_ab)*_sc;}\
+      |                                                                            ^
+   59 | SLOTU(_as,sfTicketCount,_ab,4,_ok);if(_ok)_ex+=U32B(_ab);\
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:54:93: note: expanded from macro '\
+SLOTU'
+   54 | #define SLOTU(par,fld,buf,n,ok) do{int64_t _q=slot_subfield((par),(fld),0);(ok)=_q>=0&&slot((buf),(n),_q)==(n);}while(0)
+      |                                                                                             ^~~~~
+inc/extern.h:228:15: note: passing argument to parameter 'write_ptr' here
+  228 | slot(uint32_t write_ptr, uint32_t write_len, uint32_t slot);
+      |               ^
+tgstkshookbox_15.c:230:45: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  230 | if(F>1){uint8_t au[41]; if(!(state(SBUF(au),AUD,32)==41&&au[16]&&F<=U64(au+8))) NOPE("tgs: audit");}}
+      |                                             ^~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:235:34: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  235 | {uint8_t nb[4];if(state(SBUF(nb),NCK,32)!=4) extra+=1;}
+      |                                  ^~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:236:14: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  236 | int64_t bal; LOADBAL(ha,bal); uint64_t oc; LOADOC(oc);
+      |              ^~~~~~~~~~~~~~~
+tgstkshookbox_15.c:35:98: note: expanded from macro 'LOADBAL'
+   35 | #define LOADBAL(acc,var) do{uint8_t _k[34],_b[8];(var)=-1;if(util_keylet(SBUF(_k),KEYLET_ACCOUNT,(acc),20,0,0,0,0)==34){int64_t _s=slot_set(SBUF(_k),0);if(_s>=0&&slot_subfield(_s,sfBalance,1)>=0&&slot(SBUF(_b),1)==8)(var)=(int64_t)DROP(_b);}}while(0)
+      |                                                                                                  ^~~~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:236:44: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  236 | int64_t bal; LOADBAL(ha,bal); uint64_t oc; LOADOC(oc);
+      |                                            ^~~~~~~~~~
+tgstkshookbox_15.c:50:60: note: expanded from macro 'LOADOC'
+   50 | #define LOADOC(v) do{uint8_t _o[8];(v)=0;if(state(SBUF(_o),OCK,32)==8)(v)=U64(_o);}while(0)
+      |                                                            ^~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:237:38: warning: incompatible pointer to integer conversion passing 'uint8_t[48]' (aka 'unsigned char[48]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  237 | {uint8_t tr[48];int td=0;uint64_t lv;TRKLOAD(tr);
+      |                                      ^~~~~~~~~~~
+tgstkshookbox_15.c:52:33: note: expanded from macro 'TRKLOAD'
+   52 | #define TRKLOAD(tr) do{if(state((tr),48,TRK,32)!=48){int _i;for(_i=0;GUARD(6),_i<6;++_i)__builtin_memset((tr)+_i*8,0,8);}}while(0)
+      |                                 ^~~~
+inc/extern.h:274:14: note: passing argument to parameter 'write_ptr' here
+  274 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:237:38: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  237 | {uint8_t tr[48];int td=0;uint64_t lv;TRKLOAD(tr);
+      |                                      ^~~~~~~~~~~
+tgstkshookbox_15.c:52:41: note: expanded from macro 'TRKLOAD'
+   52 | #define TRKLOAD(tr) do{if(state((tr),48,TRK,32)!=48){int _i;for(_i=0;GUARD(6),_i<6;++_i)__builtin_memset((tr)+_i*8,0,8);}}while(0)
+      |                                         ^~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:238:1: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  238 | TRKSUM(tr,lv,td);oc+=lv;}
+      | ^~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:53:205: note: expanded from macro 'TRKSUM'
+   53 | #define TRKSUM(tr,live,dirty) do{int _i;int64_t _TS=0,_TQ=0;(live)=0;for(_i=0;GUARD(8),_i<8;++_i){uint8_t* _e=(tr)+_i*5;if(_e[0]){uint8_t _k[34];if(util_keylet(SBUF(_k),_e[0]==1?KEYLET_OFFER:KEYLET_CHECK,ha,20,U32B(_e+1),0,0,0)!=34) NOPE("tgs: trk");int64_t _s=slot_set(SBUF(_k),_TS);if(_s==DOESNT_EXIST){_e[0]=0;(dirty)=1;}else{if(_s<0) NOPE("tgs: trk");_TS=_s;int64_t _q=slot_subfield(_s,_e[0]==1?sfTakerGets:sfSendMax,_TQ);if(_q<0) NOPE("tgs: trk");_TQ=_q;(live)+=XD(_q);}}}}while(0)
+      |                                                                                                                                                                                                             ^~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:239:10: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  239 | {int ok; RESERVE_NOW(ha,rv,ok); if(!ok) NOPE("tgs: reserve");}
+      |          ^~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:36:119: note: expanded from macro 'RESERVE_NOW'
+   36 | #define RESERVE_NOW(acc,out,ok) do{uint8_t _rk[34],_rb[4];uint32_t _oc;(ok)=0;if(util_keylet(SBUF(_rk),KEYLET_ACCOUNT,(acc),20,0,0,0,0)==34){int64_t _rs=slot_set(SBUF(_rk),0);if(_rs>=0&&slot_subfield(_rs,sfOwnerCount,1)>=0&&slot(SBUF(_rb),1)==4){_oc=((uint32_t)_rb[0]<<24)|((uint32_t)_rb[1]<<16)|((uint32_t)_rb[2]<<8)|_rb[3];(out)=BASE_RESERVE+(uint64_t)_oc*OWNER_RESERVE;(ok)=1;}}}while(0)
+      |                                                                                                                       ^~~~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:242:17: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  242 | uint8_t bk[32]; BKEY(vc,bk);
+      |                 ^~~~~~~~~~~
+tgstkshookbox_15.c:40:192: note: expanded from macro 'BKEY'
+   40 | #define BKEY(v,out) do{uint8_t _m[33];_m[0]=0x42;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash4");}while(0)
+      |                                                                                                                                                                                                ^~~~~
+inc/extern.h:43:14: note: passing argument to parameter 'write_ptr' here
+   43 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:242:17: warning: incompatible pointer to integer conversion passing 'uint8_t[33]' (aka 'unsigned char[33]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  242 | uint8_t bk[32]; BKEY(vc,bk);
+      |                 ^~~~~~~~~~~
+tgstkshookbox_15.c:40:201: note: expanded from macro 'BKEY'
+   40 | #define BKEY(v,out) do{uint8_t _m[33];_m[0]=0x42;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash4");}while(0)
+      |                                                                                                                                                                                                         ^~
+inc/extern.h:45:14: note: passing argument to parameter 'read_ptr' here
+   45 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:248:48: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  248 | {uint8_t nb[4];uint32_t nv=0;if(state(SBUF(nb),NCK,32)==4) nv=U32B(nb);nv+=1;nb[0]=(uint8_t)(nv>>24);nb[1]=(uint8_t)(nv>>16);nb[2]=(uint8_t)(nv>>8);nb[3]=(uint8_t)nv;
+      |                                                ^~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:249:79: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  249 | box[81]=nb[0];box[82]=nb[1];box[83]=nb[2];box[84]=nb[3];if(state_set(SBUF(nb),NCK,32)!=4) NOPE("tgs: nonce");}
+      |                                                                               ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:251:38: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  251 | if(tok){uint8_t mk[32],rec[33];int j;MKEY(bk,mk);rec[0]=1;
+      |                                      ^~~~~~~~~~~
+tgstkshookbox_15.c:39:192: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                ^~~~~
+inc/extern.h:43:14: note: passing argument to parameter 'write_ptr' here
+   43 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:251:38: warning: incompatible pointer to integer conversion passing 'uint8_t[33]' (aka 'unsigned char[33]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  251 | if(tok){uint8_t mk[32],rec[33];int j;MKEY(bk,mk);rec[0]=1;
+      |                                      ^~~~~~~~~~~
+tgstkshookbox_15.c:39:201: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                         ^~
+inc/extern.h:45:14: note: passing argument to parameter 'read_ptr' here
+   45 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:252:88: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  252 | for(j=0;GUARD(4),j<4;++j)__builtin_memcpy(rec+1+j*8,ktid+j*8,8);if(state_set(SBUF(rec),mk,32)!=33) NOPE("tgs: mode");}
+      |                                                                                        ^~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:256:25: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  256 | if(state_set(SBUF(meta),META,32)!=17) NOPE("tgs: meta");
+      |                         ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:262:13: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  262 | uint64_t F; ACCF(F);
+      |             ^~~~~~~
+tgstkshookbox_15.c:55:116: note: expanded from macro 'ACCF'
+   55 | #define ACCF(F) do{uint8_t _ak[34],_ab[4];uint64_t _oc=0,_ex=locks;int _ok;if(util_keylet(SBUF(_ak),KEYLET_ACCOUNT,ha,20,0,0,0,0)!=34) NOPE("tgs: acc3");int64_t _as=slot_set(SBUF(_ak),0);if(_as<0) NOPE("tgs: acc3");\
+      |                                                                                                                    ^~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:262:13: warning: incompatible pointer to integer conversion passing 'uint8_t[4]' (aka 'unsigned char[4]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  262 | uint64_t F; ACCF(F);
+      |             ^~~~~~~
+tgstkshookbox_15.c:55:216: note: expanded from macro 'ACCF'
+   55 | #define ACCF(F) do{uint8_t _ak[34],_ab[4];uint64_t _oc=0,_ex=locks;int _ok;if(util_keylet(SBUF(_ak),KEYLET_ACCOUNT,ha,20,0,0,0,0)!=34) NOPE("tgs: acc3");int64_t _as=slot_set(SBUF(_ak),0);if(_as<0) NOPE("tgs: acc3");\
+      |                                                                                                                                                                                                                        ^
+   56 | SLOTU(_as,sfOwnerCount,_ab,4,_ok);if(_ok)_oc=U32B(_ab);\
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:54:93: note: expanded from macro '\
+SLOTU'
+   54 | #define SLOTU(par,fld,buf,n,ok) do{int64_t _q=slot_subfield((par),(fld),0);(ok)=_q>=0&&slot((buf),(n),_q)==(n);}while(0)
+      |                                                                                             ^~~~~
+inc/extern.h:228:15: note: passing argument to parameter 'write_ptr' here
+  228 | slot(uint32_t write_ptr, uint32_t write_len, uint32_t slot);
+      |               ^
+tgstkshookbox_15.c:262:13: warning: incompatible pointer to integer conversion passing 'uint8_t[4]' (aka 'unsigned char[4]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  262 | uint64_t F; ACCF(F);
+      |             ^~~~~~~
+tgstkshookbox_15.c:57:17: note: expanded from macro 'ACCF'
+   57 | {uint64_t _sc=1;SLOTU(_as,sfHookStateScale,_ab,2,_ok);if(_ok)_sc=((uint64_t)_ab[0]<<8)|_ab[1];if(!_sc)_sc=1;\
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:54:93: note: expanded from macro 'SLOTU'
+   54 | #define SLOTU(par,fld,buf,n,ok) do{int64_t _q=slot_subfield((par),(fld),0);(ok)=_q>=0&&slot((buf),(n),_q)==(n);}while(0)
+      |                                                                                             ^~~~~
+inc/extern.h:228:15: note: passing argument to parameter 'write_ptr' here
+  228 | slot(uint32_t write_ptr, uint32_t write_len, uint32_t slot);
+      |               ^
+tgstkshookbox_15.c:262:13: warning: incompatible pointer to integer conversion passing 'uint8_t[4]' (aka 'unsigned char[4]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  262 | uint64_t F; ACCF(F);
+      |             ^~~~~~~
+tgstkshookbox_15.c:57:109: note: expanded from macro 'ACCF'
+   57 | {uint64_t _sc=1;SLOTU(_as,sfHookStateScale,_ab,2,_ok);if(_ok)_sc=((uint64_t)_ab[0]<<8)|_ab[1];if(!_sc)_sc=1;\
+      |                                                                                                             ^
+   58 | SLOTU(_as,sfHookStateCount,_ab,4,_ok);if(_ok)_ex+=(uint64_t)U32B(_ab)*_sc;}\
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:54:93: note: expanded from macro '\
+SLOTU'
+   54 | #define SLOTU(par,fld,buf,n,ok) do{int64_t _q=slot_subfield((par),(fld),0);(ok)=_q>=0&&slot((buf),(n),_q)==(n);}while(0)
+      |                                                                                             ^~~~~
+inc/extern.h:228:15: note: passing argument to parameter 'write_ptr' here
+  228 | slot(uint32_t write_ptr, uint32_t write_len, uint32_t slot);
+      |               ^
+tgstkshookbox_15.c:262:13: warning: incompatible pointer to integer conversion passing 'uint8_t[4]' (aka 'unsigned char[4]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  262 | uint64_t F; ACCF(F);
+      |             ^~~~~~~
+tgstkshookbox_15.c:58:76: note: expanded from macro 'ACCF'
+   58 | SLOTU(_as,sfHookStateCount,_ab,4,_ok);if(_ok)_ex+=(uint64_t)U32B(_ab)*_sc;}\
+      |                                                                            ^
+   59 | SLOTU(_as,sfTicketCount,_ab,4,_ok);if(_ok)_ex+=U32B(_ab);\
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:54:93: note: expanded from macro '\
+SLOTU'
+   54 | #define SLOTU(par,fld,buf,n,ok) do{int64_t _q=slot_subfield((par),(fld),0);(ok)=_q>=0&&slot((buf),(n),_q)==(n);}while(0)
+      |                                                                                             ^~~~~
+inc/extern.h:228:15: note: passing argument to parameter 'write_ptr' here
+  228 | slot(uint32_t write_ptr, uint32_t write_len, uint32_t slot);
+      |               ^
+tgstkshookbox_15.c:263:155: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  263 | uint8_t au[41],tr[48],dk[34],rk[32],ix[1026],ek[34],ac[20],tg[8]; int j,p,done=0,bad=0; int64_t DS=0,ES=0,SS=0; uint64_t pg=0,sm=0,oc,o0,lv,gn; int td=0; LOADOC(oc); o0=oc; TRKLOAD(tr); gn=U64(tr+40);
+      |                                                                                                                                                           ^~~~~~~~~~
+tgstkshookbox_15.c:50:60: note: expanded from macro 'LOADOC'
+   50 | #define LOADOC(v) do{uint8_t _o[8];(v)=0;if(state(SBUF(_o),OCK,32)==8)(v)=U64(_o);}while(0)
+      |                                                            ^~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:263:174: warning: incompatible pointer to integer conversion passing 'uint8_t[48]' (aka 'unsigned char[48]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  263 | uint8_t au[41],tr[48],dk[34],rk[32],ix[1026],ek[34],ac[20],tg[8]; int j,p,done=0,bad=0; int64_t DS=0,ES=0,SS=0; uint64_t pg=0,sm=0,oc,o0,lv,gn; int td=0; LOADOC(oc); o0=oc; TRKLOAD(tr); gn=U64(tr+40);
+      |                                                                                                                                                                              ^~~~~~~~~~~
+tgstkshookbox_15.c:52:33: note: expanded from macro 'TRKLOAD'
+   52 | #define TRKLOAD(tr) do{if(state((tr),48,TRK,32)!=48){int _i;for(_i=0;GUARD(6),_i<6;++_i)__builtin_memset((tr)+_i*8,0,8);}}while(0)
+      |                                 ^~~~
+inc/extern.h:274:14: note: passing argument to parameter 'write_ptr' here
+  274 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:263:174: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  263 | uint8_t au[41],tr[48],dk[34],rk[32],ix[1026],ek[34],ac[20],tg[8]; int j,p,done=0,bad=0; int64_t DS=0,ES=0,SS=0; uint64_t pg=0,sm=0,oc,o0,lv,gn; int td=0; LOADOC(oc); o0=oc; TRKLOAD(tr); gn=U64(tr+40);
+      |                                                                                                                                                                              ^~~~~~~~~~~
+tgstkshookbox_15.c:52:41: note: expanded from macro 'TRKLOAD'
+   52 | #define TRKLOAD(tr) do{if(state((tr),48,TRK,32)!=48){int _i;for(_i=0;GUARD(6),_i<6;++_i)__builtin_memset((tr)+_i*8,0,8);}}while(0)
+      |                                         ^~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:264:19: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  264 | if(state(SBUF(au),AUD,32)==41&&!au[16]&&U64(au+8)==F&&U64(au+33)==gn){pg=U64(au);sm=U64(au+17);o0=U64(au+25);}
+      |                   ^~~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:265:42: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  265 | if(util_keylet(SBUF(dk),KEYLET_OWNER_DIR,ha,20,0,0,0,0)!=34) NOPE("tgs: dir");
+      |                                          ^~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:268:37: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  268 | if(util_keylet(SBUF(dk),KEYLET_PAGE,rk,32,(uint32_t)(pg>>32),(uint32_t)pg,0,0)!=34) NOPE("tgs: dir");
+      |                                     ^~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:275:39: warning: incompatible pointer to integer conversion passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  275 | util_keylet(SBUF(ek),KEYLET_UNCHECKED,ix+h+(e<<5),32,0,0,0,0);
+      |                                       ^~~~~~~~~~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:286:24: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  286 | if(done){uint8_t _o[8];TRKSUM(tr,lv,td);if(td&&state_set(tr,48,TRK,32)!=48) NOPE("tgs: trk");oc=(sm>lv?sm-lv:0)+(oc>o0?oc-o0:0);PUT64(_o,0,oc);if(state_set(SBUF(_o),OCK,32)!=8) NOPE("tgs: ocommit");}
+      |                        ^~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:53:205: note: expanded from macro 'TRKSUM'
+   53 | #define TRKSUM(tr,live,dirty) do{int _i;int64_t _TS=0,_TQ=0;(live)=0;for(_i=0;GUARD(8),_i<8;++_i){uint8_t* _e=(tr)+_i*5;if(_e[0]){uint8_t _k[34];if(util_keylet(SBUF(_k),_e[0]==1?KEYLET_OFFER:KEYLET_CHECK,ha,20,U32B(_e+1),0,0,0)!=34) NOPE("tgs: trk");int64_t _s=slot_set(SBUF(_k),_TS);if(_s==DOESNT_EXIST){_e[0]=0;(dirty)=1;}else{if(_s<0) NOPE("tgs: trk");_TS=_s;int64_t _q=slot_subfield(_s,_e[0]==1?sfTakerGets:sfSendMax,_TQ);if(_q<0) NOPE("tgs: trk");_TQ=_q;(live)+=XD(_q);}}}}while(0)
+      |                                                                                                                                                                                                             ^~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:286:58: warning: incompatible pointer to integer conversion passing 'uint8_t[48]' (aka 'unsigned char[48]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  286 | if(done){uint8_t _o[8];TRKSUM(tr,lv,td);if(td&&state_set(tr,48,TRK,32)!=48) NOPE("tgs: trk");oc=(sm>lv?sm-lv:0)+(oc>o0?oc-o0:0);PUT64(_o,0,oc);if(state_set(SBUF(_o),OCK,32)!=8) NOPE("tgs: ocommit");}
+      |                                                          ^~
+inc/extern.h:256:14: note: passing argument to parameter 'read_ptr' here
+  256 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:286:64: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  286 | if(done){uint8_t _o[8];TRKSUM(tr,lv,td);if(td&&state_set(tr,48,TRK,32)!=48) NOPE("tgs: trk");oc=(sm>lv?sm-lv:0)+(oc>o0?oc-o0:0);PUT64(_o,0,oc);if(state_set(SBUF(_o),OCK,32)!=8) NOPE("tgs: ocommit");}
+      |                                                                ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:286:166: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  286 | if(done){uint8_t _o[8];TRKSUM(tr,lv,td);if(td&&state_set(tr,48,TRK,32)!=48) NOPE("tgs: trk");oc=(sm>lv?sm-lv:0)+(oc>o0?oc-o0:0);PUT64(_o,0,oc);if(state_set(SBUF(_o),OCK,32)!=8) NOPE("tgs: ocommit");}
+      |                                                                                                                                                                      ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:287:23: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  287 | if(state_set(SBUF(au),AUD,32)!=41) NOPE("tgs: audit");
+      |                       ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:294:31: warning: incompatible pointer to integer conversion passing 'char[3]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  294 | if(claim&&otxn_param(SBUF(pk),"PK",2)==DOESNT_EXIST&&otxn_param(SBUF(vc),"VC",2)==32) tclaim=1;
+      |                               ^~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:294:74: warning: incompatible pointer to integer conversion passing 'char[3]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  294 | if(claim&&otxn_param(SBUF(pk),"PK",2)==DOESNT_EXIST&&otxn_param(SBUF(vc),"VC",2)==32) tclaim=1;
+      |                                                                          ^~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:299:24: warning: incompatible pointer to integer conversion passing 'char[3]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  299 | if(otxn_param(SBUF(pk),"PK",2)!=33) NOPE("tgs: pk");
+      |                        ^~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:300:25: warning: incompatible pointer to integer conversion passing 'char[4]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  300 | sl=otxn_param(SBUF(sig),"SIG",3);
+      |                         ^~~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:308:24: warning: incompatible pointer to integer conversion passing 'char[3]' to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  308 | if(otxn_param(SBUF(vc),"VC",2)!=32) NOPE("tgs: vc");
+      |                        ^~~~
+inc/extern.h:326:14: note: passing argument to parameter 'read_ptr' here
+  326 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:311:88: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  311 | uint8_t vk[32]; {int j; for(j=0;GUARD(4),j<4;++j) __builtin_memcpy(vk+j*8,key+j*8,8);} BKEY(vk,key);
+      |                                                                                        ^~~~~~~~~~~~
+tgstkshookbox_15.c:40:192: note: expanded from macro 'BKEY'
+   40 | #define BKEY(v,out) do{uint8_t _m[33];_m[0]=0x42;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash4");}while(0)
+      |                                                                                                                                                                                                ^~~~~
+inc/extern.h:43:14: note: passing argument to parameter 'write_ptr' here
+   43 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:311:88: warning: incompatible pointer to integer conversion passing 'uint8_t[33]' (aka 'unsigned char[33]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  311 | uint8_t vk[32]; {int j; for(j=0;GUARD(4),j<4;++j) __builtin_memcpy(vk+j*8,key+j*8,8);} BKEY(vk,key);
+      |                                                                                        ^~~~~~~~~~~~
+tgstkshookbox_15.c:40:201: note: expanded from macro 'BKEY'
+   40 | #define BKEY(v,out) do{uint8_t _m[33];_m[0]=0x42;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash4");}while(0)
+      |                                                                                                                                                                                                         ^~
+inc/extern.h:45:14: note: passing argument to parameter 'read_ptr' here
+   45 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:316:70: warning: incompatible pointer to integer conversion passing 'uint8_t[85]' (aka 'unsigned char[85]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  316 | if(th){uint8_t k[34],ow[20]; if(util_keylet(SBUF(k),KEYLET_UNCHECKED,box,32,0,0,0,0)==34){int64_t s=slot_set(SBUF(k),0); if(s>=0&&slot_subfield(s,sfOwner,1)>=0&&slot(SBUF(ow),1)==20&&EQ(ow,ha)) fin=0;}}
+      |                                                                      ^~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:317:9: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  317 | if(fin){FIN(box,key); OK("tgs: synced");}
+      |         ^~~~~~~~~~~~
+tgstkshookbox_15.c:45:197: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                     ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:317:9: warning: incompatible pointer to integer conversion passing 'uint8_t[85]' (aka 'unsigned char[85]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  317 | if(fin){FIN(box,key); OK("tgs: synced");}
+      |         ^~~~~~~~~~~~
+tgstkshookbox_15.c:45:226: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                                                  ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:317:9: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  317 | if(fin){FIN(box,key); OK("tgs: synced");}
+      |         ^~~~~~~~~~~~
+tgstkshookbox_15.c:45:251: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                                                                           ^~~~~~~~~~~~~
+tgstkshookbox_15.c:39:192: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                ^~~~~
+inc/extern.h:43:14: note: passing argument to parameter 'write_ptr' here
+   43 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:317:9: warning: incompatible pointer to integer conversion passing 'uint8_t[33]' (aka 'unsigned char[33]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  317 | if(fin){FIN(box,key); OK("tgs: synced");}
+      |         ^~~~~~~~~~~~
+tgstkshookbox_15.c:45:251: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                                                                           ^~~~~~~~~~~~~
+tgstkshookbox_15.c:39:201: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                         ^~
+inc/extern.h:45:14: note: passing argument to parameter 'read_ptr' here
+   45 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:317:9: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  317 | if(fin){FIN(box,key); OK("tgs: synced");}
+      |         ^~~~~~~~~~~~
+tgstkshookbox_15.c:45:279: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                                                                                                       ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:317:9: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  317 | if(fin){FIN(box,key); OK("tgs: synced");}
+      |         ^~~~~~~~~~~~
+tgstkshookbox_15.c:45:302: note: expanded from macro 'FIN'
+   45 | #define FIN(b,k) do{int _t;HASTOK(b,_t);{uint64_t _dv=U64((b)+32)+CLAIM_RES;held=held>=_dv?held-_dv:0;}if(_t&&locks)locks-=1;PUT64(meta,0,held);PUT64(meta,8,locks);meta[16]=0;state_set(SBUF(meta),META,32);if(_t)state_set(0,0,(b),32);{uint8_t _mk[32];MKEY((k),_mk);state_set(0,0,_mk,32);}state_set(0,0,(k),32);}while(0)
+      |                                                                                                                                                                                                                                                                                                              ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:318:1: warning: incompatible pointer to integer conversion passing 'uint8_t[85]' (aka 'unsigned char[85]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  318 | RESTORE(box,key);
+      | ^~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:46:93: note: expanded from macro 'RESTORE'
+   46 | #define RESTORE(b,k) do{int _j;(b)[44]=0;for(_j=45;GUARD(36),_j<81;++_j)(b)[_j]=0;state_set((b),85,(k),32);}while(0)
+      |                                                                                             ^~~
+inc/extern.h:256:14: note: passing argument to parameter 'read_ptr' here
+  256 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:318:1: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  318 | RESTORE(box,key);
+      | ^~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:46:100: note: expanded from macro 'RESTORE'
+   46 | #define RESTORE(b,k) do{int _j;(b)[44]=0;for(_j=45;GUARD(36),_j<81;++_j)(b)[_j]=0;state_set((b),85,(k),32);}while(0)
+      |                                                                                                    ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:325:1: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  325 | MKEY(key,mk);
+      | ^~~~~~~~~~~~
+tgstkshookbox_15.c:39:192: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                ^~~~~
+inc/extern.h:43:14: note: passing argument to parameter 'write_ptr' here
+   43 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:325:1: warning: incompatible pointer to integer conversion passing 'uint8_t[33]' (aka 'unsigned char[33]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  325 | MKEY(key,mk);
+      | ^~~~~~~~~~~~
+tgstkshookbox_15.c:39:201: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                         ^~
+inc/extern.h:45:14: note: passing argument to parameter 'read_ptr' here
+   45 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:326:20: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  326 | if(state(SBUF(rec),mk,32)==33&&rec[0]==1) tm=1;
+      |                    ^~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:331:41: warning: incompatible pointer to integer conversion passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  331 | if(util_keylet(SBUF(k),KEYLET_UNCHECKED,rec+1,32,0,0,0,0)!=34) NOPE("tgs: ktoken");
+      |                                         ^~~~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:344:17: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  344 | if(!util_verify(dig,32,sig,sl,pk,33)) NOPE("tgs: bad sig");
+      |                 ^~~
+inc/extern.h:34:14: note: passing argument to parameter 'dread_ptr' here
+   34 |     uint32_t dread_ptr,
+      |              ^
+tgstkshookbox_15.c:344:24: warning: incompatible pointer to integer conversion passing 'uint8_t[72]' (aka 'unsigned char[72]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  344 | if(!util_verify(dig,32,sig,sl,pk,33)) NOPE("tgs: bad sig");
+      |                        ^~~
+inc/extern.h:36:14: note: passing argument to parameter 'sread_ptr' here
+   36 |     uint32_t sread_ptr,
+      |              ^
+tgstkshookbox_15.c:344:31: warning: incompatible pointer to integer conversion passing 'uint8_t[33]' (aka 'unsigned char[33]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  344 | if(!util_verify(dig,32,sig,sl,pk,33)) NOPE("tgs: bad sig");
+      |                               ^~
+inc/extern.h:38:14: note: passing argument to parameter 'kread_ptr' here
+   38 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:349:44: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  349 | if(!exp){int gone=0;uint8_t mk[32],rec[33];MKEY(key,mk);if(state(SBUF(rec),mk,32)==33&&rec[0]==1){uint8_t k[34];if(util_keylet(SBUF(k),KEYLET_UNCHECKED,rec+1,32,0,0,0,0)==34&&slot_set(SBUF(k),0)==DOESNT_EXIST) gone=1;}
+      |                                            ^~~~~~~~~~~~
+tgstkshookbox_15.c:39:192: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                ^~~~~
+inc/extern.h:43:14: note: passing argument to parameter 'write_ptr' here
+   43 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:349:44: warning: incompatible pointer to integer conversion passing 'uint8_t[33]' (aka 'unsigned char[33]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  349 | if(!exp){int gone=0;uint8_t mk[32],rec[33];MKEY(key,mk);if(state(SBUF(rec),mk,32)==33&&rec[0]==1){uint8_t k[34];if(util_keylet(SBUF(k),KEYLET_UNCHECKED,rec+1,32,0,0,0,0)==34&&slot_set(SBUF(k),0)==DOESNT_EXIST) gone=1;}
+      |                                            ^~~~~~~~~~~~
+tgstkshookbox_15.c:39:201: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                         ^~
+inc/extern.h:45:14: note: passing argument to parameter 'read_ptr' here
+   45 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:349:76: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  349 | if(!exp){int gone=0;uint8_t mk[32],rec[33];MKEY(key,mk);if(state(SBUF(rec),mk,32)==33&&rec[0]==1){uint8_t k[34];if(util_keylet(SBUF(k),KEYLET_UNCHECKED,rec+1,32,0,0,0,0)==34&&slot_set(SBUF(k),0)==DOESNT_EXIST) gone=1;}
+      |                                                                            ^~
+inc/extern.h:276:14: note: passing argument to parameter 'kread_ptr' here
+  276 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:349:153: warning: incompatible pointer to integer conversion passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  349 | if(!exp){int gone=0;uint8_t mk[32],rec[33];MKEY(key,mk);if(state(SBUF(rec),mk,32)==33&&rec[0]==1){uint8_t k[34];if(util_keylet(SBUF(k),KEYLET_UNCHECKED,rec+1,32,0,0,0,0)==34&&slot_set(SBUF(k),0)==DOESNT_EXIST) gone=1;}
+      |                                                                                                                                                         ^~~~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:369:25: warning: incompatible pointer to integer conversion passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  369 | int64_t ed=etxn_details(txn+147,138);
+      |                         ^~~~~~~
+inc/extern.h:91:23: note: passing argument to parameter 'write_ptr' here
+   91 | etxn_details(uint32_t write_ptr, uint32_t write_len);
+      |                       ^
+tgstkshookbox_15.c:382:27: warning: incompatible pointer to integer conversion passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  382 | int64_t fee=etxn_fee_base(txn,o);
+      |                           ^~~
+inc/extern.h:94:24: note: passing argument to parameter 'read_ptr' here
+   94 | etxn_fee_base(uint32_t read_ptr, uint32_t read_len);
+      |                        ^
+tgstkshookbox_15.c:385:14: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  385 | int64_t bal; LOADBAL(ha,bal);
+      |              ^~~~~~~~~~~~~~~
+tgstkshookbox_15.c:35:98: note: expanded from macro 'LOADBAL'
+   35 | #define LOADBAL(acc,var) do{uint8_t _k[34],_b[8];(var)=-1;if(util_keylet(SBUF(_k),KEYLET_ACCOUNT,(acc),20,0,0,0,0)==34){int64_t _s=slot_set(SBUF(_k),0);if(_s>=0&&slot_subfield(_s,sfBalance,1)>=0&&slot(SBUF(_b),1)==8)(var)=(int64_t)DROP(_b);}}while(0)
+      |                                                                                                  ^~~~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:386:10: warning: incompatible pointer to integer conversion passing 'uint8_t[20]' (aka 'unsigned char[20]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  386 | {int ok; RESERVE_NOW(ha,rv,ok); if(!ok) NOPE("tgs: reserve");}
+      |          ^~~~~~~~~~~~~~~~~~~~~
+tgstkshookbox_15.c:36:119: note: expanded from macro 'RESERVE_NOW'
+   36 | #define RESERVE_NOW(acc,out,ok) do{uint8_t _rk[34],_rb[4];uint32_t _oc;(ok)=0;if(util_keylet(SBUF(_rk),KEYLET_ACCOUNT,(acc),20,0,0,0,0)==34){int64_t _rs=slot_set(SBUF(_rk),0);if(_rs>=0&&slot_subfield(_rs,sfOwnerCount,1)>=0&&slot(SBUF(_rb),1)==4){_oc=((uint32_t)_rb[0]<<24)|((uint32_t)_rb[1]<<16)|((uint32_t)_rb[2]<<8)|_rb[3];(out)=BASE_RESERVE+(uint64_t)_oc*OWNER_RESERVE;(ok)=1;}}}while(0)
+      |                                                                                                                       ^~~~~
+inc/extern.h:53:14: note: passing argument to parameter 'a' here
+   53 |     uint32_t a,
+      |              ^
+tgstkshookbox_15.c:392:18: warning: incompatible pointer to integer conversion passing 'uint8_t *' (aka 'unsigned char *') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  392 | if(emit(SBUF(hx),txn,o)!=32) NOPE("tgs: emit");
+      |                  ^~~
+inc/extern.h:109:14: note: passing argument to parameter 'read_ptr' here
+  109 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:395:14: warning: incompatible pointer to integer conversion passing 'uint8_t[85]' (aka 'unsigned char[85]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  395 | if(state_set(box,85,SBUF(key))!=85) NOPE("tgs: pend");
+      |              ^~~
+inc/extern.h:256:14: note: passing argument to parameter 'read_ptr' here
+  256 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:402:25: warning: incompatible pointer to integer conversion passing 'const uint8_t[32]' (aka 'const unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  402 | if(state_set(SBUF(meta),META,32)!=17) NOPE("tgs: meta");
+      |                         ^~~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:403:25: warning: incompatible pointer to integer conversion passing 'uint8_t[85]' (aka 'unsigned char[85]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  403 | if(hn){if(state_set(0,0,box,32)<0) NOPE("tgs: unlock");}
+      |                         ^~~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:404:17: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  404 | {uint8_t mk[32];MKEY(key,mk);if(state_set(0,0,mk,32)<0) NOPE("tgs: unmode");}
+      |                 ^~~~~~~~~~~~
+tgstkshookbox_15.c:39:192: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                ^~~~~
+inc/extern.h:43:14: note: passing argument to parameter 'write_ptr' here
+   43 |     uint32_t write_ptr,
+      |              ^
+tgstkshookbox_15.c:404:17: warning: incompatible pointer to integer conversion passing 'uint8_t[33]' (aka 'unsigned char[33]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  404 | {uint8_t mk[32];MKEY(key,mk);if(state_set(0,0,mk,32)<0) NOPE("tgs: unmode");}
+      |                 ^~~~~~~~~~~~
+tgstkshookbox_15.c:39:201: note: expanded from macro 'MKEY'
+   39 | #define MKEY(v,out) do{uint8_t _m[33];_m[0]=0x54;__builtin_memcpy(_m+1,(v),8);__builtin_memcpy(_m+9,(v)+8,8);__builtin_memcpy(_m+17,(v)+16,8);__builtin_memcpy(_m+25,(v)+24,8);if(util_sha512h((out),32,_m,33)!=32) NOPE("tgs: hash3");}while(0)
+      |                                                                                                                                                                                                         ^~
+inc/extern.h:45:14: note: passing argument to parameter 'read_ptr' here
+   45 |     uint32_t read_ptr,
+      |              ^
+tgstkshookbox_15.c:404:47: warning: incompatible pointer to integer conversion passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'uint32_t' (aka 'unsigned int') [-Wint-conversion]
+  404 | {uint8_t mk[32];MKEY(key,mk);if(state_set(0,0,mk,32)<0) NOPE("tgs: unmode");}
+      |                                               ^~
+inc/extern.h:258:14: note: passing argument to parameter 'kread_ptr' here
+  258 |     uint32_t kread_ptr,
+      |              ^
+tgstkshookbox_15.c:407:1: warning: non-void function does not return a value [-Wreturn-type]
+  407 | }
+      | ^
+141 warnings generated.
+[32mclean[39m stripped 1 stray export(s)
+[1m[36minfo[39m[0m writes hook state via `state_set` - confirm value sizes are bounded (hook state grows the account reserve).
+0 error(s), 0 warning(s), 1 info
+[1m[32mbuilt[39m[0m xahc_v15.wasm

@@ -1,0 +1,2 @@
+[1m[36minfo[39m[0m writes hook state via `state_set` - confirm value sizes are bounded (hook state grows the account reserve).
+0 error(s), 0 warning(s), 1 info

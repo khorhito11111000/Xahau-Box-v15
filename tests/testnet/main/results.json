@@ -1,0 +1,1327 @@
+{
+ "started": "2026-11-03T11:18:57.158Z",
+ "network": "Xahau Testnet 21338",
+ "hookHash": "4847C361FCB669BD7C7E919092F9EB4831852B1152CA5AE9C08EFA7E741EE6FA",
+ "accounts": [
+  {
+   "role": "issuer",
+   "address": "rNdEGBbayHzFq9J13vS34aWsYmPj4kXMSw"
+  },
+  {
+   "role": "R1",
+   "address": "rUHLkVrxgYwk37foiRDFS6yrFdGm2aEcAW"
+  },
+  {
+   "role": "R2",
+   "address": "ratjU9CbvpoqiyWMLh9MaieevopGq1rQk7"
+  },
+  {
+   "role": "R3",
+   "address": "rnMKyJmxiuKSLx3Kd2U7ffhz2CXSwzGdB1"
+  },
+  {
+   "role": "R4(foreign)",
+   "address": "rsyQd8p3RGQy4ndxUGa5PgK5cB9mt5S4rM"
+  }
+ ],
+ "startBalances": {
+  "issuer": "2997000000",
+  "R1": "1000000000",
+  "R2": "1000000000",
+  "R3": "1000000000",
+  "R4(foreign)": "1000000000"
+ },
+ "hookStateLeft": 4,
+ "endBalances": {
+  "issuer": "2942459308",
+  "R1": "1019757604",
+  "R2": "1015438614",
+  "R3": "1007238450",
+  "R4(foreign)": "999326974"
+ },
+ "finished": "2026-11-03T11:35:41.608Z",
+ "totalTx": 157,
+ "pass": 167,
+ "fail": 0,
+ "rows": [
+  {
+   "sc": "0",
+   "name": "Hook install by HookHash (without wasm)",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "B5471CE55C5089326535AB5F1882DF241020B2EAA698B7F5D9CE72FA63EAD791"
+  },
+  {
+   "sc": "0",
+   "name": "Separate SetHook: HookOn",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "6A9B470BDBA32F56703DDB63F0096AECDF070D4AE60D1EAD1616C26221E96A78"
+  },
+  {
+   "sc": "0",
+   "name": "Hook on account: HookHash matched",
+   "expect": "HookHash 4847C361",
+   "got": "4847C361 HookOn (default from definition)",
+   "ok": true,
+   "hash": null
+  },
+  {
+   "sc": "1",
+   "name": "After 10 mints PACK without AUDIT",
+   "expect": "tgs: audit",
+   "got": "tgs: audit",
+   "ok": true,
+   "hash": "8C46ED93C255AEAD689BCC27B3766CFDBBA918467D2918445197724B25777668"
+  },
+  {
+   "sc": "1",
+   "name": "AUDIT",
+   "expect": "tgs: audit ok/done",
+   "got": "tgs: audited",
+   "ok": true,
+   "hash": "96B5EBDE2B01E774CD24ACB8B8FED688474AFE285F8FF77B325881C92CAA94D7"
+  },
+  {
+   "sc": "1",
+   "name": "Box 1 (key, XAH+token): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "B24A40CF3F0673EABE793D3B711DA74D2A68CFCD223B5A8806FEFB447688367D"
+  },
+  {
+   "sc": "3",
+   "name": "Box 2 (key, token only): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "53380414D5120940A9FD1600865A7FC6572010E9141FBFD9CC4F74EF4B1313AB"
+  },
+  {
+   "sc": "4",
+   "name": "Box 3 (key, only XAH): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "70BFBBB4E00FC5AF7B5013301F579EC1251756237F1620D41E6C064F784472F6"
+  },
+  {
+   "sc": "5",
+   "name": "Repeated PACK with box 2 token in use",
+   "expect": "tgs: locked",
+   "got": "tgs: locked",
+   "ok": true,
+   "hash": "60DFC614B0397C5719A13EA57468AFAB89380822D721FC37182D5600F3235544"
+  },
+  {
+   "sc": "6",
+   "name": "Repeated PACK with the same VC box 3",
+   "expect": "tgs: exists",
+   "got": "tgs: exists",
+   "ok": true,
+   "hash": "655D2FA40507CBC6EEDBDB89ABDB982D9448C26F097A16B1D1454E9175D74263"
+  },
+  {
+   "sc": "7",
+   "name": "CLAIM box 2 from R1 with signature for R2",
+   "expect": "tgs: bad sig",
+   "got": "tgs: bad sig",
+   "ok": true,
+   "hash": "6B7E11CABA7D1ADE72BD3B8DBB99AEFD22FEECFD86CED8E80051C82BE9ED14B5"
+  },
+  {
+   "sc": "14",
+   "name": "Issuer steals a locked token Remit-er",
+   "expect": "tgs: locked",
+   "got": "tgs: locked",
+   "ok": true,
+   "hash": "9C9EDEFE9A0F0FD4A51E0675FDD03AE5A60AA420745D3B37B65CE55CE181F54D"
+  },
+  {
+   "sc": "23",
+   "name": "Sell offer on locked token",
+   "expect": "tgs: locked",
+   "got": "tgs: locked",
+   "ok": true,
+   "hash": "DA30EF9B293DA0CB182F0F30D5CC20B91772EA5DC01F9F3E6B1B4772A22805CF"
+  },
+  {
+   "sc": "15a",
+   "name": "Payment 1 XAH from free",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "DBCAB0559A8B18F3C11EAACD5CE27E17D78E7D897010A306E5DF6E33C861E9FA"
+  },
+  {
+   "sc": "15b",
+   "name": "Payment of almost the whole balance (using locked XAH)",
+   "expect": "tgs: reserve",
+   "got": "tgs: reserve",
+   "ok": true,
+   "hash": "96E09E1D0CCC7C3E0476CC808B2CD983E188DE3A64A7CB4A54F9D317F541413E"
+  },
+  {
+   "sc": "18",
+   "name": "PACK for more than available",
+   "expect": "tgs: not enough",
+   "got": "tgs: not enough",
+   "ok": true,
+   "hash": "0F4B0B6BAC46E564893E885D91A56C355DEA7E25463E77590D53F9868EFA72C3"
+  },
+  {
+   "sc": "19",
+   "name": "OfferCreate on XAH",
+   "expect": "tgs: offer",
+   "got": "tgs: offer",
+   "ok": true,
+   "hash": "A3FF46CDACBAEC4AD724F3CD2039E4733B8459E7CD64CA09B5B30F9E5A31ABE3"
+  },
+  {
+   "sc": "20",
+   "name": "CheckCreate on XAH",
+   "expect": "tgs: check",
+   "got": "tgs: check",
+   "ok": true,
+   "hash": "A1A3AFA139143F761D77393E4247B7BD6CC9AE18C45F0740AF0AA074CD49948D"
+  },
+  {
+   "sc": "2",
+   "name": "Box 1 (key, XAH+token): CLAIM (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "94C266A84DC952E5B5BDC4DC657489388C37C118D2ACEF100012F5D2F4CBD888"
+  },
+  {
+   "sc": "2",
+   "name": "Box 1 (key, XAH+token): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "F7EEFBDDCF12D8F980939A838240C44E603885F0BFD2A515BE967EA5ED9E5D58"
+  },
+  {
+   "sc": "2",
+   "name": "Box 1 (key, XAH+token): XAH arrived (Δ+fee)",
+   "expect": "3200000 drops",
+   "got": "3200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "2",
+   "name": "Box 1 (key, XAH+token): token at R1",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true
+  },
+  {
+   "sc": "3",
+   "name": "Box 2 (key, token only): CLAIM (R2)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "E7FDD396049A02CCD560441DB25AAE90239908686DBADCF7A05350330F16A6DF"
+  },
+  {
+   "sc": "3",
+   "name": "Box 2 (key, only token): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "C31BBCF77464CEA9676F30F79C7273CC1B2C64549C08221809BCD825669BA21E"
+  },
+  {
+   "sc": "3",
+   "name": "Box 2 (key, token only): XAH arrived (Δ+fee)",
+   "expect": "200000 drops",
+   "got": "200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "3",
+   "name": "Box 2 (key, only token): token at R2",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true
+  },
+  {
+   "sc": "4",
+   "name": "Box 3 (key, only XAH): CLAIM (R3)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "25F448A4B17BE9AA69232F696307E76CF9D362A554828333764C991BCC6182FB"
+  },
+  {
+   "sc": "4",
+   "name": "Box 3 (key, only XAH): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "6190D1484AA8695F24C2708201C5F5CE7A407937A07895EBD820A7CCCF4BB11A"
+  },
+  {
+   "sc": "4",
+   "name": "Box 3 (key, only XAH): XAH arrived (Δ+fee)",
+   "expect": "2000000 drops",
+   "got": "2000000 drops",
+   "ok": true
+  },
+  {
+   "sc": "8",
+   "name": "Repeated CLAIM: Box 1 (key, XAH+token)",
+   "expect": "tgs: unknown",
+   "got": "tgs: unknown",
+   "ok": true,
+   "hash": "FC601C3205087AC50B6A2ED87A80F111EDDE91FCBBCC23C73ABD4A8DC53E70CE"
+  },
+  {
+   "sc": "8",
+   "name": "Repeated CLAIM: Box 3 (key, only XAH)",
+   "expect": "tgs: unknown",
+   "got": "tgs: unknown",
+   "ok": true,
+   "hash": "5A37E90C18804114726DAA593C31AD2156000171CA36DC8AF3EE6FA8D826D799"
+  },
+  {
+   "sc": "9",
+   "name": "Box 4 (token, token+3 XAH): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "CAB51AE4324A0FACBB55681A8AF13DAA42970C5CBBADEC5655B2E38EEF33642E"
+  },
+  {
+   "sc": "13",
+   "name": "CLAIM box 4 without key (R4)",
+   "expect": "tgs: not holder",
+   "got": "tgs: not holder",
+   "ok": true,
+   "hash": "7B6F88530D977AABD6F0AD49B539607683393E1E825E50757399D4C0DDC4E23B"
+  },
+  {
+   "sc": "9",
+   "name": "Transfer of box 4 key → R1",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "2B6332697D538C36921494773929C27B2166766F520189FCE0D38AA3ADE07EF8"
+  },
+  {
+   "sc": "9",
+   "name": "Box 4 (token, token+3 XAH): CLAIM by key holder (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "D3B43CA0522477A1A7D8BFFCFF15A5ECF1453D8F22FB2B88755834BB179E6163"
+  },
+  {
+   "sc": "9",
+   "name": "Box 4 (token, token+3 XAH): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "194A4E808BA6EF138C833B105868F7AC9578A76D4E5216B738E3DE837D9A41A4"
+  },
+  {
+   "sc": "9",
+   "name": "Box 4 (token, token+3 XAH): XAH arrived (Δ+fee)",
+   "expect": "3200000 drops",
+   "got": "3200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "9",
+   "name": "Box 4 (token, token+3 XAH): token at R1",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true
+  },
+  {
+   "sc": "10",
+   "name": "Box 5 (key, EXP): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "39C583473BAB845A54526D0C81CFA3B41FB2E4DA9CA423957501DAB68F7190F1"
+  },
+  {
+   "sc": "10",
+   "name": "OPEN box 5 before expiry",
+   "expect": "tgs: not expired",
+   "got": "tgs: not expired",
+   "ok": true,
+   "hash": "303426B65D74D5657A3AF817576DD76FA0F79D93286E84EB913B1947798C6308"
+  },
+  {
+   "sc": "11",
+   "name": "CLAIM box 5 after expiry",
+   "expect": "tgs: expired",
+   "got": "tgs: expired",
+   "ok": true,
+   "hash": "D33F759FBF2B289DC1D8B274AB62E92816473AE1F6E35C96F51CFBFF7C65C4E8"
+  },
+  {
+   "sc": "12",
+   "name": "OPEN box 5 after expiry",
+   "expect": "tgs: opened",
+   "got": "tgs: opened",
+   "ok": true,
+   "hash": "BD3BC86670A001C635FD6F4A2C3D46C2E4AC015E76DD0977A1290884E922ED54"
+  },
+  {
+   "sc": "12",
+   "name": "Box 5 token returned to issuer",
+   "expect": "issuer",
+   "got": "emit no emit, owner is issuer",
+   "ok": true
+  },
+  {
+   "sc": "21",
+   "name": "Repeated OPEN box 5",
+   "expect": "tgs: unknown",
+   "got": "tgs: unknown",
+   "ok": true,
+   "hash": "D65875303143CDBFEF98F4B03DD6BDB2BDF21BCE6DE0ACEF2328D6EBEB5D8DFB"
+  },
+  {
+   "sc": "16",
+   "name": "Box 6 (token, hand to hand): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "CC82223B166BEA043D5F4E647A750F98ED241A850768C6392AAD66E41824D800"
+  },
+  {
+   "sc": "16",
+   "name": "Key box 6: issuer → R1",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "8689E880152C2C762CF234EACC2FC9405297F9C7C853DF35E315D94A3E5A7DC4"
+  },
+  {
+   "sc": "16",
+   "name": "Key of box 6: R1 → R2",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "B53A5F33FA3BAFDD2BE75F49BC29DD598FC7E9CEEC9A48D81115ED8EA016F99B"
+  },
+  {
+   "sc": "17",
+   "name": "Former holder R1 opens box 6",
+   "expect": "tgs: not holder",
+   "got": "tgs: not holder",
+   "ok": true,
+   "hash": "46AD0100853D945C121BBAF0818FDD61A4556422121BC003C595A84FCB95AFCD"
+  },
+  {
+   "sc": "16",
+   "name": "Box 6 (token, hand to hand): CLAIM by key holder (R2)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "3A2163C1527B735665EC64495D8B8B4D7BEDE425A393D6C95A21C9803533F455"
+  },
+  {
+   "sc": "16",
+   "name": "Box 6 (token, hand to hand): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "D767E422A115BBBBFC1417C49FE69434FBE8F991F5F0EC3EC1135EC92D32FD10"
+  },
+  {
+   "sc": "16",
+   "name": "Box 6 (token, hand to hand): XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "16",
+   "name": "Box 6 (token, hand to hand): token at R2",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true
+  },
+  {
+   "sc": "24",
+   "name": "Box 7 (token, key sale): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "BC7F167192FCDA75AC19BE4DC94BAA70EFEF8E38D0D36ECE9C732D977C33537A"
+  },
+  {
+   "sc": "24",
+   "name": "Sell offer key for 5 XAH for R3",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS / tgs: out",
+   "ok": true,
+   "hash": "3D6CF48062BA487A7514BAEFA3873396573671D65BA372F30B79EF2669F796D3"
+  },
+  {
+   "sc": "24",
+   "name": "R3 buys key (URITokenBuy)",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "7FC7E4E2DB8E74CEAB10DDFC05239450EE2C36B6381378309A3426D73575CCA1"
+  },
+  {
+   "sc": "24",
+   "name": "Box 7 (token, key sale): CLAIM by key holder (R3)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "7EE62E99952E9D257642CE90208BE3628C9151C3274F56E85AE1CA846FC24CE3"
+  },
+  {
+   "sc": "24",
+   "name": "Box 7 (token, key sale): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "63DF6F911BD235456DF3EB24EC89566BFFD6C48C1CD3A628955DA3888DB5AADF"
+  },
+  {
+   "sc": "24",
+   "name": "Box 7 (token, key sale): XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "24",
+   "name": "Box 7 (token, key sale): token at R3",
+   "expect": "R3",
+   "got": "R3",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 1 (key): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "3FBB11AF18A9048B5DEF3F8D865278F9EC91767BC815263B2EDB47A16B51BF02"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 2 (token): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "1609F59BBBA4A95F532C9AED1340E38BCE068EFC8786297DAA0A60AA9265B581"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 3 (key): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "6C8E86F1B29C2A008339D8E89C754720C4135CC86A8B516FC711AEC1FE92E9F2"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 4 (token): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "ACBA3D009F04E6BE9208B8B7BCBC3D843D37D1E97E1A835EAA97A9EBED65FFB6"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 5 (key): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "131982B4DFE055CB24DFFC0666A7D77EE0C83DA9C9ED1E6CD954C008735A4B59"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 6 (token): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "3369821EDEDCBE1C41DD59070371D3633C6DE13C53F01008100FA2F933A63454"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 7 (key): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "47F1D885D19B655030D5E836FDDB526D4E3BF01BB88844AD20A8BBA2462F501D"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 8 (token): PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "08B03C2605BDF98B8520855524F25C1B3A972C87CFD33F523E956FC2806E8B54"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 1 (key): CLAIM (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "9422327D99417C37F952E32C9019FB1050C79658DFADEDB947C9163719BBEE71"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 1 (key): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "E3CB00F247957EF17DE0460161EC522E42502CCA7B6735B748983D50FCE8CF58"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 1 (key): XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 1 (key): token at R1",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 7 (key): CLAIM (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "7052641CC3C570F7E45A1F6BA2CA4B96B3E89F8583E2564A073E548C02C4ABEC"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 7 (key): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "E4E803B49632DD1555D8C805F3CA0E8E84042068ED236CBF794900004B8C9D38"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 7 (key): XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 7 (key): token at R1",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 5 (key): CLAIM (R2)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "DE3D559D3E8207426E156B161E538065901BA1E9DCFD811D98F6A786BC7C1051"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 5 (key): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "124E0A65F3421443E2A6BF4917E1D4C387F919709AA52CCE8ABE528AEEB90132"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 5 (key): XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 5 (key): token at R2",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 4 (token): CLAIM by key holder (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "94935713390797B6250B0259E2197B440029A0295524344A0C72891708202A57"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 4 (token): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "03D62EF8FB45D736D119EAD89C3AC8BD4FC3F3295988C9AA04580B4296970561"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 4 (token): XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 4 (token): token at R1",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 8 (token): CLAIM by key holder (R2)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "AAE5360DE2B2FAC3EF5C95B3B5053C9F8F69F2377C66FED7AEE11B57F2C5041E"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 8 (token): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "6EFA68D1245CE457DED84174FB5554E836FBB41C15E1E467280542FFF3587ACB"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 8 (token): XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 8 (token): token at R2",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 3 (key): CLAIM (R3)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "7BBE3B5811C5AAED1B66399D5B6DE7217F7010BF4E63CF7EB147C83E78AB580D"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 3 (key): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "34D63D8CE08CABAEC45B9CAC7D154033A82B018FF375F70BB8A097601C8E3C7A"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 3 (key): XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 3 (key): token at R3",
+   "expect": "R3",
+   "got": "R3",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 2 (token): CLAIM by key holder (R2)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "082627CB0D4AC100D93F09BD5DBE9D8AA66B7A3C584A2058D2BAE67AA70BA8C0"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 2 (token): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "D1A8216BB35757CB6A153F0F654D95769A9D9FF81F47BEE23D6F4EE6113B17A5"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 2 (token): XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 2 (token): token at R2",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 6 (token): CLAIM by key holder (R3)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "F98AB01B8060D1BB6580959142EB5EB6FDFFA70DAF56A83A14BEEEF6866C9093"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 6 (token): emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "32E747AA417CEBEFE262DE5318F58C1D4B17093C15A7092B962AB8089A44624A"
+  },
+  {
+   "sc": "22",
+   "name": "Multi 6 (token): XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "22",
+   "name": "Multi 6 (token): token at R3",
+   "expect": "R3",
+   "got": "R3",
+   "ok": true
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A1 bearer: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "CE6BCF25D9F0D8F4287299F2CEC51355F68340B3293F3DF3814FC5043780C831"
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A2 bearer: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "E0E19C628AFECFF6EF9644CBC1B76F78D52CF4B1BADE6C70C4C39CD38EEE4B30"
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B1 code: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "28E4F69441D180A129D3AC2E250D8191D1C634C3235BB6C926319C03B11FA517"
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B2 code: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "743BC99BF60DDA9D49D64746AC9A98EA9B3811A2A8DA88A9A96A0B0475542240"
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C1 addressed: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "E2F06C3381B2E9F3320AC3D0D479137091716DCD54F46F0D47EC94DBE1BC4F45"
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C2 addressed: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "2B21372C2948A3D238201E51BCA534D784E61C80FC0FF5977D1043A529F8B131"
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D1 token: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "E572285FC2AC5E0FEBB62C66358FCA60E7E59C00882624E1A4734AB023163118"
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D2 token: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "79A036F7CEEB1A9136F8B0492DDBDBB0CEA73005BD7569B44C297DA23EA1A3E4"
+  },
+  {
+   "sc": "QR-X",
+   "name": "QR-X with expiry: PACK",
+   "expect": "tgs: packed",
+   "got": "tgs: packed",
+   "ok": true,
+   "hash": "F8EAA56D47E02B5828717702810301B8C424D1129F284C3FD7E3DCF35FA9C8FC"
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A1 bearer: PNG → jsQR matched",
+   "expect": "matched",
+   "got": "matched",
+   "ok": true
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A1 bearer: intercepted signature from a foreign R4",
+   "expect": "tgs: bad sig",
+   "got": "tgs: bad sig",
+   "ok": true,
+   "hash": "E035FA93245C9868425BB52DE17DCF8D9DC80E1002EB0CA55AA36CFD10ADB00D"
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A1 bearer: CLAIM by QR",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "F99FA8AB4297B21BDC83600CA9FBD0DEEE246A29F2859DD35C351D74A8D55557"
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A1 bearer: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "AF70DE6E95AB47BD50948D88365C41C6FD29DA90D47380AB1E1F4B5B8C2B30A9"
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A1 bearer: XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A1 bearer: token at R1",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A1 bearer: rescan",
+   "expect": "tgs: unknown",
+   "got": "tgs: unknown",
+   "ok": true,
+   "hash": "FD4AB9EB66262C02251757F52D8D958F9E400231708ED4FEAF0833687ACFA312"
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A2 bearer: PNG → jsQR matched",
+   "expect": "matched",
+   "got": "matched",
+   "ok": true
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A2 bearer: intercepted signature from a foreign R4",
+   "expect": "tgs: bad sig",
+   "got": "tgs: bad sig",
+   "ok": true,
+   "hash": "CD25CECB7495FF5C40ECFF64809EB8DFC456AB607941D937921D9A5A46C5169A"
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A2 bearer: CLAIM by QR",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "26B8A06AA9AE25FC013011EA69DDA0D5DD5E1799DB558BE64C2665884C01C0C7"
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A2 bearer: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "BA32A9B1E3D9FBDCE0A4B80161FEFBD097AA070C37AEE42893FBE29F5E596E54"
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A2 bearer: XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A2 bearer: token at R2",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true
+  },
+  {
+   "sc": "QR-A",
+   "name": "QR-A2 bearer: rescan",
+   "expect": "tgs: unknown",
+   "got": "tgs: unknown",
+   "ok": true,
+   "hash": "318F2943BE4A7FC32C2148D5BE70E129909539CA55DB3B97E501CF35AFE9211C"
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B1 code: PNG → jsQR matched",
+   "expect": "matched",
+   "got": "matched",
+   "ok": true
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B1 code: CLAIM by QR",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "AC20A500E3D2F7ADDABA8620C8D1F89E563666CDE300F2ADC85ED312906934E1"
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B1 code: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "0336E2C39FBFC1C709D59B47999006637041FDBB8BDB0DD77362E1530D2EA948"
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B1 code: XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B1 code: token at R1",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B1 code: code from ledger (tgsE1:AeGvapEU…) decrypted",
+   "expect": "TEST-GIFT-52AB55",
+   "got": "TEST-GIFT-52AB55",
+   "ok": true
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B1 code: rescan",
+   "expect": "tgs: unknown",
+   "got": "tgs: unknown",
+   "ok": true,
+   "hash": "DECFB38834ACB71C10E29F5A771D51529EDE546B06BBE132AD0784BA81348710"
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B2 code: PNG → jsQR matched",
+   "expect": "matched",
+   "got": "matched",
+   "ok": true
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B2 code: CLAIM by QR",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "6C83B63EEDB58D1D05423D089EA3AEE4600167AC87E1138D981F56F1B15BB5A6"
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B2 code: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "23F50A11D48D73C79E69C861035694848F91DF49F0749683CAA0BE6C70BE2322"
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B2 code: XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B2 code: token at R3",
+   "expect": "R3",
+   "got": "R3",
+   "ok": true
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B2 code: code from ledger (tgsE1:AdOn9ZFN…) decrypted",
+   "expect": "TEST-GIFT-8CE874",
+   "got": "TEST-GIFT-8CE874",
+   "ok": true
+  },
+  {
+   "sc": "QR-B",
+   "name": "QR-B2 code: rescan",
+   "expect": "tgs: unknown",
+   "got": "tgs: unknown",
+   "ok": true,
+   "hash": "380EE86901BFF699EC014BF0AE8CB88DFA57F8423162CB990572C82A0E971DA4"
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C1 addressed: PNG → jsQR matched",
+   "expect": "matched",
+   "got": "matched",
+   "ok": true
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C1 addressed: in QR no secret",
+   "expect": "no field b",
+   "got": "v,h,a,p,s",
+   "ok": true
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C1 addressed: foreign R4 with addressed QR",
+   "expect": "tgs: bad sig",
+   "got": "tgs: bad sig",
+   "ok": true,
+   "hash": "5BD42ED40B077D7212F1B15D998438F2C974888EA894D9E99AE48E5A0EC03159"
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C1 addressed: CLAIM addressee",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "5EA569E8DA3A131525D6FC70026ACB0DC871AA60E2835B7DD863B4974421D633"
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C1 addressed: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "D5739A79834B8485B7EFC7207C3C71F2A7A51BDDB1F6960B733AEEE595656A62"
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C1 addressed: XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C1 addressed: token at R2",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C2 addressed: PNG → jsQR matched",
+   "expect": "matched",
+   "got": "matched",
+   "ok": true
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C2 addressed: in QR no secret",
+   "expect": "no field b",
+   "got": "v,h,a,p,s",
+   "ok": true
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C2 addressed: foreign R4 with addressed QR",
+   "expect": "tgs: bad sig",
+   "got": "tgs: bad sig",
+   "ok": true,
+   "hash": "99A752B9F65B35A4C8F1991009C11B21C8FFA71A4A68655AC10F033D78361E98"
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C2 addressed: CLAIM addressee",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "D624B641AFBF000583311811AAFECD80429583ABCB2705638018DFF88CC0C74F"
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C2 addressed: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "278BFE42377A2C9B862D3D201B0B36F3B39E1C3824E0A9E4980547A7021D7F90"
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C2 addressed: XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "QR-C",
+   "name": "QR-C2 addressed: token at R3",
+   "expect": "R3",
+   "got": "R3",
+   "ok": true
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D1 token: PNG → jsQR matched",
+   "expect": "matched",
+   "got": "matched",
+   "ok": true
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D1 token: R4 without key by QR",
+   "expect": "tgs: not holder",
+   "got": "tgs: not holder",
+   "ok": true,
+   "hash": "E1CAD3606F73EF02E4D98F96E8EA0B41716CC60D459A49E257DB0EDCDC74E586"
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D1 token: CLAIM by key holder (R1)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "15EE411AFBC2D136004002B930A1D192965E23DBCDF64863802486FB628408E4"
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D1 token: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "4E0A4A469EF26405D98BC8B48E049B086EB5D2289CC13DD49482888E671E7641"
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D1 token: XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D1 token: token at R1",
+   "expect": "R1",
+   "got": "R1",
+   "ok": true
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D1 token: replay",
+   "expect": "tgs: unknown",
+   "got": "tgs: unknown",
+   "ok": true,
+   "hash": "91E0458CC155B45615D5689CEF0310EC48CA48E415C28549068EFC8841174759"
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D2 token: PNG → jsQR matched",
+   "expect": "matched",
+   "got": "matched",
+   "ok": true
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D2 token: R4 without key by QR",
+   "expect": "tgs: not holder",
+   "got": "tgs: not holder",
+   "ok": true,
+   "hash": "9F0977224DD80511F5703467220FB39DD094D49B361E667901C35AA927A9047C"
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D2 token: CLAIM by key holder (R2)",
+   "expect": "tgs: claiming",
+   "got": "tgs: claiming",
+   "ok": true,
+   "hash": "8DC2AAD2D96123D88478E085E1A4C5A091DEA0C0AED82A05B81E19CCDFB0820D"
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D2 token: emit Remit to recipient",
+   "expect": "tesSUCCESS",
+   "got": "tesSUCCESS",
+   "ok": true,
+   "hash": "19094AAA72C5191070DCFCFB49AEFE9626FB46B99A846BD4F18FBA7F419CC0C1"
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D2 token: XAH arrived (Δ+fee)",
+   "expect": "2200000 drops",
+   "got": "2200000 drops",
+   "ok": true
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D2 token: token at R2",
+   "expect": "R2",
+   "got": "R2",
+   "ok": true
+  },
+  {
+   "sc": "QR-D",
+   "name": "QR-D2 token: replay",
+   "expect": "tgs: unknown",
+   "got": "tgs: unknown",
+   "ok": true,
+   "hash": "6F18AF4762EDD055D68C927D07D6D1F398CB53A23FC23B2B54D96204F304586A"
+  },
+  {
+   "sc": "QR-X",
+   "name": "QR-X: PNG → jsQR matched",
+   "expect": "matched",
+   "got": "matched",
+   "ok": true
+  },
+  {
+   "sc": "QR-X",
+   "name": "QR-X: CLAIM after expiry",
+   "expect": "tgs: expired",
+   "got": "tgs: expired",
+   "ok": true,
+   "hash": "FE3CBE55AE0A14B10F1BA5ED09E7B4C5CDC876719E598DCBB584B4165C7B5581"
+  },
+  {
+   "sc": "QR-X",
+   "name": "QR-X: OPEN by issuer after expiry",
+   "expect": "tgs: opened",
+   "got": "tgs: opened",
+   "ok": true,
+   "hash": "22E82E7325A20AD458D295E3AAF8E8140EE4C76EFFDF1C91960BBE26410CA9AB"
+  }
+ ]
+}

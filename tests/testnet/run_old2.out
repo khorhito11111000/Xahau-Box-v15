@@ -1,0 +1,8 @@
+escape PASS=28 FAIL=0 exit 0 15:56
+escape2 PASS=13 FAIL=0 exit 0 16:01
+gaps PASS=22 FAIL=0 exit 0 16:09
+gaps2 PASS=25 FAIL=0 exit 0 16:12
+race PASS=9 FAIL=0 exit 0 16:18
+multisign PASS=13 FAIL=0 exit 0 16:22
+newtests PASS=93 FAIL=0 exit 0 16:34
+Terminated
