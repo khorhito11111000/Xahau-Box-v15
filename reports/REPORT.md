@@ -1,10 +1,13 @@
-# Hook v15: one change (local, 2026-11-03)
+# Hook v15: three changes (local, 2026-11-03)
 
 Everything in the first part was done only on the local machine: a local node in standalone mode (network 21337, no peers). Testnet and mainnet were not used, no transactions were sent to a network, nothing was uploaded anywhere. The v14 files were not changed.
 
-## The change (v15.diff)
-It sits after line 179: if the hook account itself sends an Invoke to another address, the hook lets it pass ("tgs: pass") and writes nothing.
-Invoke without Destination, and Invoke with Destination = own address, work exactly as in v14.
+## The changes (vs v14)
+1. Two hook accounts can open each other's boxes: if the hook account itself sends an Invoke to another address, the hook lets it pass ("tgs: pass") and writes nothing. It sits after line 179. Invoke without Destination, and Invoke with Destination = own address, work exactly as in v14.
+2. A key token must be minted by the hook account itself (reject "tgs: key issuer").
+3. When building a box under a key token, the key must still be on the hook account (reject "tgs: key owner").
+
+Everything else works as in v14.
 
 ## Build
 - clang 19 (wasi-sdk 25), flags from sim/gc.sh, clean.py, guard_checker.

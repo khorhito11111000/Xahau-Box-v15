@@ -1,16 +1,21 @@
 # Xahau Box — hook v15: tests and reports
 
-Private repository with the test material and test reports for hook v15 of Xahau Box.
+Test material and test reports for hook v15 of Xahau Box.
 
 - **HookHash (v15, Hooks Builder build):** `4847C361…` (see the on-chain hook; full hash in the testnet logs).
-- **What changed vs v14:** one change. If the hook account itself sends an `Invoke` to another address, the hook lets it pass (`tgs: pass`) and writes nothing. Everything else works as in v14. Details: [reports/REPORT.md](reports/REPORT.md).
+- **What changed vs v14:** three changes.
+  1. Two hook accounts can open each other's boxes: if the hook account itself sends an `Invoke` to another address, the hook lets it pass (`tgs: pass`) and writes nothing.
+  2. A key token must be minted by the hook account itself (reject `tgs: key issuer`).
+  3. When building a box under a key token, the key must still be on the hook account (reject `tgs: key owner`).
+  Everything else works as in v14. Details: [reports/REPORT.md](reports/REPORT.md).
 - **Source and wasm:** in `src/` and `wasm/` (see "Source and wasm" below).
 
 ## What the tests cover
 
 - PACK / OPEN / CLAIM / SYNC / AUDIT for all box kinds: link (VC) boxes, addressed boxes, key-token boxes, gift codes, mixed boxes under one key.
 - Expiry, races in one ledger, replays, foreign signatures, multisign, offers on locked tokens, issuer burn/theft attempts, hook deletion and reinstall.
-- Two hook accounts talking to each other in both directions (the v15 change).
+- Two hook accounts talking to each other in both directions (v15 change 1).
+- Key-token PACK rejects: foreign issuer (`tgs: key issuer`) and key already passed on (`tgs: key owner`) (v15 changes 2 and 3).
 - When the hook requires AUDIT (testnet trigger tests).
 - xahc 1.12.1 static analysis: build, lint, sim, fuzz, and a cbmc proof of PACK.
 
